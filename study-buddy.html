@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎮 Study Buddy — Barracuda TSE Interview Prep</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --bg1:#eef2f7; --bg2:#e0e7f0; --bg3:#f5f7fa;
+  --card:#ffffff; --card2:#f0f4f9; --line:#d0d8e4;
+  --pink:#e94560; --gold:#f5a623; --cyan:#0099cc; --green:#22c55e; --purple:#8b5cf6;
+  --txt:#1a2233; --mut:#6b7a90;
+}
+body {
+  font-family:'Segoe UI',Tahoma,sans-serif;
+  background:linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));
+  background-attachment:fixed; color:var(--txt); min-height:100vh; padding:12px;
+}
+.container { max-width:1100px; margin:0 auto; }
+
+/* Header */
+.hdr {
+  background:linear-gradient(135deg,var(--card),var(--card2));
+  border:2px solid var(--pink); border-radius:18px;
+  padding:12px 18px; margin-bottom:12px;
+  display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;
+  box-shadow:0 8px 30px rgba(233,69,96,.3);
+}
+.hdr h1 { font-size:1.15em; color:#1a2233; }
+.hdr h1 span { color:var(--pink); }
+.hdr .sub { font-size:.72em; color:var(--mut); }
+.stats { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+.stat { background:var(--bg3); border-radius:12px; padding:6px 12px; text-align:center; border:1px solid var(--line); min-width:72px; }
+.stat .v { font-size:1.1em; font-weight:bold; color:var(--gold); }
+.stat .l { font-size:.58em; text-transform:uppercase; letter-spacing:1px; color:var(--mut); }
+.stat.cd .v { color:var(--cyan); font-size:.95em; }
+.ring { position:relative; width:56px; height:56px; }
+.ring svg { transform:rotate(-90deg); }
+.ring .pct { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:.8em; color:var(--cyan); }
+
+/* Tabs */
+.tabs { display:flex; gap:6px; margin-bottom:12px; flex-wrap:wrap; }
+.tab {
+  padding:9px 16px; border-radius:12px 12px 0 0; cursor:pointer;
+  background:var(--card); border:2px solid #c8d2e0; border-bottom:none;
+  font-weight:600; color:var(--mut); transition:.2s; font-size:.85em; position:relative;
+}
+.tab:hover { color:#1a2233; }
+.tab.active { background:var(--card2); color:var(--pink); border-color:var(--pink); }
+.tab .dot { position:absolute; top:6px; right:8px; width:8px; height:8px; background:var(--pink); border-radius:50%; display:none; }
+.tab .dot.show { display:block; animation:pulse 1.5s infinite; }
+@keyframes pulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.4);opacity:.5} }
+
+/* Panels */
+.panel { display:none; background:#fafbfc; border:2px solid #c8d2e0; border-radius:0 14px 14px 14px; padding:16px; animation:fadeIn .25s; }
+.panel.active { display:block; }
+@keyframes fadeIn { from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;} }
+
+/* Daily mission */
+.mission {
+  background:linear-gradient(90deg,rgba(233,69,96,.15),rgba(245,166,35,.1));
+  border:1px solid var(--pink); border-radius:14px; padding:12px 16px; margin-bottom:14px;
+  display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;
+}
+.mission .mtitle { font-weight:700; color:var(--gold); }
+.mission .mitems { display:flex; gap:8px; flex-wrap:wrap; }
+.mitem { background:var(--bg3); border:1px solid var(--line); border-radius:10px; padding:6px 12px; font-size:.8em; cursor:pointer; transition:.15s; user-select:none; }
+.mitem.done { border-color:var(--green); color:var(--green); text-decoration:line-through; opacity:.75; }
+.mitem:hover { border-color:var(--gold); }
+
+/* Watch & Learn */
+.watch-layout { display:grid; grid-template-columns: 1.4fr 1fr; gap:14px; }
+@media(max-width:1020px){ .watch-layout{grid-template-columns:1fr;} }
+.video-frame { position:relative; width:100%; padding-top:56.25%; border-radius:12px; overflow:hidden; background:#000; border:2px solid var(--line); }
+.video-frame iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
+.vid-title { margin:8px 0 2px; font-size:1em; color:#1a2233; }
+.vid-meta { color:var(--mut); font-size:.78em; margin-bottom:6px; }
+select { width:100%; padding:9px; border-radius:10px; background:var(--bg3); color:#1a2233; border:1px solid var(--line); font-size:.9em; margin-bottom:8px; }
+.qcard { background:var(--card); border:1px solid var(--line); border-radius:12px; margin-bottom:8px; overflow:hidden; transition:.2s; }
+.qcard.done { border-color:var(--green); box-shadow:0 0 12px rgba(34,197,94,.2); }
+.qhead { padding:9px 12px; cursor:pointer; display:flex; gap:9px; align-items:flex-start; }
+.qhead:hover { background:rgba(0,0,0,.03); }
+.qnum { color:var(--gold); font-weight:bold; min-width:30px; font-size:.85em; }
+.qtext { flex:1; font-size:.86em; }
+.qbadge { font-size:.6em; padding:2px 8px; border-radius:8px; white-space:nowrap; color:#fff; }
+.qbody { display:none; padding:0 12px 10px 52px; font-size:.83em; line-height:1.55; color:#445; }
+.qcard.open .qbody { display:block; }
+.gotbtn { margin-top:7px; margin-right:6px; padding:4px 12px; border-radius:8px; border:none; cursor:pointer; font-weight:600; font-size:.78em; }
+.gotbtn.yes { background:var(--green); color:#fff; }
+.gotbtn.notyet { background:var(--line); color:#445; }
+.gotbtn.undo { background:var(--gold); color:#2b1d00; }
+.searchbox { width:100%; padding:9px 12px; border-radius:10px; background:var(--bg3); border:1px solid var(--line); color:#1a2233; font-size:.9em; margin-bottom:10px; }
+.searchbox:focus { outline:none; border-color:var(--gold); }
+
+/* Quiz */
+.quiz-box { max-width:760px; margin:0 auto; }
+.progress-bar { height:8px; background:var(--bg3); border-radius:6px; overflow:hidden; margin-bottom:12px; }
+.progress-fill { height:100%; background:linear-gradient(90deg,var(--pink),var(--gold)); width:0%; transition:.4s; }
+.quiz-q { font-size:1.1em; color:#1a2233; margin-bottom:14px; line-height:1.5; }
+.quiz-q .kbd-hint { font-size:.6em; color:var(--mut); }
+.opt {
+  display:block; width:100%; text-align:left; padding:12px 15px; margin-bottom:9px;
+  background:var(--card); border:2px solid var(--line); border-radius:12px; color:var(--txt);
+  font-size:.92em; cursor:pointer; transition:.15s; position:relative;
+}
+.opt .key { display:inline-block; width:22px; height:22px; line-height:22px; text-align:center; background:var(--bg3); border-radius:6px; margin-right:10px; font-size:.8em; color:var(--mut); border:1px solid var(--line); }
+.opt:hover:not(:disabled) { border-color:var(--gold); transform:translateX(4px); }
+.opt.correct { border-color:var(--green); background:rgba(34,197,94,.12); }
+.opt.wrong { border-color:var(--pink); background:rgba(233,69,96,.12); }
+.expl { background:var(--bg3); border-left:4px solid var(--gold); border-radius:0 10px 10px 0; padding:11px 13px; margin:10px 0; font-size:.86em; line-height:1.55; display:none; }
+.expl.show { display:block; }
+.next-btn { padding:10px 26px; background:linear-gradient(90deg,var(--pink),var(--gold)); border:none; border-radius:10px; color:#fff; font-weight:700; cursor:pointer; font-size:.92em; display:none; }
+.next-btn.show { display:inline-block; }
+.topic-filter { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; }
+.chip { padding:5px 12px; border-radius:16px; font-size:.74em; cursor:pointer; background:var(--card); border:1px solid var(--line); color:var(--mut); }
+.chip.on { background:var(--pink); color:#fff; border-color:var(--pink); }
+
+/* Flashcards */
+.flash-wrap { max-width:600px; margin:0 auto; text-align:center; }
+.flashcard {
+  background:linear-gradient(135deg,var(--card),var(--card2));
+  border:2px solid var(--line); border-radius:18px; min-height:240px;
+  display:flex; align-items:center; justify-content:center; padding:28px;
+  font-size:1.2em; line-height:1.6; cursor:pointer; position:relative;
+  transition:.3s; margin-bottom:14px; color:#1a2233;
+}
+.flashcard:hover { border-color:var(--gold); }
+.flashcard.flipped { border-color:var(--cyan); }
+.flashcard .topic-tag { position:absolute; top:10px; left:14px; font-size:.55em; color:var(--mut); text-transform:uppercase; letter-spacing:1px; }
+.flashcard .hint { position:absolute; bottom:10px; left:0; right:0; font-size:.55em; color:var(--mut); }
+.flash-nav { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:12px; }
+.grade-btn { padding:11px 18px; border-radius:10px; border:none; cursor:pointer; font-weight:700; font-size:.9em; transition:.15s; }
+.grade-btn:hover { transform:translateY(-2px); }
+.g-again { background:var(--pink); color:#fff; }
+.g-hard { background:#e77; color:#fff; }
+.g-good { background:var(--gold); color:#2b1d00; }
+.g-easy { background:var(--green); color:#06281a; }
+
+/* Interview Sim */
+.interview-box { max-width:760px; margin:0 auto; }
+.int-q { background:var(--card); border:2px solid var(--purple); border-radius:14px; padding:18px; margin-bottom:14px; }
+.int-q .iq-label { font-size:.7em; color:var(--purple); font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px; }
+.int-q .iq-text { font-size:1.1em; color:#1a2233; line-height:1.5; }
+.int-controls { display:flex; gap:8px; flex-wrap:wrap; margin:12px 0; }
+.int-controls button { padding:10px 18px; border-radius:10px; border:1px solid var(--line); background:var(--card); color:var(--txt); cursor:pointer; font-size:.88em; font-weight:600; }
+.int-controls button:hover { border-color:var(--gold); }
+.int-timer { font-size:1.4em; font-weight:bold; color:var(--cyan); margin:8px 0; }
+.int-rubric { background:var(--bg3); border-radius:12px; padding:14px; margin-top:12px; }
+.int-rubric .rs { display:flex; justify-content:space-between; margin:6px 0; font-size:.85em; }
+.int-rubric .rs input { width:60px; }
+
+/* Readiness */
+.readiness-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; }
+.rd-card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px; }
+.rd-card h3 { color:var(--gold); margin-bottom:10px; font-size:.95em; }
+.rd-bar { height:10px; background:var(--bg3); border-radius:6px; overflow:hidden; margin:6px 0; }
+.rd-bar > div { height:100%; border-radius:6px; transition:width .5s; }
+.rd-pct { font-size:1.6em; font-weight:bold; }
+.rd-list { font-size:.82em; color:var(--mut); line-height:1.7; }
+.rd-list .ok { color:var(--green); }
+.rd-list .no { color:var(--pink); }
+
+/* Achievements */
+.achv-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:12px; }
+.achv-item { background:var(--card); border:2px solid var(--line); border-radius:14px; padding:14px; text-align:center; transition:.2s; }
+.achv-item.un { border-color:var(--gold); box-shadow:0 0 16px rgba(245,166,35,.25); }
+.achv-item.locked { opacity:.4; filter:grayscale(1); }
+.achv-item .ai { font-size:2em; margin-bottom:6px; }
+.achv-item .an { font-size:.82em; font-weight:700; color:#1a2233; }
+.achv-item .ad { font-size:.68em; color:var(--mut); margin-top:4px; }
+
+/* Hype ritual */
+.hype {
+  position:fixed; inset:0; z-index:9000; background:rgba(0,0,0,.92);
+  display:none; align-items:center; justify-content:center; flex-direction:column; gap:14px;
+}
+.hype.show { display:flex; }
+.hype .ht { font-size:1.4em; font-weight:bold; color:var(--gold); }
+.hype .hs { font-size:.85em; color:var(--mut); }
+.hype-frame { width:min(90vw,640px); aspect-ratio:16/9; border-radius:12px; overflow:hidden; border:2px solid var(--pink); }
+.hype-frame iframe { width:100%; height:100%; border:none; }
+.hype-lock { font-size:1em; color:var(--cyan); }
+.hype-skip { padding:10px 24px; background:var(--card); border:1px solid var(--pink); color:var(--pink); border-radius:10px; cursor:pointer; font-weight:700; }
+.hype-skip:hover { background:var(--pink); color:#fff; }
+
+/* Pre-check challenge bar */
+.precheck-bar {
+  background:linear-gradient(90deg,rgba(139,92,246,.1),rgba(245,166,35,.08));
+  border:1px solid var(--purple); border-radius:14px; padding:12px 16px;
+  margin-bottom:14px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+}
+.precheck-bar.done-pc { border-color:var(--green); background:linear-gradient(90deg,rgba(34,197,94,.1),rgba(34,197,94,.05)); }
+.precheck-bar h4 { font-size:.95em; color:#1a2233; margin-bottom:2px; }
+.precheck-bar .pc-sub { font-size:.78em; color:var(--mut); }
+.precheck-bar .pc-done-tag { font-size:.78em; color:var(--green); font-weight:700; margin-top:2px; }
+.pcbtn {
+  padding:10px 22px; border-radius:12px; border:none; cursor:pointer; font-weight:700; font-size:.9em;
+  background:linear-gradient(135deg,var(--purple),var(--pink)); color:#fff; transition:.15s; white-space:nowrap;
+}
+.pcbtn:hover { transform:translateY(-2px); box-shadow:0 4px 16px rgba(139,92,246,.3); }
+
+/* Pre-check overlay */
+.pcov {
+  position:fixed; inset:0; z-index:9001; background:rgba(0,0,0,.75);
+  display:none; align-items:center; justify-content:center; padding:16px;
+}
+.pcov.show { display:flex; }
+.pccard {
+  background:var(--card); border:2px solid var(--purple); border-radius:18px;
+  padding:24px; max-width:560px; width:100%; box-shadow:0 0 40px rgba(139,92,246,.3);
+  animation:fadeIn .25s;
+}
+.pccard h2 { font-size:1.15em; color:#1a2233; margin-bottom:6px; }
+.pcq-count { font-size:.78em; color:var(--mut); margin-bottom:14px; }
+.pc-question { font-size:1.1em; color:#1a2233; margin-bottom:16px; line-height:1.5; font-weight:600; }
+.pc-opt {
+  display:block; width:100%; text-align:left; padding:12px 15px; margin-bottom:9px;
+  background:var(--bg3); border:2px solid var(--line); border-radius:12px; color:var(--txt);
+  font-size:.92em; cursor:pointer; transition:.15s;
+}
+.pc-opt:hover:not(:disabled) { border-color:var(--purple); transform:translateX(4px); }
+.pc-opt.correct { border-color:var(--green); background:rgba(34,197,94,.12); }
+.pc-opt.wrong { border-color:var(--pink); background:rgba(233,69,96,.12); }
+.pc-opt:disabled { cursor:default; }
+.pc-feedback {
+  background:var(--bg3); border-left:4px solid var(--gold); border-radius:0 10px 10px 0;
+  padding:11px 13px; margin:10px 0; font-size:.86em; line-height:1.55; color:#445; display:none;
+}
+.pc-feedback.show { display:block; }
+.pc-actions { display:flex; gap:10px; justify-content:flex-end; margin-top:12px; }
+.pc-skip { padding:8px 18px; background:var(--bg3); border:1px solid var(--line); color:var(--mut); border-radius:10px; cursor:pointer; font-size:.85em; }
+.pc-skip:hover { border-color:var(--pink); color:var(--pink); }
+.pc-results { text-align:center; }
+.pc-results .score { font-size:2.5em; font-weight:900; margin-bottom:6px; }
+.pc-results .verdict { font-size:1em; font-weight:700; color:#1a2233; margin-bottom:6px; }
+.pc-results .muted { font-size:.82em; color:var(--mut); margin-bottom:14px; }
+.pc-watchplan { text-align:left; background:var(--bg3); border-radius:12px; padding:14px; margin-bottom:14px; font-size:.85em; line-height:1.7; }
+.pc-watchplan .must { color:var(--pink); font-weight:600; }
+.pc-watchplan .skip-ok { color:var(--green); font-weight:600; }
+
+/* Study pet */
+.pet {
+  position:fixed; bottom:16px; right:16px; z-index:8000; cursor:pointer;
+  background:var(--card); border:2px solid var(--gold); border-radius:50%;
+  width:56px; height:56px; display:flex; align-items:center; justify-content:center;
+  font-size:1.6em; box-shadow:0 4px 20px rgba(245,166,35,.3); transition:.2s;
+}
+.pet:hover { transform:scale(1.1) rotate(8deg); }
+.pet-msg {
+  position:fixed; bottom:80px; right:16px; z-index:8000; max-width:240px;
+  background:var(--card); border:1px solid var(--gold); border-radius:12px;
+  padding:10px 14px; font-size:.82em; color:#1a2233; display:none; box-shadow:0 4px 20px rgba(0,0,0,.15);
+}
+.pet-msg.show { display:block; }
+
+/* Confetti + toast */
+#confetti { position:fixed; inset:0; z-index:9998; pointer-events:none; }
+#toast {
+  position:fixed; bottom:80px; left:50%; transform:translateX(-50%); z-index:9996;
+  background:var(--card); border:1px solid var(--gold); border-radius:12px;
+  padding:10px 22px; font-size:.9em; font-weight:700; color:#1a2233; opacity:0;
+  transition:opacity .3s; pointer-events:none; box-shadow:0 4px 20px rgba(245,166,35,.3);
+}
+#toast.show { opacity:1; }
+
+/* Level up */
+#levelUp {
+  display:none; position:fixed; inset:0; z-index:9997; background:rgba(0,0,0,.85);
+  align-items:center; justify-content:center;
+}
+#levelUp.show { display:flex; }
+.lu-card {
+  background:linear-gradient(145deg,var(--card),var(--card2)); border:2px solid var(--gold);
+  border-radius:20px; padding:28px 36px; text-align:center; max-width:340px;
+  box-shadow:0 0 40px rgba(245,166,35,.4); animation:luPop .4s;
+}
+.lu-card .lu-emoji { font-size:48px; margin-bottom:8px; }
+.lu-card .lu-title { font-size:22px; font-weight:900; color:#1a2233; margin-bottom:4px; }
+.lu-card .lu-sub { font-size:14px; color:var(--gold); margin-bottom:18px; }
+.lu-card .lu-btn {
+  background:linear-gradient(135deg,var(--pink),var(--gold)); color:#fff; border:none;
+  border-radius:12px; padding:12px 30px; font-size:15px; font-weight:700; cursor:pointer;
+}
+@keyframes luPop { from{transform:scale(.7);opacity:0} to{transform:scale(1);opacity:1} }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="hdr">
+    <div>
+      <h1>🎮 Study Buddy | <span>Barracuda TSE</span> — Interview Prep</h1>
+      <div class="sub" id="hdrSub">Loading… · Networking · Security · Email · Linux · Barracuda · Troubleshooting</div>
+    </div>
+    <div class="stats">
+      <div class="stat cd"><div class="v" id="cdVal">—</div><div class="l">To Interview</div></div>
+      <div class="stat"><div class="v" id="xpVal">0</div><div class="l">XP</div></div>
+      <div class="stat"><div class="v" id="streakVal">1🔥</div><div class="l">Streak</div></div>
+      <div class="stat"><div class="v" id="lvlVal">🌱 Noob</div><div class="l">Level</div></div>
+      <div class="ring">
+        <svg width="56" height="56"><circle cx="28" cy="28" r="24" fill="none" stroke="#272727" stroke-width="5"/><circle id="rdRing" cx="28" cy="28" r="24" fill="none" stroke="#00d2ff" stroke-width="5" stroke-linecap="round" stroke-dasharray="150.8" stroke-dashoffset="150.8" style="transition:stroke-dashoffset .5s"/></svg>
+        <div class="pct" id="rdPct">0%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" data-tab="watch">📺 Watch & Learn</div>
+    <div class="tab" data-tab="quiz">⚡ Quiz Arena</div>
+    <div class="tab" data-tab="flash">🃏 Flashcards</div>
+    <div class="tab" data-tab="interview">🎤 Interview Sim</div>
+    <div class="tab" data-tab="readiness">📊 Readiness</div>
+    <div class="tab" data-tab="achv">🏅 Achievements</div>
+  </div>
+
+  <!-- Watch & Learn -->
+  <div class="panel active" id="panel-watch">
+    <div class="mission">
+      <div class="mtitle">🎯 Today's Mission (<span id="missionDone">0</span>/<span id="missionTotal">4</span>)</div>
+      <div class="mitems">
+        <div class="mitem" id="m-watch">📺 Watch 1 new video</div>
+        <div class="mitem" id="m-flash">🃏 10 flashcards</div>
+        <div class="mitem" id="m-quiz">⚡ 1 quiz run</div>
+        <div class="mitem" id="m-interview">🎤 Mock interview</div>
+      </div>
+    </div>
+    <div class="precheck-bar" id="precheckBar" style="display:none">
+      <div>
+        <h4>🧠 Think you already know this?</h4>
+        <div class="pc-sub">Answer up to 5 challenge questions first — prove what you know, only watch the parts you miss.</div>
+      </div>
+      <button class="pcbtn" id="pcBtn">⚡ Challenge me!</button>
+    </div>
+    <div class="watch-layout">
+      <div>
+        <select id="vidSelect"></select>
+        <div class="video-frame" id="vidFrame"></div>
+        <div class="vid-title" id="vidTitle">Pick a video to start</div>
+        <div class="vid-meta" id="vidMeta"></div>
+      </div>
+      <div>
+        <input class="searchbox" id="qSearch" placeholder="🔍 Search all questions… (Enter to jump)">
+        <h3 style="margin-bottom:8px;color:var(--gold)">Questions in this video</h3>
+        <div style="font-size:.78em;color:var(--mut);margin-bottom:8px">Click to reveal · Mark ✅ only when you could explain it OUT LOUD.</div>
+        <div id="qList"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quiz Arena -->
+  <div class="panel" id="panel-quiz">
+    <div class="quiz-box">
+      <div class="topic-filter" id="quizFilter"></div>
+      <div id="quizStart">
+        <h3 style="color:var(--gold);margin-bottom:10px">⚡ Quiz Arena</h3>
+        <p style="color:var(--mut);font-size:.88em;margin-bottom:14px">Test your knowledge. 10 questions per run, mixed from all topics. Keyboard: 1-4 to answer, Enter for next.</p>
+        <button class="next-btn show" id="quizStartBtn" style="font-size:1em;padding:12px 30px">🚀 Start Quiz</button>
+      </div>
+      <div id="quizPlay" style="display:none">
+        <div class="progress-bar"><div class="progress-fill" id="quizProgress"></div></div>
+        <div style="font-size:.78em;color:var(--mut);margin-bottom:10px" id="quizCounter"></div>
+        <div class="quiz-q" id="quizQ"></div>
+        <div id="quizOpts"></div>
+        <div class="expl" id="quizExpl"></div>
+        <button class="next-btn" id="quizNext">Next ▶</button>
+      </div>
+      <div id="quizResult" style="display:none;text-align:center">
+        <div style="font-size:3em;margin-bottom:8px" id="quizEmoji">🎉</div>
+        <h3 style="color:var(--gold);margin-bottom:6px" id="quizScore"></h3>
+        <p style="color:var(--mut);margin-bottom:14px" id="quizScoreSub"></p>
+        <button class="next-btn show" id="quizAgain" style="font-size:1em;padding:12px 30px">🔁 Again</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Flashcards -->
+  <div class="panel" id="panel-flash">
+    <div class="flash-wrap">
+      <div class="topic-filter" id="flashFilter"></div>
+      <div class="flashcard" id="flashCard">
+        <span class="topic-tag" id="flashTag">Topic</span>
+        <span id="flashText">Click to start</span>
+        <span class="hint" id="flashHint">Click to flip · ←/→ to navigate</span>
+      </div>
+      <div class="flash-nav">
+        <button class="grade-btn g-again" id="flashPrev">◀ Prev</button>
+        <button class="grade-btn g-good" id="flashFlip">🔄 Flip</button>
+        <button class="grade-btn g-easy" id="flashNext">Next ▶</button>
+      </div>
+      <div style="margin-top:10px;font-size:.82em;color:var(--mut)" id="flashCounter"></div>
+    </div>
+  </div>
+
+  <!-- Interview Sim -->
+  <div class="panel" id="panel-interview">
+    <div class="interview-box">
+      <h3 style="color:var(--purple);margin-bottom:6px">🎤 Interview Simulator</h3>
+      <p style="color:var(--mut);font-size:.85em;margin-bottom:14px">Random question · 90s to answer out loud · self-grade. Practice speaking confidently.</p>
+      <div class="int-q" id="intQ">
+        <div class="iq-label">Question</div>
+        <div class="iq-text" id="intText">Click "New Question" to begin</div>
+      </div>
+      <div class="int-controls">
+        <button id="intNew">🎲 New Question</button>
+        <button id="intStart">⏱️ Start Timer</button>
+        <button id="intStop">⏹️ Stop</button>
+        <button id="intDone">✅ Done</button>
+      </div>
+      <div class="int-timer" id="intTimer">1:30</div>
+      <div class="int-rubric" id="intRubric" style="display:none">
+        <h4 style="color:var(--gold);margin-bottom:10px;font-size:.9em">Self-grade (0-5 each)</h4>
+        <div class="rs"><span>Technical accuracy</span><input type="number" id="r-tech" min="0" max="5" value="3"></div>
+        <div class="rs"><span>Completeness</span><input type="number" id="r-comp" min="0" max="5" value="3"></div>
+        <div class="rs"><span>Clarity & confidence</span><input type="number" id="r-clarity" min="0" max="5" value="3"></div>
+        <div class="rs"><span>Examples used</span><input type="number" id="r-ex" min="0" max="5" value="2"></div>
+        <button class="next-btn show" id="intSave" style="margin-top:10px">💾 Save & Next</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Readiness -->
+  <div class="panel" id="panel-readiness">
+    <h3 style="color:var(--gold);margin-bottom:14px">📊 Interview Readiness</h3>
+    <div class="readiness-grid" id="rdGrid"></div>
+  </div>
+
+  <!-- Achievements -->
+  <div class="panel" id="panel-achv">
+    <h3 style="color:var(--gold);margin-bottom:6px">🏅 Achievements</h3>
+    <p style="color:var(--mut);font-size:.85em;margin-bottom:14px"><span id="achvCount">0</span> unlocked</p>
+    <div class="achv-grid" id="achvGrid"></div>
+  </div>
+
+</div>
+
+<!-- Hype ritual -->
+<div class="hype" id="hype">
+  <div class="ht">🎉 THE HYPE RITUAL 🎉</div>
+  <div class="hs">Watch the celebration — your reward video unlocks after this.</div>
+  <div class="hype-frame" id="hypeFrame"></div>
+  <div class="hype-lock" id="hypeLock">🔒 Video locked — 90s of hype remaining</div>
+  <button class="hype-skip" id="hypeSkip">⏭️ Skip (−50 XP)</button>
+</div>
+
+<!-- Pre-check challenge overlay -->
+<div class="pcov" id="pcov">
+  <div class="pccard">
+    <div id="pcPlay">
+      <h2>🧠 Pre-Check Challenge — <span id="pcVidName"></span></h2>
+      <div class="pcq-count" id="pcCount"></div>
+      <div class="pc-question" id="pcQ"></div>
+      <div id="pcOpts"></div>
+      <div class="pc-feedback" id="pcFb"></div>
+      <div class="pc-actions">
+        <button class="pc-skip" id="pcSkipBtn">Skip — just let me watch</button>
+        <button class="pcbtn" id="pcNext" style="display:none">Next →</button>
+      </div>
+    </div>
+    <div id="pcDone" class="pc-results" style="display:none">
+      <div class="score" id="pcScore"></div>
+      <div class="verdict" id="pcVerdict"></div>
+      <div class="muted" id="pcSub"></div>
+      <div class="pc-watchplan" id="pcPlan"></div>
+      <div class="pc-actions" style="justify-content:center">
+        <button class="pcbtn" id="pcWatchBtn">Start watching 🎬</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Study pet -->
+<div class="pet" id="pet">🐣</div>
+<div class="pet-msg" id="petMsg"></div>
+
+<!-- Overlays -->
+<canvas id="confetti"></canvas>
+<div id="toast"></div>
+<div id="levelUp">
+  <div class="lu-card">
+    <div class="lu-emoji">⚡</div>
+    <div class="lu-title">Level Up!</div>
+    <div class="lu-sub">Senior</div>
+    <button class="lu-btn" id="luBtn">Let's go! 🚀</button>
+  </div>
+</div>
+
+<script src="data/playlist.js"></script>
+<script src="data/challenge-bank.js"></script>
+<script>
+// ====== Data ======
+const PLAYLIST = window.BCV_PLAYLIST;
+const CAT_COLORS = {
+  'Networking':'#0ea5e9','Security':'#ef4444','Email & SMTP':'#f59e0b',
+  'Linux':'#22c55e','Barracuda':'#f97316','Troubleshooting':'#a855f7',
+};
+const CATS = Object.keys(CAT_COLORS);
+const entries = [];
+for (const [qid, item] of Object.entries(PLAYLIST)) {
+  for (const vid of item.vids || []) entries.push({ qid, cat: item.cat, q: item.q, vid });
+}
+const TOTAL = entries.length;
+const QUESTIONS = Object.entries(PLAYLIST).map(([qid, v]) => ({ id: qid, cat: v.cat, q: v.q, vids: v.vids }));
+
+// ====== State ======
+const LS = 'sb_barracuda_v1';
+let S = load();
+function load() {
+  try { return JSON.parse(localStorage.getItem(LS)) || {}; } catch { return {}; }
+}
+function save() { localStorage.setItem(LS, JSON.stringify(S)); }
+if (!S.watched) S.watched = {};
+if (!S.qDone) S.qDone = {};
+if (!S.flash) S.flash = {};
+if (!S.quiz) S.quiz = { runs: 0, correct: 0, total: 0 };
+if (!S.interview) S.interview = { done: 0, scores: [] };
+if (!S.streak) S.streak = { last: null, n: 0 };
+if (!S.mission) S.mission = { date: null, watch: false, flash: false, quiz: false, interview: false };
+if (!S.xp) S.xp = 0;
+if (!S.level) S.level = 1;
+if (!S.pet) S.pet = 'egg';
+if (!S.hypeSeen) S.hypeSeen = [];
+
+// ====== Levels ======
+const LEVELS = [
+  { xp: 0,    name: 'Noob',           icon: '🌱' },
+  { xp: 100,  name: 'Junior',         icon: '⚡' },
+  { xp: 300,  name: 'Senior',         icon: '🔧' },
+  { xp: 600,  name: 'Expert',         icon: '🏗️' },
+  { xp: 1000, name: 'Master',         icon: '🛡️' },
+  { xp: 1500, name: 'Beast',          icon: '💪' },
+  { xp: 2200, name: 'Legend',        icon: '👑' },
+  { xp: 3000, name: 'Interview Ready',icon: '🎓' },
+];
+function getLevel(xp) {
+  let lvl = LEVELS[0], idx = 0;
+  for (let i = 0; i < LEVELS.length; i++) if (xp >= LEVELS[i].xp) { lvl = LEVELS[i]; idx = i; }
+  const next = LEVELS[idx + 1];
+  return { idx, level: idx + 1, name: lvl.name, icon: lvl.icon, xp, next,
+    pct: next ? Math.round(((xp - lvl.xp) / (next.xp - lvl.xp)) * 100) : 100 };
+}
+function addXP(n) {
+  const before = getLevel(S.xp).level;
+  S.xp += n;
+  const after = getLevel(S.xp).level;
+  if (after > before) { S.level = after; showLevelUp(getLevel(S.xp)); burstConfetti(150); }
+  save(); updateHeader();
+}
+function showLevelUp(lvl) {
+  const el = document.getElementById('levelUp');
+  el.querySelector('.lu-emoji').textContent = lvl.icon;
+  el.querySelector('.lu-title').textContent = 'Level ' + lvl.level + '!';
+  el.querySelector('.lu-sub').textContent = lvl.name;
+  el.classList.add('show');
+}
+document.getElementById('luBtn').onclick = () => document.getElementById('levelUp').classList.remove('show');
+
+// ====== Streak ======
+function bumpStreak() {
+  const today = new Date().toDateString();
+  if (S.streak.last === today) return;
+  const yest = new Date(Date.now() - 864e5).toDateString();
+  S.streak.n = S.streak.last === yest ? S.streak.n + 1 : 1;
+  S.streak.last = today;
+  save();
+}
+
+// ====== Countdown ======
+function updateCountdown() {
+  const target = new Date('2026-09-30T09:00:00');
+  const diff = target - Date.now();
+  if (diff <= 0) { document.getElementById('cdVal').textContent = 'NOW'; return; }
+  const d = Math.floor(diff / 864e5);
+  const h = Math.floor((diff % 864e5) / 36e5);
+  const m = Math.floor((diff % 36e5) / 6e4);
+  document.getElementById('cdVal').textContent = d + 'd ' + h + 'h ' + m + 'm';
+}
+setInterval(updateCountdown, 60000);
+
+// ====== Header ======
+function updateHeader() {
+  document.getElementById('xpVal').textContent = S.xp;
+  document.getElementById('streakVal').textContent = S.streak.n + '🔥';
+  const lvl = getLevel(S.xp);
+  document.getElementById('lvlVal').textContent = lvl.icon + ' ' + lvl.name;
+  const rdy = readinessPct();
+  document.getElementById('rdPct').textContent = rdy + '%';
+  const circ = 150.8;
+  document.getElementById('rdRing').style.strokeDashoffset = String(circ - (rdy / 100) * circ);
+  document.getElementById('hdrSub').textContent = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) + ' · ' + watchedCount() + '/' + TOTAL + ' videos · ' + QUESTIONS.length + ' questions';
+}
+function readinessPct() {
+  const done = QUESTIONS.filter(q => q.vids.some(v => S.watched[v.id])).length;
+  return Math.round((done / QUESTIONS.length) * 100);
+}
+function watchedCount() { return Object.keys(S.watched).length; }
+
+// ====== Tabs ======
+document.querySelectorAll('.tab').forEach(t => {
+  t.onclick = () => {
+    document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById('panel-' + t.dataset.tab).classList.add('active');
+    if (t.dataset.tab === 'readiness') renderReadiness();
+    if (t.dataset.tab === 'achv') renderAchievements();
+  };
+});
+
+// ====== Watch & Learn ======
+let curVid = null;
+function buildVidSelect() {
+  const sel = document.getElementById('vidSelect');
+  sel.innerHTML = QUESTIONS.map(q => {
+    const v = q.vids[0];
+    const done = S.watched[v.id] ? ' ✅' : '';
+    return '<option value="' + q.id + '">' + q.id + ' — ' + q.q.substring(0, 70) + done + '</option>';
+  }).join('');
+  sel.onchange = () => loadVideo(sel.value);
+}
+function loadVideo(qid) {
+  const q = QUESTIONS.find(x => x.id === qid);
+  if (!q) return;
+  const vid = q.vids[0];
+  curVid = vid;
+  curQid = qid;
+  renderPrecheckBar(qid);
+  // Show the video info + question list immediately (no hype yet)
+  // Hype plays only when user chooses to watch (via challenge results or skip)
+  playActualVideo(qid, vid);
+}
+function watchCurrentVideo() {
+  // Called when user chooses to watch (from precheck skip or results)
+  if (curQid) {
+    const q = QUESTIONS.find(x => x.id === curQid);
+    if (q) showHype(() => playActualVideo(curQid, q.vids[0]));
+  }
+}
+function playActualVideo(qid, vid) {
+  const isYT = vid.id && !vid.source;
+  if (isYT) {
+    document.getElementById('vidFrame').innerHTML = '<iframe src="https://www.youtube.com/embed/' + vid.id + '?rel=0&autoplay=1" allowfullscreen allow="autoplay;encrypted-media"></iframe>';
+  } else {
+    document.getElementById('vidFrame').innerHTML = '<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#f0f4f9;color:#6b7a90;font-size:.9em;text-align:center;padding:20px"><a href="' + vid.url + '" target="_blank" style="color:var(--cyan)">Open LinkedIn Learning video →</a></div>';
+  }
+  document.getElementById('vidTitle').textContent = vid.title;
+  document.getElementById('vidMeta').textContent = (vid.channel || '') + ' · ' + (vid.dur || '') + ' · ' + (vid.views || '');
+  renderQList(qid);
+  if (!S.watched[vid.id]) {
+    S.watched[vid.id] = { at: Date.now(), qid };
+    addXP(10);
+    bumpStreak();
+    markMission('watch');
+    toast('✓ Watched! +10 XP');
+    burstConfetti(20);
+    save();
+  }
+}
+function renderQList(qid) {
+  const q = QUESTIONS.find(x => x.id === qid);
+  const list = document.getElementById('qList');
+  list.innerHTML = '';
+  // Show the question as a reveal card
+  const card = document.createElement('div');
+  card.className = 'qcard' + (S.qDone[qid] ? ' done' : '');
+  card.innerHTML =
+    '<div class="qhead"><div class="qnum">Q</div><div class="qtext">' + esc(q.q) + '</div>' +
+    '<span class="qbadge" style="background:' + (CAT_COLORS[q.cat] || '#64748b') + '">' + q.cat + '</span></div>' +
+    '<div class="qbody"><div style="margin-bottom:8px">Can you explain this out loud confidently?</div>' +
+    (S.qDone[qid] ? '<button class="gotbtn undo" data-undo>↺ Undo</button>' : '<button class="gotbtn yes" data-yes>✅ Got it</button><button class="gotbtn notyet" data-no>Not yet</button>') +
+    '</div>';
+  card.querySelector('.qhead').onclick = () => card.classList.toggle('open');
+  const yesBtn = card.querySelector('[data-yes]');
+  if (yesBtn) yesBtn.onclick = (e) => { e.stopPropagation(); S.qDone[qid] = true; addXP(15); markMission('watch'); toast('✓ Question mastered! +15 XP'); burstConfetti(15); save(); renderQList(qid); };
+  const noBtn = card.querySelector('[data-no]');
+  if (noBtn) noBtn.onclick = (e) => { e.stopPropagation(); card.classList.remove('open'); };
+  const undoBtn = card.querySelector('[data-undo]');
+  if (undoBtn) undoBtn.onclick = (e) => { e.stopPropagation(); delete S.qDone[qid]; save(); renderQList(qid); };
+  list.appendChild(card);
+}
+document.getElementById('qSearch').oninput = (e) => {
+  const term = e.target.value.toLowerCase();
+  if (!term) { if (curVid) renderQList(curVid.qid || curVid.id); return; }
+  const matches = QUESTIONS.filter(q => (q.id + ' ' + q.q + ' ' + q.cat).toLowerCase().includes(term));
+  const list = document.getElementById('qList');
+  list.innerHTML = matches.length ? '' : '<div style="color:var(--mut);padding:12px">No matches.</div>';
+  matches.slice(0, 50).forEach(q => {
+    const card = document.createElement('div');
+    card.className = 'qcard' + (S.qDone[q.id] ? ' done' : '');
+    card.innerHTML = '<div class="qhead"><div class="qnum">' + q.id + '</div><div class="qtext">' + esc(q.q) + '</div><span class="qbadge" style="background:' + (CAT_COLORS[q.cat] || '#64748b') + '">' + q.cat + '</span></div>';
+    card.querySelector('.qhead').onclick = () => { document.getElementById('vidSelect').value = q.id; loadVideo(q.id); document.getElementById('qSearch').value = ''; };
+    list.appendChild(card);
+  });
+};
+
+// ====== Quiz ======
+let quizQs = [], quizIdx = 0, quizCorrect = 0;
+function buildQuizFilter() {
+  const f = document.getElementById('quizFilter');
+  f.innerHTML = '<div class="chip on" data-cat="All">All</div>' + CATS.map(c => '<div class="chip" data-cat="' + c + '" style="border-color:' + CAT_COLORS[c] + '">' + c + '</div>').join('');
+  f.querySelectorAll('.chip').forEach(c => c.onclick = () => { f.querySelectorAll('.chip').forEach(x => x.classList.remove('on')); c.classList.add('on'); });
+}
+document.getElementById('quizStartBtn').onclick = startQuiz;
+document.getElementById('quizAgain').onclick = startQuiz;
+function startQuiz() {
+  const filter = document.querySelector('#quizFilter .chip.on')?.dataset.cat || 'All';
+  let pool = QUESTIONS.map(q => ({ ...q, vid: q.vids[0] }));
+  if (filter !== 'All') pool = pool.filter(q => q.cat === filter);
+  // Shuffle and take 10
+  pool.sort(() => Math.random() - 0.5);
+  quizQs = pool.slice(0, 10).map(q => makeQuizQ(q));
+  quizIdx = 0; quizCorrect = 0;
+  document.getElementById('quizStart').style.display = 'none';
+  document.getElementById('quizResult').style.display = 'none';
+  document.getElementById('quizPlay').style.display = 'block';
+  showQuizQ();
+}
+function makeQuizQ(q) {
+  // Use the question text as prompt; build 4 options from other questions' text + correct
+  const others = QUESTIONS.filter(x => x.id !== q.id).sort(() => Math.random() - 0.5).slice(0, 3);
+  const opts = [q.q, ...others.map(o => o.q)].sort(() => Math.random() - 0.5);
+  return { q: 'Which question matches this video: "' + (q.vid.title || q.q) + '"?', opts, correct: q.q, cat: q.cat, qid: q.id };
+}
+function showQuizQ() {
+  const q = quizQs[quizIdx];
+  document.getElementById('quizCounter').textContent = 'Q ' + (quizIdx + 1) + ' / ' + quizQs.length + ' · ' + q.cat;
+  document.getElementById('quizProgress').style.width = ((quizIdx / quizQs.length) * 100) + '%';
+  document.getElementById('quizQ').innerHTML = esc(q.q) + ' <span class="kbd-hint">(1-4)</span>';
+  const opts = document.getElementById('quizOpts');
+  opts.innerHTML = '';
+  q.opts.forEach((o, i) => {
+    const b = document.createElement('button');
+    b.className = 'opt';
+    b.innerHTML = '<span class="key">' + (i + 1) + '</span>' + esc(o);
+    b.onclick = () => answerQuiz(i, b);
+    opts.appendChild(b);
+  });
+  document.getElementById('quizExpl').classList.remove('show');
+  document.getElementById('quizNext').classList.remove('show');
+}
+function answerQuiz(i, btn) {
+  const q = quizQs[quizIdx];
+  document.querySelectorAll('#quizOpts .opt').forEach(b => b.disabled = true);
+  if (q.opts[i] === q.correct) {
+    btn.classList.add('correct'); quizCorrect++; addXP(20);
+    toast('✓ Correct! +20 XP'); burstConfetti(15);
+  } else {
+    btn.classList.add('wrong');
+    document.querySelectorAll('#quizOpts .opt').forEach(b => { if (b.textContent.includes(q.correct)) b.classList.add('correct'); });
+  }
+  const expl = document.getElementById('quizExpl');
+  expl.innerHTML = '<strong style="color:var(--gold)">Answer:</strong> ' + esc(q.correct);
+  expl.classList.add('show');
+  document.getElementById('quizNext').classList.add('show');
+}
+document.getElementById('quizNext').onclick = () => {
+  quizIdx++;
+  if (quizIdx >= quizQs.length) endQuiz();
+  else showQuizQ();
+};
+function endQuiz() {
+  S.quiz.runs++; S.quiz.correct += quizCorrect; S.quiz.total += quizQs.length;
+  addXP(quizCorrect * 5);
+  markMission('quiz');
+  bumpStreak();
+  save();
+  document.getElementById('quizPlay').style.display = 'none';
+  document.getElementById('quizResult').style.display = 'block';
+  const pct = Math.round((quizCorrect / quizQs.length) * 100);
+  document.getElementById('quizScore').textContent = quizCorrect + ' / ' + quizQs.length + ' (' + pct + '%)';
+  document.getElementById('quizScoreSub').textContent = pct >= 80 ? '🔥 You\'re on fire!' : pct >= 50 ? '👍 Decent — keep going!' : '📚 Review and retry!';
+  document.getElementById('quizEmoji').textContent = pct >= 80 ? '🎉' : pct >= 50 ? '👍' : '📚';
+  if (pct >= 80) burstConfetti(80);
+}
+
+// ====== Flashcards ======
+let flashIdx = 0, flashFlipped = false, flashPool = [];
+function buildFlashFilter() {
+  const f = document.getElementById('flashFilter');
+  f.innerHTML = '<div class="chip on" data-cat="All">All</div>' + CATS.map(c => '<div class="chip" data-cat="' + c + '" style="border-color:' + CAT_COLORS[c] + '">' + c + '</div>').join('');
+  f.querySelectorAll('.chip').forEach(c => c.onclick = () => { f.querySelectorAll('.chip').forEach(x => x.classList.remove('on')); c.classList.add('on'); buildFlashPool(); });
+}
+function buildFlashPool() {
+  const filter = document.querySelector('#flashFilter .chip.on')?.dataset.cat || 'All';
+  flashPool = filter === 'All' ? [...QUESTIONS] : QUESTIONS.filter(q => q.cat === filter);
+  flashIdx = 0; flashFlipped = false; showFlash();
+}
+function showFlash() {
+  if (!flashPool.length) return;
+  const q = flashPool[flashIdx];
+  const card = document.getElementById('flashCard');
+  card.classList.toggle('flipped', flashFlipped);
+  document.getElementById('flashTag').textContent = q.cat;
+  document.getElementById('flashText').textContent = flashFlipped ? q.q : 'Q ' + q.id;
+  document.getElementById('flashHint').textContent = flashFlipped ? 'Click to see question only' : 'Click to reveal answer';
+  document.getElementById('flashCounter').textContent = (flashIdx + 1) + ' / ' + flashPool.length;
+}
+document.getElementById('flashCard').onclick = () => { flashFlipped = !flashFlipped; showFlash(); };
+document.getElementById('flashFlip').onclick = () => { flashFlipped = !flashFlipped; showFlash(); };
+document.getElementById('flashPrev').onclick = () => { flashIdx = (flashIdx - 1 + flashPool.length) % flashPool.length; flashFlipped = false; showFlash(); };
+document.getElementById('flashNext').onclick = () => {
+  flashIdx = (flashIdx + 1) % flashPool.length; flashFlipped = false; showFlash();
+  S.flash[flashPool[flashIdx].id] = (S.flash[flashPool[flashIdx].id] || 0) + 1;
+  if (S.flash[flashPool[flashIdx].id] === 1) addXP(5);
+  if (Object.keys(S.flash).length >= 10) markMission('flash');
+  save();
+};
+
+// ====== Interview Sim ======
+let intTimer = null, intSecs = 90;
+document.getElementById('intNew').onclick = () => {
+  const q = QUESTIONS[Math.floor(Math.random() * QUESTIONS.length)];
+  document.getElementById('intText').textContent = q.q;
+  document.getElementById('intText').dataset.qid = q.id;
+  document.getElementById('intRubric').style.display = 'none';
+  intSecs = 90; document.getElementById('intTimer').textContent = '1:30';
+};
+document.getElementById('intStart').onclick = () => {
+  clearInterval(intTimer);
+  intTimer = setInterval(() => {
+    intSecs--;
+    const m = Math.floor(intSecs / 60), s = intSecs % 60;
+    document.getElementById('intTimer').textContent = m + ':' + (s < 10 ? '0' : '') + s;
+    if (intSecs <= 0) { clearInterval(intTimer); toast('⏰ Time!'); document.getElementById('intRubric').style.display = 'block'; }
+  }, 1000);
+};
+document.getElementById('intStop').onclick = () => { clearInterval(intTimer); document.getElementById('intRubric').style.display = 'block'; };
+document.getElementById('intDone').onclick = () => { clearInterval(intTimer); document.getElementById('intRubric').style.display = 'block'; };
+document.getElementById('intSave').onclick = () => {
+  const t = +document.getElementById('r-tech').value, c = +document.getElementById('r-comp').value;
+  const cl = +document.getElementById('r-clarity').value, ex = +document.getElementById('r-ex').value;
+  const score = (t + c + cl + ex) / 4;
+  S.interview.done++; S.interview.scores.push(score);
+  addXP(Math.round(score * 10));
+  markMission('interview');
+  bumpStreak();
+  save();
+  toast('🎤 Interview saved! +' + Math.round(score * 10) + ' XP');
+  burstConfetti(30);
+  document.getElementById('intRubric').style.display = 'none';
+  document.getElementById('intNew').click();
+};
+
+// ====== Readiness ======
+function renderReadiness() {
+  const grid = document.getElementById('rdGrid');
+  const rdy = readinessPct();
+  const confPct = Math.round((Object.keys(S.qDone).length / QUESTIONS.length) * 100);
+  const quizPct = S.quiz.total ? Math.round((S.quiz.correct / S.quiz.total) * 100) : 0;
+  const intAvg = S.interview.scores.length ? (S.interview.scores.reduce((a, b) => a + b, 0) / S.interview.scores.length).toFixed(1) : '—';
+  let html = '';
+  html += rdCard('Overall Readiness', rdy, 'var(--cyan)', QUESTIONS.filter(q => q.vids.some(v => S.watched[v.id])).length + ' / ' + QUESTIONS.length + ' questions covered');
+  html += rdCard('Confidence', confPct, 'var(--purple)', Object.keys(S.qDone).length + ' / ' + QUESTIONS.length + ' questions mastered');
+  html += rdCard('Quiz Accuracy', quizPct, 'var(--gold)', S.quiz.correct + ' / ' + S.quiz.total + ' across ' + S.quiz.runs + ' runs');
+  html += rdCard('Interview Practice', S.interview.done ? Math.min(100, S.interview.done * 10) : 0, 'var(--pink)', S.interview.done + ' mocks · avg ' + intAvg + '/5');
+  // Per-category
+  for (const cat of CATS) {
+    const catQs = QUESTIONS.filter(q => q.cat === cat);
+    const catDone = catQs.filter(q => q.vids.some(v => S.watched[v.id])).length;
+    const pct = Math.round((catDone / catQs.length) * 100);
+    html += rdCard(cat, pct, CAT_COLORS[cat], catDone + ' / ' + catQs.length + ' covered');
+  }
+  grid.innerHTML = html;
+}
+function rdCard(title, pct, color, sub) {
+  return '<div class="rd-card"><h3>' + title + '</h3><div class="rd-pct" style="color:' + color + '">' + pct + '%</div><div class="rd-bar"><div style="width:' + pct + '%;background:' + color + '"></div></div><div class="rd-list">' + sub + '</div></div>';
+}
+
+// ====== Achievements ======
+const ACHV = [
+  { icon: '🥇', name: 'First Steps', desc: 'Watch 1 video', check: () => watchedCount() >= 1 },
+  { icon: '📚', name: 'Getting Started', desc: 'Watch 10 videos', check: () => watchedCount() >= 10 },
+  { icon: '📖', name: 'Bookworm', desc: 'Watch 50 videos', check: () => watchedCount() >= 50 },
+  { icon: '💯', name: 'Century Club', desc: 'Watch 100 videos', check: () => watchedCount() >= 100 },
+  { icon: '🏆', name: 'Completionist', desc: 'Watch all ' + TOTAL, check: () => watchedCount() >= TOTAL },
+  { icon: '🔥', name: 'Week Warrior', desc: '7-day streak', check: () => S.streak.n >= 7 },
+  { icon: '🌋', name: 'Fortnight Fire', desc: '14-day streak', check: () => S.streak.n >= 14 },
+  { icon: '☀️', name: 'Monthly Master', desc: '30-day streak', check: () => S.streak.n >= 30 },
+  { icon: '🎯', name: 'Category Master', desc: 'Cover one full category', check: () => CATS.some(c => { const qs = QUESTIONS.filter(q => q.cat === c); return qs.every(q => q.vids.some(v => S.watched[v.id])); }) },
+  { icon: '🧠', name: 'Know-it-all', desc: 'Master 50 questions', check: () => Object.keys(S.qDone).length >= 50 },
+  { icon: '⚡', name: 'Quiz Whiz', desc: 'Score 80%+ on a quiz', check: () => S.quiz.total > 0 && (S.quiz.correct / S.quiz.total) >= 0.8 },
+  { icon: '🎤', name: 'Interview Pro', desc: 'Complete 10 mock interviews', check: () => S.interview.done >= 10 },
+  { icon: '🎓', name: 'Interview Ready', desc: '100% readiness', check: () => readinessPct() >= 100 },
+  { icon: '🌟', name: 'Daily Hero', desc: 'Complete all daily missions', check: () => S.mission.watch && S.mission.flash && S.mission.quiz && S.mission.interview },
+];
+function renderAchievements() {
+  const unlocked = ACHV.filter(a => a.check());
+  document.getElementById('achvCount').textContent = unlocked.length + ' / ' + ACHV.length;
+  document.getElementById('achvGrid').innerHTML = ACHV.map(a =>
+    '<div class="achv-item ' + (a.check() ? 'un' : 'locked') + '"><div class="ai">' + a.icon + '</div><div class="an">' + a.name + '</div><div class="ad">' + a.desc + '</div></div>'
+  ).join('');
+}
+
+// ====== Daily mission ======
+function checkMissionReset() {
+  const today = new Date().toDateString();
+  if (S.mission.date !== today) S.mission = { date: today, watch: false, flash: false, quiz: false, interview: false };
+}
+function markMission(key) {
+  checkMissionReset();
+  if (!S.mission[key]) { S.mission[key] = true; addXP(25); toast('🎯 Mission complete! +25 XP'); burstConfetti(40); }
+  renderMission();
+  save();
+}
+function renderMission() {
+  checkMissionReset();
+  const items = ['watch', 'flash', 'quiz', 'interview'];
+  const done = items.filter(k => S.mission[k]).length;
+  document.getElementById('missionDone').textContent = done;
+  items.forEach(k => { document.getElementById('m-' + k).classList.toggle('done', S.mission[k]); });
+  document.querySelectorAll('.mitem').forEach(el => el.onclick = () => {
+    const map = { 'm-watch': 'watch', 'm-flash': 'flash', 'm-quiz': 'quiz', 'm-interview': 'interview' };
+    const tab = map[el.id];
+    document.querySelector('.tab[data-tab="' + (tab === 'watch' ? 'watch' : tab === 'flash' ? 'flash' : tab === 'quiz' ? 'quiz' : 'interview') + '"]').click();
+  });
+}
+
+// ====== Pre-check challenge ======
+const HYPE_VIDEO = 'oKjtZlHSKX8';
+let curQid = null;
+let pcQueue = [], pcIdx = 0, pcCor = 0, pcResults = [], pcPendingQid = null, pcPendingVid = null;
+
+function renderPrecheckBar(qid) {
+  const bar = document.getElementById('precheckBar');
+  const q = QUESTIONS.find(x => x.id === qid);
+  if (!q) { bar.style.display = 'none'; return; }
+  const done = S.precheck && S.precheck[qid];
+  bar.style.display = 'flex';
+  bar.className = 'precheck-bar' + (done ? ' done-pc' : '');
+  const btn = document.getElementById('pcBtn');
+  if (done) {
+    bar.querySelector('h4').textContent = '✅ Challenge completed — ' + done.cor + '/' + done.n + ' correct';
+    bar.querySelector('.pc-sub').innerHTML = '<span class="pc-done-tag">You scored ' + Math.round((done.cor / done.n) * 100) + '% — questions you passed are marked ✅</span>';
+    btn.textContent = '🔁 Retry challenge';
+  } else {
+    bar.querySelector('h4').textContent = '🧠 Think you already know this?';
+    bar.querySelector('.pc-sub').textContent = 'Answer up to 5 challenge questions first — prove what you know, only watch the parts you miss.';
+    btn.textContent = '⚡ Challenge me!';
+  }
+  btn.onclick = () => startPrecheck(qid);
+}
+
+function startPrecheck(qid) {
+  const q = QUESTIONS.find(x => x.id === qid);
+  if (!q) return;
+  const mcqs = pcBuildMCQs(q);
+  if (!mcqs.length) { toast('Not enough content to challenge — just watch 🎬'); return; }
+  pcQueue = mcqs.sort(() => Math.random() - 0.5).slice(0, 5);
+  pcIdx = 0; pcCor = 0; pcResults = [];
+  pcPendingQid = qid; pcPendingVid = q.vids[0];
+  document.getElementById('pcVidName').textContent = q.id;
+  document.getElementById('pcPlay').style.display = 'block';
+  document.getElementById('pcDone').style.display = 'none';
+  document.getElementById('pcov').classList.add('show');
+  showPcQ();
+}
+
+function pcBuildMCQs(q) {
+  // Build accurate, topic-specific MCQs from a curated question bank
+  const BANK = window.CHALLENGE_BANK || {};
+  const bank = BANK[q.id] || [];
+  const catBank = BANK['_cat_' + q.cat] || [];
+  // Pick from question-specific bank first, then category bank, then related questions
+  let pool = [...bank, ...catBank];
+  // If not enough, borrow from same-category question banks
+  if (pool.length < 5) {
+    const catQs = QUESTIONS.filter(x => x.cat === q.cat && x.id !== q.id);
+    for (const oq of catQs) {
+      const extra = BANK[oq.id] || [];
+      pool.push(...extra);
+      if (pool.length >= 5) break;
+    }
+  }
+  // Shuffle and take 5
+  pool = pool.sort(() => Math.random() - 0.5).slice(0, 5);
+  return pool.map(m => ({ q: m.q, opts: [...m.opts].sort(() => Math.random() - 0.5), ans: 0, real: q, correctText: m.opts[0], explain: m.explain || '' }));
+}
+
+function showPcQ() {
+  const m = pcQueue[pcIdx];
+  document.getElementById('pcCount').textContent = 'Question ' + (pcIdx + 1) + ' / ' + pcQueue.length + ' · no pressure — wrong answers just tell you what to watch';
+  document.getElementById('pcQ').textContent = m.q;
+  document.getElementById('pcOpts').innerHTML = m.opts.map((o, i) =>
+    '<button class="pc-opt" data-i="' + i + '">' + esc(o) + '</button>').join('');
+  document.querySelectorAll('#pcOpts .pc-opt').forEach(b => b.onclick = () => pcAnswer(+b.dataset.i, b));
+  document.getElementById('pcFb').classList.remove('show');
+  document.getElementById('pcNext').style.display = 'none';
+  document.getElementById('pcSkipBtn').style.display = 'none';
+}
+
+function pcAnswer(i, btn) {
+  const m = pcQueue[pcIdx];
+  const opts = document.querySelectorAll('#pcOpts .pc-opt');
+  opts.forEach(b => b.disabled = true);
+  const cor = m.opts[i] === m.correctText;
+  pcResults.push({ q: m.real.q, cor, qid: m.real.id });
+  if (cor) {
+    btn.classList.add('correct'); pcCor++;
+    addXP(15);
+    if (!S.qDone[m.real.id]) { S.qDone[m.real.id] = true; }
+    toast('✅ Nailed it — you can SKIP this part of the video!');
+    burstConfetti(15);
+  } else {
+    btn.classList.add('wrong');
+    opts.forEach(b => { if (b.textContent === m.correctText) b.classList.add('correct'); });
+    addXP(2);
+    toast('📌 Marked for watching — pay attention to this part');
+  }
+  const fb = document.getElementById('pcFb');
+  fb.innerHTML = (cor ? '✅ <b>Correct!</b> ' : '❌ <b>Watch this part.</b> ') +
+    (m.explain ? esc(m.explain) : 'This covers: <b>' + esc(m.real.cat) + '</b> — ' + esc(m.real.q.substring(0, 120)));
+  fb.classList.add('show');
+  const n = document.getElementById('pcNext');
+  n.style.display = 'inline-block';
+  n.textContent = (pcIdx === pcQueue.length - 1) ? 'See results 🏁' : 'Next →';
+  save();
+}
+
+document.getElementById('pcNext').onclick = () => {
+  pcIdx++;
+  if (pcIdx < pcQueue.length) showPcQ();
+  else endPrecheck(true);
+};
+document.getElementById('pcSkipBtn').onclick = () => endPrecheck(false);
+
+function endPrecheck(finished) {
+  if (!finished) {
+    document.getElementById('pcov').classList.remove('show');
+    // Just proceed to watch the video (hype + actual)
+    if (pcPendingQid) { showHype(() => playActualVideo(pcPendingQid, pcPendingVid)); }
+    return;
+  }
+  // Record score
+  S.precheck = S.precheck || {};
+  S.precheck[pcPendingQid] = { n: pcQueue.length, cor: pcCor, at: Date.now() };
+  save();
+  const pct = pcCor / pcQueue.length;
+  const missed = pcResults.filter(r => !r.cor);
+  const passed = pcResults.filter(r => r.cor);
+  document.getElementById('pcScore').textContent = pcCor + ' / ' + pcQueue.length;
+  document.getElementById('pcScore').style.color = pct >= 0.8 ? 'var(--green)' : pct >= 0.5 ? 'var(--gold)' : 'var(--pink)';
+  document.getElementById('pcVerdict').innerHTML =
+    pct === 1 ? '🏆 PERFECT — you know this already. Skim or skip it!' :
+    pct >= 0.8 ? '🔥 Almost there — just patch the gaps below.' :
+    pct >= 0.5 ? '💪 Halfway — the watch plan below is your shortcut.' :
+    '📚 Fresh territory — watch this one properly, it\'s all new.';
+  document.getElementById('pcSub').textContent = 'Questions you passed are marked ✅ — you\'re free to skip them.';
+  const plan = document.getElementById('pcPlan');
+  if (missed.length) {
+    plan.innerHTML = '<b>🎬 Your watch plan:</b><br>' +
+      missed.map(r => '<span class="must">▶ MUST WATCH: ' + esc(r.q.substring(0, 70)) + '</span>').join('<br>') +
+      (passed.length ? '<br><span class="skip-ok">✓ Can skip: ' + passed.map(r => r.qid).join(', ') + '</span>' : '');
+  } else {
+    plan.innerHTML = '<span class="skip-ok">✓ Nothing to watch — you passed everything! Go crush another video 🚀</span>';
+  }
+  document.getElementById('pcPlay').style.display = 'none';
+  document.getElementById('pcDone').style.display = 'block';
+  if (pct === 1) { burstConfetti(100); toast('🏆 Perfect score! +bonus XP'); addXP(30); }
+  else if (pct >= 0.8) { burstConfetti(50); }
+  renderPrecheckBar(pcPendingQid);
+  renderQList(pcPendingQid);
+}
+
+document.getElementById('pcWatchBtn').onclick = () => {
+  document.getElementById('pcov').classList.remove('show');
+  if (pcPendingQid) { showHype(() => playActualVideo(pcPendingQid, pcPendingVid)); }
+};
+
+// ====== Hype ritual ======
+function showHype(afterFn) {
+  const h = document.getElementById('hype');
+  h.classList.add('show');
+  document.getElementById('hypeFrame').innerHTML = '<iframe src="https://www.youtube.com/embed/' + HYPE_VIDEO + '?autoplay=1&rel=0" allow="autoplay;encrypted-media"></iframe>';
+  let secs = 90;
+  document.getElementById('hypeLock').textContent = '🔒 Video locked — ' + secs + 's of hype remaining';
+  const timer = setInterval(() => {
+    secs--;
+    document.getElementById('hypeLock').textContent = '🔒 Video locked — ' + secs + 's of hype remaining';
+    if (secs <= 0) { clearInterval(timer); closeHype(afterFn); }
+  }, 1000);
+  document.getElementById('hypeSkip').onclick = () => { clearInterval(timer); addXP(-50); closeHype(afterFn); };
+}
+function closeHype(afterFn) {
+  document.getElementById('hype').classList.remove('show');
+  document.getElementById('hypeFrame').innerHTML = '';
+  if (afterFn) afterFn();
+}
+
+// ====== Study pet ======
+const PETS = [
+  { xp: 0, emoji: '🐣', msgs: ['New day, new XP. Let\'s go! 🚀', 'Time to study! 📚', 'You got this! 💪'] },
+  { xp: 100, emoji: '🐥', msgs: ['Growing strong! 🌱', 'Keep watching videos! 📺', 'Quiz time? ⚡'] },
+  { xp: 300, emoji: '🐦', msgs: ['You\'re on fire! 🔥', 'Streak looking good! 🔥', 'Master those questions! 🧠'] },
+  { xp: 600, emoji: '🦅', msgs: ['Expert level! 🛡️', 'Interview ready soon! 🎓', 'Crush it! 💪'] },
+  { xp: 1000, emoji: '🐉', msgs: ['Legend! 👑', 'You\'re a beast! 💪', 'Interview ready! 🎉'] },
+];
+function petMsg() {
+  const p = PETS.slice().reverse().find(p => S.xp >= p.xp) || PETS[0];
+  S.pet = p.emoji;
+  document.getElementById('pet').textContent = p.emoji;
+  const m = p.msgs[Math.floor(Math.random() * p.msgs.length)];
+  const el = document.getElementById('petMsg');
+  el.textContent = m; el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 3000);
+}
+document.getElementById('pet').onclick = petMsg;
+
+// ====== Confetti ======
+let cc = null, cx = null, cp = [];
+function ensureConfetti() {
+  if (cc) return;
+  cc = document.getElementById('confetti'); cx = cc.getContext('2d');
+  const r = () => { cc.width = innerWidth; cc.height = innerHeight; };
+  r(); addEventListener('resize', r); requestAnimationFrame(cloop);
+}
+function burstConfetti(n = 30) {
+  ensureConfetti();
+  const cols = ['#e94560', '#f5a623', '#00d2ff', '#2ecc71', '#a855f7', '#fff'];
+  for (let i = 0; i < n; i++) cp.push({
+    x: innerWidth / 2 + (Math.random() - 0.5) * 200, y: innerHeight / 2,
+    vx: (Math.random() - 0.5) * 12, vy: Math.random() * -14 - 4,
+    g: 0.4, size: Math.random() * 6 + 3, color: cols[Math.floor(Math.random() * cols.length)],
+    rot: Math.random() * 360, vr: (Math.random() - 0.5) * 20, life: 120,
+  });
+}
+function cloop() {
+  if (!cx) { requestAnimationFrame(cloop); return; }
+  cx.clearRect(0, 0, cc.width, cc.height);
+  cp = cp.filter(p => p.life > 0);
+  for (const p of cp) {
+    p.x += p.vx; p.y += p.vy; p.vy += p.g; p.rot += p.vr; p.life--;
+    cx.save(); cx.translate(p.x, p.y); cx.rotate(p.rot * Math.PI / 180);
+    cx.fillStyle = p.color; cx.globalAlpha = Math.min(1, p.life / 40);
+    cx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6); cx.restore();
+  }
+  requestAnimationFrame(cloop);
+}
+
+// ====== Toast ======
+let toastTimer = null;
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg; el.classList.add('show');
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove('show'), 2200);
+}
+
+// ====== Helpers ======
+function esc(s) { return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+
+// ====== Keyboard ======
+document.addEventListener('keydown', e => {
+  if (document.getElementById('panel-quiz').classList.contains('active') && document.getElementById('quizPlay').style.display !== 'none') {
+    if (['1', '2', '3', '4'].includes(e.key)) {
+      const btns = document.querySelectorAll('#quizOpts .opt:not(:disabled)');
+      const idx = +e.key - 1;
+      if (btns[idx]) btns[idx].click();
+    }
+    if (e.key === 'Enter' && document.getElementById('quizNext').classList.contains('show')) document.getElementById('quizNext').click();
+  }
+  if (document.getElementById('panel-flash').classList.contains('active')) {
+    if (e.key === 'ArrowLeft') document.getElementById('flashPrev').click();
+    if (e.key === 'ArrowRight') document.getElementById('flashNext').click();
+    if (e.key === ' ') { e.preventDefault(); document.getElementById('flashCard').click(); }
+  }
+});
+
+// ====== Init ======
+buildVidSelect();
+buildQuizFilter();
+buildFlashPool();
+renderMission();
+updateCountdown();
+updateHeader();
+loadVideo(QUESTIONS[0].id);
+petMsg();
+</script>
+</body>
+</html>
