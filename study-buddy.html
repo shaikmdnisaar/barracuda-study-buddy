@@ -943,6 +943,9 @@ let ytPlayer = null, ytReady = false;
 let alEnabled = false, alTimer = null, alInterval = 30; // seconds
 let alQuizPool = [], alQuizIdx = 0, alCorrect = 0, alTotal = 0;
 let alCurQ = null;
+let alAskedIds = []; // track which questions have been asked to avoid repeats
+let alLastTimestamp = 0; // video timestamp at last quiz
+let alLearnedConcepts = []; // concepts covered in the last 30s segment
 
 function loadYTAPI(cb) {
   if (document.getElementById('yt-iframe-api')) { window.onYouTubeIframeAPIReady = cb; return; }
@@ -995,10 +998,41 @@ function ytGetState(cb) {
 function startALTimer() {
   stopALTimer();
   if (!alEnabled || !ytReady) return;
+  // Reset asked questions when starting a new video segment
+  alAskedIds = [];
+  alLastTimestamp = 0;
+  alLearnedConcepts = [];
   alTimer = setInterval(() => {
-    // Pause the video via postMessage and show quiz
-    ytControl('pauseVideo');
-    showALQuiz();
+    // Get current video timestamp via postMessage
+    const iframe = document.getElementById('ytPlayerDiv');
+    if (!iframe || !iframe.contentWindow) return;
+    // Request current time
+    try { iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'getCurrentTime', args: '' }), '*'); } catch(e) {}
+    // Listen for the response
+    const timeHandler = (e) => {
+      if (e.data && typeof e.data === 'string') {
+        try {
+          const d = JSON.parse(e.data);
+          if (d.event === 'onInfoDelivery' && d.info && d.info.currentTime !== undefined) {
+            const curTime = Math.floor(d.info.currentTime);
+            // Track what was covered in this 30s segment
+            const segmentStart = alLastTimestamp;
+            const segmentEnd = curTime;
+            alLearnedConcepts.push({ start: segmentStart, end: segmentEnd, qid: curQid });
+            alLastTimestamp = segmentEnd;
+            window.removeEventListener('message', timeHandler);
+            // Pause and show quiz about what was just covered
+            ytControl('pauseVideo');
+            showALQuiz(segmentStart, segmentEnd);
+          }
+        } catch(err) {}
+      }
+    };
+    window.addEventListener('message', timeHandler);
+    // Fallback: if no response in 500ms, just pause and quiz
+    setTimeout(() => {
+      window.removeEventListener('message', timeHandler);
+    }, 500);
   }, alInterval * 1000);
 }
 function stopALTimer() { clearInterval(alTimer); alTimer = null; }
@@ -1016,11 +1050,12 @@ document.getElementById('alToggle').onclick = () => {
   }
 };
 
-function showALQuiz() {
+function showALQuiz(segStart, segEnd) {
   // Build quiz pool from current question's challenge bank + category
   const BANK = window.CHALLENGE_BANK || {};
   const q = QUESTIONS.find(x => x.id === curQid);
   if (!q) { resumeVideo(); return; }
+  // Get all questions for this topic + category
   let pool = [...(BANK[q.id] || []), ...(BANK['_cat_' + q.cat] || [])];
   if (pool.length < 1) {
     // Borrow from same category
@@ -1028,17 +1063,31 @@ function showALQuiz() {
     for (const oq of catQs) { pool.push(...(BANK[oq.id] || [])); if (pool.length >= 3) break; }
   }
   if (pool.length < 1) { resumeVideo(); return; }
-  alCurQ = pool[Math.floor(Math.random() * pool.length)];
+  // Filter out already-asked questions (avoid repeats)
+  let available = pool.filter((item, idx) => !alAskedIds.includes(idx));
+  // If all asked, reset and start over
+  if (available.length === 0) { alAskedIds = []; available = pool; }
+  // Pick the next question (sequential rotation, not random — covers different aspects)
+  const poolIdx = pool.indexOf(available[0]);
+  alAskedIds.push(poolIdx);
+  alCurQ = available[0];
   alTotal++;
+  // Format timestamp for display
+  const fmtTS = (s) => {
+    const m = Math.floor(s / 60), sec = Math.floor(s % 60);
+    return m + ':' + (sec < 10 ? '0' : '') + sec;
+  };
   const opts = [...alCurQ.opts].sort(() => Math.random() - 0.5);
-  document.getElementById('alQ').textContent = alCurQ.q;
+  // Show "recently covered" context before the question
+  const contextMsg = '📺 You just watched ' + fmtTS(segStart || 0) + ' → ' + fmtTS(segEnd || 0) + ' of the video. Let\'s check what you learned!';
+  document.getElementById('alQ').innerHTML = '<div style="font-size:.75em;color:var(--green);margin-bottom:8px;font-weight:600">' + contextMsg + '</div>' + esc(alCurQ.q);
   document.getElementById('alOpts').innerHTML = opts.map((o, i) =>
     '<button class="al-opt" data-o="' + esc(o) + '">' + esc(o) + '</button>').join('');
   document.querySelectorAll('#alOpts .al-opt').forEach(b => b.onclick = () => alAnswer(b));
   document.getElementById('alFb').classList.remove('show');
   document.getElementById('alResume').style.display = 'none';
   document.getElementById('alSkip').style.display = 'inline-block';
-  document.getElementById('alStats').textContent = 'Quiz ' + alTotal + ' · Correct: ' + alCorrect;
+  document.getElementById('alStats').textContent = 'Quiz ' + alTotal + ' · Correct: ' + alCorrect + '/' + alTotal + ' · Segment: ' + fmtTS(segStart || 0) + '-' + fmtTS(segEnd || 0);
   document.getElementById('alQuiz').classList.add('show');
 }
 function alAnswer(btn) {
