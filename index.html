@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0f0f0f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="BCV Checklist">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon128.png">
+  <link rel="apple-touch-icon" href="icons/icon128.png">
+  <title>🎬 Interview Video Checklist</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    body {
+      background: #0f0f0f; color: #f1f1f1;
+      font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+    #app { max-width: 600px; margin: 0 auto; min-height: 100vh; }
+
+    /* Sign-in screen */
+    #signin {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      min-height: 100vh; padding: 24px; text-align: center;
+    }
+    #signin .logo { font-size: 48px; margin-bottom: 12px; }
+    #signin h1 { font-size: 22px; margin-bottom: 8px; }
+    #signin p { font-size: 14px; color: #aaa; margin-bottom: 32px; max-width: 320px; line-height: 1.5; }
+    #signin .gbtn {
+      display: flex; align-items: center; gap: 10px;
+      background: #fff; color: #1f1f1f; border: none; border-radius: 12px;
+      padding: 14px 24px; font-size: 16px; font-weight: 600; cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3); transition: transform 0.1s;
+    }
+    #signin .gbtn:active { transform: scale(0.97); }
+    #signin .gbtn svg { width: 20px; height: 20px; }
+    #signin .guest {
+      margin-top: 16px; background: none; border: none; color: #888;
+      font-size: 13px; cursor: pointer; text-decoration: underline;
+    }
+    #signin .err { color: #ef4444; font-size: 13px; margin-top: 16px; max-width: 320px; }
+
+    /* Main app */
+    #main { display: none; padding: 12px 14px; }
+    #main.show { display: block; }
+
+    .header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .header h2 { font-size: 18px; flex: 1; }
+    .header .user-chip {
+      display: flex; align-items: center; gap: 6px; font-size: 12px; color: #aaa;
+    }
+    .header .user-chip img { width: 28px; height: 28px; border-radius: 50%; }
+    .header .signout {
+      background: #272727; border: none; color: #aaa; border-radius: 8px;
+      padding: 6px 10px; font-size: 11px; cursor: pointer;
+    }
+
+    .progress-bar { height: 8px; background: #272727; border-radius: 4px; overflow: hidden; margin-bottom: 4px; }
+    .progress-bar .fill { height: 100%; background: linear-gradient(90deg, #ff0033, #ff5c39); border-radius: 4px; transition: width 0.4s; }
+    .progress-txt { font-size: 11px; color: #aaa; margin-bottom: 4px; }
+    .stats { font-size: 11px; color: #888; margin-bottom: 12px; }
+
+    .controls { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
+    .controls input {
+      flex: 1; min-width: 120px; background: #1a1a1a; border: 1px solid #303030; color: #eee;
+      border-radius: 10px; padding: 10px 14px; font-size: 14px; outline: none;
+    }
+    .controls input:focus { border-color: #ff0033; }
+    .controls select {
+      background: #1a1a1a; border: 1px solid #303030; color: #eee; border-radius: 10px;
+      padding: 10px 8px; font-size: 13px; outline: none;
+    }
+    .controls button {
+      background: #1a1a1a; border: 1px solid #303030; color: #eee; border-radius: 10px;
+      padding: 10px 12px; font-size: 12px; cursor: pointer; white-space: nowrap;
+    }
+    .controls button.on { background: #ff0033; border-color: #ff0033; color: #fff; }
+    .controls button.on.due { background: #ffb020; border-color: #ffb020; color: #232323; }
+
+    .qhead {
+      font-size: 13px; font-weight: 600; color: #ddd; padding: 12px 4px 6px;
+      line-height: 1.4; border-top: 1px solid #212121;
+    }
+    .chip {
+      display: inline-block; color: #fff; font-size: 9px; font-weight: 700;
+      border-radius: 20px; padding: 2px 8px; margin-right: 6px; vertical-align: middle;
+    }
+    .qid {
+      display: inline-block; background: #272727; color: #ff8a8a; font-size: 9px;
+      font-weight: 700; border-radius: 4px; padding: 2px 5px; margin-right: 4px; vertical-align: middle;
+    }
+
+    .item {
+      display: flex; align-items: center; gap: 10px; padding: 8px;
+      border-radius: 12px; cursor: pointer; transition: background 0.12s; margin-bottom: 2px;
+    }
+    .item:active { background: #1f1f1f; }
+    .item.done .box { background: #22c55e; border-color: #22c55e; color: #fff; }
+    .item.done .vtitle { text-decoration: line-through; color: #7a7a7a; }
+    .item.done .meta { color: #5a5a5a; }
+    .item.is-due { background: rgba(255,176,32,0.08); box-shadow: inset 3px 0 0 #ffb020; }
+    .item.is-due .box { border-color: #ffb020; color: #ffb020; }
+    .item.is-mastered .box { background: linear-gradient(135deg,#f59e0b,#ef4444); border-color: transparent; }
+    .item.is-linkedin { box-shadow: inset 3px 0 0 #0a66c2; }
+
+    .box {
+      flex: 0 0 24px; height: 24px; width: 24px; border: 2px solid #555; border-radius: 7px;
+      display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 900;
+      color: transparent; transition: all 0.25s;
+    }
+    .thumb {
+      flex: 0 0 90px; height: 52px; border-radius: 8px; background-color: #000;
+      background-size: cover; background-position: center; position: relative; overflow: hidden;
+    }
+    .dur {
+      position: absolute; right: 3px; bottom: 3px; background: rgba(0,0,0,0.85);
+      color: #fff; font-size: 9px; font-weight: 700; padding: 1px 4px; border-radius: 3px;
+    }
+    .info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+    .vtitle {
+      font-size: 13px; font-weight: 600; line-height: 1.3;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .meta { font-size: 11px; color: #999; }
+    .src {
+      display: inline-block; font-size: 8px; font-weight: 800; border-radius: 3px;
+      padding: 1px 4px; margin-right: 4px; vertical-align: middle;
+    }
+    .src.yt { background: #ff0033; color: #fff; }
+    .src.lil { background: #0a66c2; color: #fff; }
+    .sr-due { color: #ffb020; font-weight: 700; }
+    .sr-wait { color: #7dd3fc; }
+    .sr-mastered { color: #f59e0b; font-weight: 700; }
+
+    .manual {
+      flex: 0 0 28px; height: 28px; width: 28px; border-radius: 50%; border: 1px solid #444;
+      background: #1a1a1a; color: #ccc; font-size: 13px; cursor: pointer; display: flex;
+      align-items: center; justify-content: center;
+    }
+    .manual.on { background: #22c55e; border-color: #22c55e; color: #fff; }
+
+    .empty { padding: 40px; text-align: center; color: #888; font-size: 14px; }
+    .sync-badge {
+      display: inline-flex; align-items: center; gap: 4px; font-size: 10px; color: #22c55e;
+      margin-left: 8px;
+    }
+    .sync-badge.off { color: #888; }
+
+    /* Pre-roll ad overlay */
+    #adOverlay {
+      display: none; position: fixed; inset: 0; z-index: 9999;
+      background: rgba(0,0,0,0.96); align-items: center; justify-content: center;
+      flex-direction: column; gap: 12px;
+    }
+    #adOverlay.show { display: flex; }
+    .ad-box {
+      position: relative; width: min(95vw, 640px); aspect-ratio: 16/9;
+      background: #000; border-radius: 12px; overflow: hidden;
+    }
+    .ad-label {
+      position: absolute; top: 8px; left: 8px; background: rgba(0,0,0,0.7);
+      color: #fff; font-size: 11px; font-weight: 700; padding: 2px 8px;
+      border-radius: 4px; z-index: 3; pointer-events: none;
+    }
+    #adPlayer { width: 100%; height: 100%; }
+    .ad-skip {
+      position: absolute; bottom: 10px; right: 10px;
+      background: rgba(255,255,255,0.15); color: #fff;
+      border: 1px solid rgba(255,255,255,0.3); border-radius: 6px;
+      padding: 8px 14px; font-size: 13px; font-weight: 600; cursor: pointer; z-index: 3;
+    }
+    .ad-skip:disabled { opacity: 0.5; cursor: not-allowed; }
+    .ad-skip:not(:disabled) { background: #ff0033; border-color: #ff0033; }
+    .ad-hint { font-size: 12px; color: #888; }
+  </style>
+</head>
+<body>
+<div id="app">
+
+  <!-- Sign-in screen -->
+  <div id="signin">
+    <div class="logo">🎬</div>
+    <h1>Interview Video Checklist</h1>
+    <p>100 interview questions · 300 videos (YouTube + LinkedIn Learning).<br>Sign in to sync your progress across all devices.</p>
+    <button class="gbtn" id="googleSignIn">
+      <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84C6.71 7.31 9.14 5.38 12 5.38z"/></svg>
+      Sign in with Google
+    </button>
+    <button class="guest" id="guestBtn">Continue without signing in (no sync)</button>
+    <div class="err" id="signInErr"></div>
+  </div>
+
+  <!-- Main app -->
+  <div id="main">
+    <div class="header">
+      <h2>🎬 Checklist</h2>
+      <span class="sync-badge" id="syncBadge">☁️ Synced</span>
+      <div class="user-chip" id="userChip"></div>
+      <button class="signout" id="signOutBtn">Sign out</button>
+    </div>
+    <div class="dash">
+      <!-- Level + XP + streak -->
+      <div class="card">
+        <div class="level-row">
+          <div class="lvl-badge" id="lvlBadge">1</div>
+          <div class="lvl-info">
+            <div class="lvl-title" id="lvlTitle">Rookie</div>
+            <div class="lvl-sub" id="lvlSub">0 XP · Level 1</div>
+            <div class="xp-bar"><div class="xf" id="xpFill" style="width:0%"></div></div>
+          </div>
+          <div class="streak-pill" id="streakPill">🔥 0</div>
+        </div>
+      </div>
+
+      <!-- Readiness + Confidence -->
+      <div class="card">
+        <div class="meters">
+          <div class="meter ready">
+            <div class="mv" id="readyVal">0%</div>
+            <div class="ml">📊 Interview Ready</div>
+            <div class="mb"><div id="readyBar" style="width:0%"></div></div>
+          </div>
+          <div class="meter conf">
+            <div class="mv" id="confVal">0%</div>
+            <div class="ml">💪 Confidence</div>
+            <div class="mb"><div id="confBar" style="width:0%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Daily goal + category bars -->
+      <div class="card">
+        <div class="daily-ring" style="margin-bottom:10px">
+          <div class="ring-wrap">
+            <svg width="48" height="48"><circle cx="24" cy="24" r="20" fill="none" stroke="#272727" stroke-width="5"/><circle id="dailyRing" cx="24" cy="24" r="20" fill="none" stroke="#ff0033" stroke-width="5" stroke-linecap="round" stroke-dasharray="125.6" stroke-dashoffset="125.6" style="transition:stroke-dashoffset 0.5s"/></svg>
+            <div class="rt" id="dailyTxt">0</div>
+          </div>
+          <div class="daily-info">
+            <div class="dt" id="dailyTitle">Today's goal: 5 videos</div>
+            <div class="ds" id="dailySub">Watch 5 to hit your daily target 🔥</div>
+          </div>
+        </div>
+        <div class="cat-bars" id="catBars"></div>
+      </div>
+
+      <!-- Achievements -->
+      <div class="card">
+        <div style="font-size:11px;font-weight:700;color:#888;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px">🏆 Achievements <span id="achvCount" style="color:#ff5c39"></span></div>
+        <div class="achv" id="achvRow"></div>
+      </div>
+
+      <!-- Next up -->
+      <div class="nextup" id="nextUp">
+        <div class="ni">▶️</div>
+        <div class="nt">
+          <div class="nh">Next up</div>
+          <div class="nv" id="nextTitle">Loading…</div>
+          <div class="nq" id="nextQ"></div>
+        </div>
+        <div class="nb">▸</div>
+      </div>
+    </div>
+
+    <div class="progress-bar"><div class="fill" id="pbar"></div></div>
+    <div class="progress-txt" id="ptxt"></div>
+    <div class="stats" id="stats"></div>
+    <div class="controls">
+      <input id="search" type="text" placeholder="Search videos…">
+      <select id="filter"></select>
+      <button id="dueBtn">⏰ DUE</button>
+      <button id="todoBtn">◻ TODO</button>
+    </div>
+    <div id="list"></div>
+  </div>
+
+</div>
+
+<canvas id="confetti"></canvas>
+<div id="levelUp">
+  <div class="lu-card">
+    <div class="lu-emoji">⚡</div>
+    <div class="lu-title">Level Up!</div>
+    <div class="lu-sub">Senior NetEng</div>
+    <button class="lu-btn" onclick="document.getElementById('levelUp').classList.remove('show')">Let's go! 🚀</button>
+  </div>
+</div>
+
+<!-- Pre-roll ad overlay -->
+<div id="adOverlay">
+  <div class="ad-box">
+    <div class="ad-label">Ad</div>
+    <div id="adPlayer"></div>
+    <button id="adSkip" class="ad-skip" disabled>Skip ad in 5s</button>
+  </div>
+  <div class="ad-hint">Your video will open after the ad</div>
+</div>
+
+<script type="module">
+  // ====== Firebase + sync ======
+  import {
+    signInGoogle, handleRedirect, signOutGoogle, onAuthChange, currentUser,
+    startCloudSync, stopCloudSync, pushToCloud, pullFromCloud,
+  } from './firebase/sync-v4.js';
+
+  // ====== Playlist data ======
+  const PLAYLIST = window.BCV_PLAYLIST;
+  const DAY = 864e5;
+  const SR_INTERVALS = [1, 3, 7, 14, 30, 60];
+  const CAT_COLORS = {
+    'Networking': '#0ea5e9', 'Security': '#ef4444', 'Email & SMTP': '#f59e0b',
+    'Linux': '#22c55e', 'Barracuda': '#f97316', 'Troubleshooting': '#a855f7',
+  };
+
+  const entries = [];
+  for (const [qid, item] of Object.entries(PLAYLIST)) {
+    for (const vid of item.vids || []) {
+      entries.push({ qid, cat: item.cat, q: item.q, vid });
+    }
+  }
+  const TOTAL = entries.length;
+
+  let progress = {};
+  let streak = { last: null, n: 0 };
+  let user = null;
+  let isGuest = false;
+  let activeFilter = 'All';
+  let search = '';
+  let dueOnly = false;
+  let hideDone = false;
+  let syncTimer = null;
+
+  // ====== Local storage (fallback for guest mode) ======
+  const LS_KEY = 'bcv_progress_v1';
+  const LS_STREAK = 'bcv_streak_v1';
+  function loadLocal() {
+    try { progress = JSON.parse(localStorage.getItem(LS_KEY)) || {}; } catch { progress = {}; }
+    try { streak = JSON.parse(localStorage.getItem(LS_STREAK)) || { last: null, n: 0 }; } catch {}
+  }
+  function saveLocal() {
+    localStorage.setItem(LS_KEY, JSON.stringify(progress));
+    localStorage.setItem(LS_STREAK, JSON.stringify(streak));
+  }
+
+  // ====== SR helpers ======
+  function isDue(p) { return !!(p && p.done && !p.mastered && p.due && Date.now() >= p.due); }
+  function srState(p) {
+    if (!p || !p.done) return null;
+    if (p.mastered) return { k: 'mastered', label: '🏆 mastered' };
+    if (isDue(p)) return { k: 'due', label: '⏰ review due' };
+    const ms = (p.due || 0) - Date.now();
+    const d = Math.ceil(ms / DAY);
+    return { k: 'wait', label: ms < DAY ? `🔁 in ${Math.max(1, Math.round(ms / 36e5))}h` : `🔁 in ${d}d` };
+  }
+  function advanceSR(vid, qid) {
+    const now = Date.now();
+    const p = progress[vid];
+    if (!p || !p.done) {
+      progress[vid] = { done: true, at: now, qid, stage: 1, due: now + SR_INTERVALS[0] * DAY };
+      return { advanced: true, stage: 1, mastered: false };
+    }
+    if (p.mastered) return { advanced: false, stage: p.stage, mastered: true };
+    if (now < p.due) return { advanced: false, stage: p.stage, mastered: false, wait: true };
+    const stage = p.stage + 1;
+    const mastered = stage > SR_INTERVALS.length;
+    p.done = true; p.at = now; p.stage = stage; p.mastered = mastered;
+    p.due = mastered ? null : now + SR_INTERVALS[Math.min(stage, SR_INTERVALS.length) - 1] * DAY;
+    return { advanced: true, stage, mastered };
+  }
+  function bumpStreak() {
+    const today = new Date().toDateString();
+    if (streak.last === today) return;
+    const yest = new Date(Date.now() - DAY).toDateString();
+    streak.n = streak.last === yest ? streak.n + 1 : 1;
+    streak.last = today;
+  }
+
+  function toggle(vid, qid, val) {
+    const wasDone = !!progress[vid]?.done;
+    if (val) {
+      const r = advanceSR(vid, qid);
+      bumpStreak();
+      if (r.advanced && !wasDone) {
+        burstConfetti(20);
+        showToast('✓ Watched! +10 XP');
+      } else if (r.advanced && r.mastered) {
+        burstConfetti(80);
+        showToast('🏆 Mastered! +50 XP');
+      }
+      checkLevelUp();
+    } else delete progress[vid];
+    save();
+    render();
+  }
+  function save() {
+    if (isGuest) saveLocal();
+    else if (user) {
+      clearTimeout(syncTimer);
+      syncTimer = setTimeout(() => pushToCloud(user.uid, progress, streak), 800);
+    }
+  }
+
+  // ====== Auth ======
+  async function init() {
+    // Handle redirect result (mobile)
+    const redirectUser = await handleRedirect();
+    if (redirectUser) { user = redirectUser; await onSignedIn(); return; }
+
+    onAuthChange(async (u) => {
+      if (u) { user = u; await onSignedIn(); }
+      else { showSignIn(); }
+    });
+  }
+
+  async function onSignedIn() {
+    isGuest = false;
+    document.getElementById('signin').style.display = 'none';
+    document.getElementById('main').classList.add('show');
+    // User chip
+    document.getElementById('userChip').innerHTML =
+      `<img src="${user.photoURL || 'icons/icon48.png'}" alt=""> ${user.displayName || user.email}`;
+    document.getElementById('syncBadge').textContent = '☁️ Synced';
+    document.getElementById('syncBadge').classList.remove('off');
+
+    // Pull cloud data
+    const cloud = await pullFromCloud(user.uid);
+    if (cloud?.progress) {
+      progress = cloud.progress;
+      streak = cloud.streak || { last: null, n: 0 };
+    } else {
+      loadLocal(); // first login: migrate local data to cloud
+      await pushToCloud(user.uid, progress, streak);
+    }
+    // Start real-time sync
+    startCloudSync(user.uid, (remoteProgress, remoteStreak) => {
+      progress = remoteProgress;
+      streak = remoteStreak;
+      render();
+    });
+    render();
+  }
+
+  function showSignIn() {
+    document.getElementById('signin').style.display = 'flex';
+    document.getElementById('main').classList.remove('show');
+  }
+
+  document.getElementById('googleSignIn').onclick = async () => {
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    try { await signInGoogle(isMobile); }
+    catch (e) { document.getElementById('signInErr').textContent = e.message; }
+  };
+  document.getElementById('guestBtn').onclick = () => {
+    isGuest = true; user = null;
+    loadLocal();
+    document.getElementById('signin').style.display = 'none';
+    document.getElementById('main').classList.add('show');
+    document.getElementById('userChip').innerHTML = '👤 Guest';
+    document.getElementById('syncBadge').textContent = '📱 Local only';
+    document.getElementById('syncBadge').classList.add('off');
+    render();
+  };
+  document.getElementById('signOutBtn').onclick = async () => {
+    stopCloudSync();
+    await signOutGoogle();
+    isGuest = false; user = null;
+    showSignIn();
+  };
+
+  // ====== Gamification: XP, levels, readiness, achievements ======
+  const LEVELS = [
+    { xp: 0,    name: 'Rookie',          icon: '🌱' },
+    { xp: 100,  name: 'Junior NetEng',   icon: '⚡' },
+    { xp: 300,  name: 'Senior NetEng',   icon: '🔧' },
+    { xp: 600,  name: 'Net Architect',   icon: '🏗️' },
+    { xp: 1000, name: 'Security Guru',   icon: '🛡️' },
+    { xp: 1500, name: 'Interview Beast', icon: '💪' },
+    { xp: 2200, name: 'Network Legend',  icon: '👑' },
+    { xp: 3000, name: 'Interview Ready', icon: '🎓' },
+  ];
+  const DAILY_GOAL = 5;
+  const ACHV = [
+    { id: 'first',   icon: '🥇', name: 'First Steps',      check: () => watchedCount() >= 1 },
+    { id: 'ten',     icon: '📚', name: 'Getting Started',  check: () => watchedCount() >= 10 },
+    { id: 'fifty',   icon: '📖', name: 'Bookworm',         check: () => watchedCount() >= 50 },
+    { id: 'hundred', icon: '💯', name: 'Century Club',     check: () => watchedCount() >= 100 },
+    { id: 'all',     icon: '🏆', name: 'Completionist',    check: () => watchedCount() >= TOTAL },
+    { id: 'week',    icon: '🔥', name: 'Week Warrior',      check: () => streak.n >= 7 },
+    { id: 'fort',    icon: '🌋', name: 'Fortnight Fire',   check: () => streak.n >= 14 },
+    { id: 'month',   icon: '☀️', name: 'Monthly Master',   check: () => streak.n >= 30 },
+    { id: 'cat1',    icon: '🎯', name: 'Category Master',  check: () => Object.keys(CAT_COLORS).some(c => catMastered(c)) },
+    { id: 'm25',     icon: '💪', name: 'Powerhouse',       check: () => masteredCount() >= 25 },
+    { id: 'm50',     icon: '🧠', name: 'Know-it-all',      check: () => masteredCount() >= 50 },
+    { id: 'ready',   icon: '🎓', name: 'Interview Ready', check: () => readinessPct() >= 100 },
+    { id: 'daily',   icon: '⚡', name: 'Daily Hero',       check: () => todayCount() >= DAILY_GOAL },
+  ];
+
+  function watchedCount() { return entries.filter(e => progress[e.vid.id]?.done).length; }
+  function masteredCount() { return entries.filter(e => progress[e.vid.id]?.mastered).length; }
+  function todayCount() {
+    const today = new Date().toDateString();
+    return entries.filter(e => progress[e.vid.id]?.at && new Date(progress[e.vid.id].at).toDateString() === today).length;
+  }
+  function catTotal(cat) { return entries.filter(e => e.cat === cat).length; }
+  function catWatched(cat) { return entries.filter(e => e.cat === cat && progress[e.vid.id]?.done).length; }
+  function catMastered(cat) {
+    const tot = catTotal(cat); return tot > 0 && entries.filter(e => e.cat === cat && progress[e.vid.id]?.mastered).length === tot;
+  }
+  function readinessPct() {
+    const qids = new Set(entries.map(e => e.qid));
+    const covered = new Set();
+    for (const e of entries) { if (progress[e.vid.id]?.done) covered.add(e.qid); }
+    return qids.size ? Math.round((covered.size / qids.size) * 100) : 0;
+  }
+  function confidencePct() {
+    return TOTAL ? Math.round((masteredCount() / TOTAL) * 100) : 0;
+  }
+  function calcXP() {
+    return watchedCount() * 10 + masteredCount() * 50 + Math.max(0, streak.n - 1) * 20 + todayCount() * 5;
+  }
+  function getLevel() {
+    const xp = calcXP();
+    let lvl = LEVELS[0], idx = 0;
+    for (let i = 0; i < LEVELS.length; i++) { if (xp >= LEVELS[i].xp) { lvl = LEVELS[i]; idx = i; } }
+    const next = LEVELS[idx + 1];
+    return { idx, level: idx + 1, name: lvl.name, icon: lvl.icon, xp, next, pct: next ? Math.round(((xp - lvl.xp) / (next.xp - lvl.xp)) * 100) : 100 };
+  }
+
+  function checkLevelUp() {
+    const lvl = getLevel();
+    const prevKey = 'bcv_prev_level';
+    const prev = parseInt(localStorage.getItem(prevKey) || '1');
+    if (lvl.level > prev) {
+      localStorage.setItem(prevKey, String(lvl.level));
+      showLevelUp(lvl);
+      burstConfetti(150);
+    }
+  }
+  function showLevelUp(lvl) {
+    const el = document.getElementById('levelUp');
+    el.querySelector('.lu-emoji').textContent = lvl.icon;
+    el.querySelector('.lu-title').textContent = `Level ${lvl.level}!`;
+    el.querySelector('.lu-sub').textContent = lvl.name;
+    el.classList.add('show');
+  }
+
+  // ====== Confetti ======
+  let confettiCanvas = null, confettiCtx = null, confettiParts = [];
+  function ensureConfetti() {
+    if (confettiCanvas) return;
+    confettiCanvas = document.getElementById('confetti');
+    confettiCtx = confettiCanvas.getContext('2d');
+    const resize = () => { confettiCanvas.width = innerWidth; confettiCanvas.height = innerHeight; };
+    resize(); addEventListener('resize', resize);
+    requestAnimationFrame(confettiLoop);
+  }
+  function burstConfetti(n = 30) {
+    ensureConfetti();
+    const colors = ['#ff0033', '#ff5c39', '#ffb020', '#22c55e', '#a855f7', '#0ea5e9', '#fff'];
+    for (let i = 0; i < n; i++) {
+      confettiParts.push({
+        x: innerWidth / 2 + (Math.random() - 0.5) * 200, y: innerHeight / 2,
+        vx: (Math.random() - 0.5) * 12, vy: Math.random() * -14 - 4,
+        g: 0.4, size: Math.random() * 6 + 3, color: colors[Math.floor(Math.random() * colors.length)],
+        rot: Math.random() * 360, vr: (Math.random() - 0.5) * 20, life: 120,
+      });
+    }
+  }
+  function confettiLoop() {
+    if (!confettiCtx) { requestAnimationFrame(confettiLoop); return; }
+    confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+    confettiParts = confettiParts.filter(p => p.life > 0);
+    for (const p of confettiParts) {
+      p.x += p.vx; p.y += p.vy; p.vy += p.g; p.rot += p.vr; p.life--;
+      confettiCtx.save();
+      confettiCtx.translate(p.x, p.y); confettiCtx.rotate(p.rot * Math.PI / 180);
+      confettiCtx.fillStyle = p.color; confettiCtx.globalAlpha = Math.min(1, p.life / 40);
+      confettiCtx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+      confettiCtx.restore();
+    }
+    requestAnimationFrame(confettiLoop);
+  }
+
+  // ====== Toast ======
+  let toastEl = null, toastTimer = null;
+  function showToast(msg) {
+    if (!toastEl) {
+      toastEl = document.createElement('div');
+      toastEl.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#1a1a1a;color:#fff;border:1px solid #ff0033;border-radius:12px;padding:10px 20px;font-size:13px;font-weight:700;z-index:9996;box-shadow:0 4px 20px rgba(255,0,51,0.3);transition:opacity 0.3s;pointer-events:none';
+      document.body.appendChild(toastEl);
+    }
+    toastEl.textContent = msg; toastEl.style.opacity = '1';
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => { toastEl.style.opacity = '0'; }, 2200);
+  }
+
+  // ====== Render ======
+  function render() {
+    const done = watchedCount();
+    const pct = TOTAL ? Math.round((done / TOTAL) * 100) : 0;
+    document.getElementById('pbar').style.width = pct + '%';
+    const lilCount = entries.filter(e => e.vid.source === 'linkedin').length;
+    document.getElementById('ptxt').textContent = `${done} / ${TOTAL} watched (${pct}%) · 📚 ${lilCount} LinkedIn`;
+
+    const dueCount = entries.filter(e => isDue(progress[e.vid.id])).length;
+    const masteredCount2 = masteredCount();
+    document.getElementById('stats').textContent =
+      `${streak.n > 1 ? `🔥 ${streak.n}-day streak · ` : ''}⏰ ${dueCount} due · 🏆 ${masteredCount2} mastered`;
+
+    // --- Dashboard ---
+    const lvl = getLevel();
+    document.getElementById('lvlBadge').textContent = lvl.level;
+    document.getElementById('lvlTitle').textContent = `${lvl.icon} ${lvl.name}`;
+    document.getElementById('lvlSub').textContent = `${lvl.xp} XP · Level ${lvl.level}${lvl.next ? ` → ${lvl.next.name}` : ' (MAX)'}`;
+    document.getElementById('xpFill').style.width = lvl.pct + '%';
+    document.getElementById('streakPill').textContent = `🔥 ${streak.n}`;
+
+    const rdy = readinessPct(), conf = confidencePct();
+    document.getElementById('readyVal').textContent = rdy + '%';
+    document.getElementById('readyBar').style.width = rdy + '%';
+    document.getElementById('confVal').textContent = conf + '%';
+    document.getElementById('confBar').style.width = conf + '%';
+
+    // Daily goal ring
+    const today = todayCount();
+    const circ = 125.6;
+    document.getElementById('dailyRing').style.strokeDashoffset = String(circ - (Math.min(today, DAILY_GOAL) / DAILY_GOAL) * circ);
+    document.getElementById('dailyTxt').textContent = today;
+    document.getElementById('dailyTitle').textContent = today >= DAILY_GOAL ? '🎯 Daily goal smashed!' : `Today's goal: ${DAILY_GOAL} videos`;
+    document.getElementById('dailySub').textContent = today >= DAILY_GOAL ? 'You\'re on fire — keep going! 🔥' : `${DAILY_GOAL - today} more to hit your target`;
+
+    // Category bars
+    document.getElementById('catBars').innerHTML = Object.keys(CAT_COLORS).map(c => {
+      const t = catTotal(c), w = catWatched(c);
+      const cp = t ? Math.round((w / t) * 100) : 0;
+      return `<div class="cat-row"><div class="cn">${c}</div><div class="cb"><div style="width:${cp}%;background:${CAT_COLORS[c]}"></div></div><div class="ct">${w}/${t}</div></div>`;
+    }).join('');
+
+    // Achievements
+    const unlocked = ACHV.filter(a => a.check());
+    document.getElementById('achvCount').textContent = `(${unlocked.length}/${ACHV.length})`;
+    document.getElementById('achvRow').innerHTML = ACHV.map(a =>
+      `<div class="a ${a.check() ? 'un' : ''}" title="${a.name}">${a.icon}</div>`).join('');
+
+    // Next up: first due, else first unwatched
+    let next = entries.find(e => isDue(progress[e.vid.id]));
+    if (!next) next = entries.find(e => !progress[e.vid.id]?.done);
+    if (next) {
+      document.getElementById('nextTitle').textContent = next.vid.title;
+      document.getElementById('nextQ').textContent = `${next.qid} · ${next.q}`;
+      document.getElementById('nextUp').onclick = () => showAdThenOpen(next.vid.url);
+    } else {
+      document.getElementById('nextTitle').textContent = '🎉 All done!';
+      document.getElementById('nextQ').textContent = 'You\'ve watched everything — review due items';
+      document.getElementById('nextUp').onclick = null;
+    }
+
+    // filter options
+    const cats = ['All', ...Object.keys(CAT_COLORS)];
+    document.getElementById('filter').innerHTML =
+      cats.map(c => `<option ${c === activeFilter ? 'selected' : ''}>${c}</option>`).join('');
+
+    let list = entries;
+    if (activeFilter !== 'All') list = list.filter(e => e.cat === activeFilter);
+    if (dueOnly) list = list.filter(e => isDue(progress[e.vid.id]));
+    if (hideDone) list = list.filter(e => !progress[e.vid.id]?.done);
+    if (search) list = list.filter(e => (e.q + ' ' + e.vid.title + ' ' + e.cat + ' ' + e.qid).toLowerCase().includes(search));
+
+    const frag = document.createDocumentFragment();
+    let lastQid = null;
+    for (const e of list.slice(0, 400)) {
+      if (e.qid !== lastQid) {
+        lastQid = e.qid;
+        const color = CAT_COLORS[e.cat] || '#64748b';
+        const gh = document.createElement('div');
+        gh.className = 'qhead';
+        gh.innerHTML = `<span class="chip" style="background:${color}">${e.cat}</span><span class="qid">${e.qid}</span> ${esc(e.q)}`;
+        frag.appendChild(gh);
+      }
+      const p = progress[e.vid.id];
+      const isDone = !!p?.done;
+      const st = srState(p);
+      const isLil = e.vid.source === 'linkedin';
+      const row = document.createElement('div');
+      row.className = 'item' + (isDone ? ' done' : '') + (st?.k === 'due' ? ' is-due' : '') + (st?.k === 'mastered' ? ' is-mastered' : '') + (isLil ? ' is-linkedin' : '');
+      const srcBadge = isLil ? '<span class="src lil">in</span>' : '<span class="src yt">▶</span>';
+      const thumbUrl = isLil ? '' : `https://i.ytimg.com/vi/${e.vid.id}/mqdefault.jpg`;
+      row.innerHTML = `
+        <span class="box">${st?.k === 'mastered' ? '🏆' : '✓'}</span>
+        <span class="thumb" style="background-image:url('${thumbUrl}')"><span class="dur">${e.vid.dur}</span></span>
+        <span class="info">
+          <span class="vtitle">${srcBadge}${esc(e.vid.title)}</span>
+          <span class="meta">${esc(e.vid.channel)} · ${e.vid.views}${st ? ` · <span class="sr-${st.k}">${st.label}</span>` : ''}</span>
+        </span>
+        <button class="manual ${isDone ? 'on' : ''}">${isDone ? '↺' : '✓'}</button>
+      `;
+      row.querySelector('.manual').onclick = (ev) => { ev.stopPropagation(); toggle(e.vid.id, e.qid, !progress[e.vid.id]?.done); };
+      row.onclick = () => { showAdThenOpen(e.vid.url); };
+      frag.appendChild(row);
+    }
+    const listEl = document.getElementById('list');
+    listEl.innerHTML = '';
+    listEl.appendChild(frag);
+    if (!list.length) listEl.innerHTML = `<div class="empty">${dueOnly ? 'Nothing due — come back later 🎉' : 'No videos match.'}</div>`;
+  }
+
+  // ====== Pre-roll ad ======
+  const AD_VIDEO_ID = 'oKjtZlHSKX8';
+  let adPlayer = null;
+  let adPendingUrl = null;
+  let adSkipTimer = null;
+
+  function showAdThenOpen(url) {
+    adPendingUrl = url;
+    const overlay = document.getElementById('adOverlay');
+    overlay.classList.add('show');
+    const skipBtn = document.getElementById('adSkip');
+    skipBtn.disabled = true;
+    let secs = 5;
+    skipBtn.textContent = `Skip ad in ${secs}s`;
+    clearInterval(adSkipTimer);
+    adSkipTimer = setInterval(() => {
+      secs--;
+      if (secs <= 0) {
+        clearInterval(adSkipTimer);
+        skipBtn.disabled = false;
+        skipBtn.textContent = 'Skip ad ▶';
+      } else {
+        skipBtn.textContent = `Skip ad in ${secs}s`;
+      }
+    }, 1000);
+    skipBtn.onclick = () => { clearInterval(adSkipTimer); closeAd(); };
+    if (window.YT && window.YT.Player) createAdPlayer();
+    else loadYTApi();
+  }
+
+  function loadYTApi() {
+    if (document.getElementById('yt-iframe-api')) return;
+    const tag = document.createElement('script');
+    tag.id = 'yt-iframe-api';
+    tag.src = 'https://www.youtube.com/iframe_api';
+    document.body.appendChild(tag);
+    window.onYouTubeIframeAPIReady = createAdPlayer;
+  }
+
+  function createAdPlayer() {
+    if (adPlayer) { try { adPlayer.destroy(); } catch (e) {} adPlayer = null; }
+    document.getElementById('adPlayer').innerHTML = '';
+    adPlayer = new YT.Player('adPlayer', {
+      videoId: AD_VIDEO_ID,
+      playerVars: { autoplay: 1, rel: 0, modestbranding: 1, controls: 0 },
+      events: { onEnded: closeAd, onError: closeAd }
+    });
+  }
+
+  function closeAd() {
+    clearInterval(adSkipTimer);
+    const overlay = document.getElementById('adOverlay');
+    overlay.classList.remove('show');
+    if (adPlayer) { try { adPlayer.destroy(); } catch (e) {} adPlayer = null; }
+    if (adPendingUrl) { window.open(adPendingUrl, '_blank'); adPendingUrl = null; }
+  }
+
+  function esc(s) {
+    return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  // Controls
+  document.getElementById('search').oninput = (e) => { search = e.target.value.toLowerCase(); render(); };
+  document.getElementById('filter').onchange = (e) => { activeFilter = e.target.value; render(); };
+  document.getElementById('dueBtn').onclick = (e) => { dueOnly = !dueOnly; e.currentTarget.classList.toggle('on', dueOnly); e.currentTarget.classList.toggle('due', dueOnly); render(); };
+  document.getElementById('todoBtn').onclick = (e) => { hideDone = !hideDone; e.currentTarget.classList.toggle('on', hideDone); render(); };
+
+  init();
+</script>
+<script src="data/playlist.js"></script>
+<script>
+  // Register service worker for offline + installable PWA
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').catch(e => console.warn('SW reg failed:', e));
+  }
+</script>
+</body>
+</html>

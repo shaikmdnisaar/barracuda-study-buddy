@@ -1,0 +1,2202 @@
+{
+ "NET-01": [
+  {
+   "id": "vv4y_uOneC0",
+   "title": "OSI Model Explained | OSI Animation | Open System Interconnection Model | OSI 7 layers | TechTerms",
+   "channel": "TechTerms",
+   "viewsLabel": "6.2M views",
+   "views": 6200000,
+   "dur": "16:39",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=vv4y_uOneC0"
+  },
+  {
+   "id": "1msEo8PIcbw",
+   "title": "What is OSI Model? full Explanation | Networking",
+   "channel": "Learn Coding",
+   "viewsLabel": "3M views",
+   "views": 3000000,
+   "dur": "11:53",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=1msEo8PIcbw"
+  }
+ ],
+ "NET-02": [
+  {
+   "id": "uwoD5YsGACg",
+   "title": "TCP vs UDP Comparison",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "2M views",
+   "views": 2000000,
+   "dur": "4:37",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=uwoD5YsGACg"
+  },
+  {
+   "id": "jJyXpMmXJI0",
+   "title": "Lec-77: TCP vs UDP differences in hindi",
+   "channel": "Gate Smashers",
+   "viewsLabel": "759K views",
+   "views": 759000,
+   "dur": "11:58",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=jJyXpMmXJI0"
+  }
+ ],
+ "NET-03": [
+  {
+   "id": "0yw-z6f7Mb4",
+   "title": "How SSL Certificate Works?  - HTTPS Explained",
+   "channel": "Piyush Garg",
+   "viewsLabel": "775K views",
+   "views": 775000,
+   "dur": "20:42",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=0yw-z6f7Mb4"
+  },
+  {
+   "id": "hJHvdBlSxug",
+   "title": "How The Web Works - The Big Picture",
+   "channel": "Academind",
+   "viewsLabel": "678K views",
+   "views": 678000,
+   "dur": "12:25",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=hJHvdBlSxug"
+  }
+ ],
+ "NET-04": [
+  {
+   "id": "qIEHUUt2Wfc",
+   "title": "Lec-71: TCP connection Establishment and connection Termination | Transport layer",
+   "channel": "Gate Smashers",
+   "viewsLabel": "908K views",
+   "views": 908000,
+   "dur": "15:12",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=qIEHUUt2Wfc"
+  },
+  {
+   "id": "rmFX1V49K8U",
+   "title": "How TCP really works // Three-way handshake // TCP/IP Deep Dive",
+   "channel": "David Bombal",
+   "viewsLabel": "859K views",
+   "views": 859000,
+   "dur": "1:01:10",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=rmFX1V49K8U"
+  }
+ ],
+ "NET-05": [
+  {
+   "id": "1z0ULvg_pW8",
+   "title": "Hub, Switch, & Router Explained - What's the difference?",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "6.2M views",
+   "views": 6200000,
+   "dur": "7:22",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=1z0ULvg_pW8"
+  },
+  {
+   "id": "Vc16CCAAz7Q",
+   "title": "Routers vs. Switches vs. Access Points - And More",
+   "channel": "Techquickie",
+   "viewsLabel": "1.6M views",
+   "views": 1600000,
+   "dur": "5:42",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=Vc16CCAAz7Q"
+  }
+ ],
+ "NET-06": [
+  {
+   "id": "cn8Zxh9bPio",
+   "title": "ARP Explained - Address Resolution Protocol",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "1.1M views",
+   "views": 1100000,
+   "dur": "4:22",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=cn8Zxh9bPio"
+  },
+  {
+   "id": "IUSyV2BVh4A",
+   "title": "Lec-65: ARP Explained- Address Resolution Protocol | Network Layer",
+   "channel": "Gate Smashers",
+   "viewsLabel": "770K views",
+   "views": 770000,
+   "dur": "8:13",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=IUSyV2BVh4A"
+  }
+ ],
+ "NET-07": [
+  {
+   "id": "FTUV0t6JaDA",
+   "title": "NAT Explained - Network Address Translation",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "2M views",
+   "views": 2000000,
+   "dur": "4:26",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=FTUV0t6JaDA"
+  },
+  {
+   "id": "po8ZFG0Xc4Q",
+   "title": "Public vs Private IP Address",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "1M views",
+   "views": 1000000,
+   "dur": "7:11",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=po8ZFG0Xc4Q"
+  }
+ ],
+ "NET-08": [
+  {
+   "id": "FTUV0t6JaDA",
+   "title": "NAT Explained - Network Address Translation",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "2M views",
+   "views": 2000000,
+   "dur": "4:26",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=FTUV0t6JaDA"
+  },
+  {
+   "id": "QBqPzHEDzvo",
+   "title": "How Network Address Translation Works",
+   "channel": "PieterExplainsTech",
+   "viewsLabel": "809K views",
+   "views": 809000,
+   "dur": "10:05",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=QBqPzHEDzvo"
+  }
+ ],
+ "NET-09": [
+  {
+   "id": "s_Ntt6eTn94",
+   "title": "Subnet Mask - Explained",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "4.2M views",
+   "views": 4200000,
+   "dur": "17:55",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=s_Ntt6eTn94"
+  },
+  {
+   "id": "5WfiTHiU4x8",
+   "title": "what is an IP Address? // You SUCK at Subnetting // EP 1",
+   "channel": "NetworkChuck",
+   "viewsLabel": "2.5M views",
+   "views": 2500000,
+   "dur": "18:45",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=5WfiTHiU4x8"
+  }
+ ],
+ "NET-10": [
+  {
+   "id": "jC6MJTh9fRE",
+   "title": "VLAN Explained",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "2M views",
+   "views": 2000000,
+   "dur": "4:38",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=jC6MJTh9fRE"
+  },
+  {
+   "id": "6_giEv20En0",
+   "title": "Subnets vs VLANs",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "919K views",
+   "views": 919000,
+   "dur": "5:51",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=6_giEv20En0"
+  }
+ ],
+ "NET-11": [
+  {
+   "id": "rA0p0ouD3aE",
+   "title": "Lec-61: What is Routing Protocols | Various types of Routing Protocols",
+   "channel": "Gate Smashers",
+   "viewsLabel": "1.3M views",
+   "views": 1300000,
+   "dur": "6:57",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=rA0p0ouD3aE"
+  },
+  {
+   "id": "CGmTvukObOw",
+   "title": "Routing Tables | CCNA - Explained",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "207K views",
+   "views": 207000,
+   "dur": "13:13",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=CGmTvukObOw"
+  }
+ ],
+ "NET-12": [
+  {
+   "id": "rA0p0ouD3aE",
+   "title": "Lec-61: What is Routing Protocols | Various types of Routing Protocols",
+   "channel": "Gate Smashers",
+   "viewsLabel": "1.3M views",
+   "views": 1300000,
+   "dur": "6:57",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=rA0p0ouD3aE"
+  },
+  {
+   "id": "N8PiZDld6Zc",
+   "title": "Free CCNA | RIP & EIGRP | Day 25 | CCNA 200-301 Complete Course",
+   "channel": "Jeremy's IT Lab",
+   "viewsLabel": "445K views",
+   "views": 445000,
+   "dur": "43:42",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=N8PiZDld6Zc"
+  }
+ ],
+ "NET-13": [
+  {
+   "id": "e6-TaH5bkjo",
+   "title": "DHCP Explained - Dynamic Host Configuration Protocol",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "3.4M",
+   "views": 3400000,
+   "dur": "10:10",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=e6-TaH5bkjo"
+  },
+  {
+   "id": "S43CFcpOZSI",
+   "title": "DHCP Explained | Step by Step",
+   "channel": "CertBros",
+   "viewsLabel": "1M",
+   "views": 1000000,
+   "dur": "5:30",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=S43CFcpOZSI"
+  }
+ ],
+ "NET-14": [
+  {
+   "id": "ttBKCvczcIQ",
+   "title": "Data Transmission Modes | Simplex, Half Duplex & Full Duplex",
+   "channel": "Learn Coding",
+   "viewsLabel": "606K views",
+   "views": 606000,
+   "dur": "5:39",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=ttBKCvczcIQ"
+  },
+  {
+   "id": "LMRSS7ZYM50",
+   "title": "Half Duplex vs Full Duplex",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "272K views",
+   "views": 272000,
+   "dur": "4:23",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=LMRSS7ZYM50"
+  }
+ ],
+ "NET-15": [
+  {
+   "id": "k8VgrqDOIUo",
+   "title": "Lec-55: Fragmentation(MTU) of IPv4 Datagram | Identification, Flags and Fragment Offset | Networks",
+   "channel": "Gate Smashers",
+   "viewsLabel": "732K views",
+   "views": 732000,
+   "dur": "13:22",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=k8VgrqDOIUo"
+  },
+  {
+   "id": "XMcYwr-yJGA",
+   "title": "How TCP Works - MTU vs MSS",
+   "channel": "Chris Greer",
+   "viewsLabel": "204K views",
+   "views": 204000,
+   "dur": "6:59",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=XMcYwr-yJGA"
+  }
+ ],
+ "NET-16": [
+  {
+   "id": "H6FKJMiiL6E",
+   "title": "Free CCNA | QoS (Part 1) | Day 46 | CCNA 200-301 Complete Course",
+   "channel": "Jeremy's IT Lab",
+   "viewsLabel": "229K views",
+   "views": 229000,
+   "dur": "32:33",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=H6FKJMiiL6E"
+  },
+  {
+   "id": "dP5c6Kr0WV8",
+   "title": "Quality of service in networking (QOS) | Data Communication | Lec-34 | Bhanu Priya",
+   "channel": "Education 4u",
+   "viewsLabel": "194K views",
+   "views": 194000,
+   "dur": "6:45",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=dP5c6Kr0WV8"
+  }
+ ],
+ "NET-17": [
+  {
+   "id": "pCcJFdYNamc",
+   "title": "Default Gateway Explained",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "1.1M views",
+   "views": 1100000,
+   "dur": "6:35",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=pCcJFdYNamc"
+  },
+  {
+   "id": "ai5bFPVToMU",
+   "title": "What is Gateway | Function of gateway in computer network | Difference between Gateway and Router",
+   "channel": "NETWORKING PLUS",
+   "viewsLabel": "676K views",
+   "views": 676000,
+   "dur": "3:40",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=ai5bFPVToMU"
+  }
+ ],
+ "NET-18": [
+  {
+   "id": "bdNS0K4Bt8U",
+   "title": "Layer 2 vs Layer 3 Switches",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "1.6M views",
+   "views": 1600000,
+   "dur": "6:02",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=bdNS0K4Bt8U"
+  },
+  {
+   "id": "Bpp2Zn6LQCY",
+   "title": "Difference Between Layer 2 Switch & Layer 3 Switch |  Difference Between Layer 3 Switch & Router",
+   "channel": "Network Engineer Stuff",
+   "viewsLabel": "175K views",
+   "views": 175000,
+   "dur": "3:32",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=Bpp2Zn6LQCY"
+  }
+ ],
+ "NET-19": [
+  {
+   "id": "IIicPE38O-s",
+   "title": "PING Command - Troubleshooting Networks",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "1.2M views",
+   "views": 1200000,
+   "dur": "9:14",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=IIicPE38O-s"
+  },
+  {
+   "id": "tAKx2RCgqow",
+   "title": "Internet Control Message Protocol (ICMP) Part-1 Explained in Hindi l Computer Network Course",
+   "channel": "5 Minutes Engineering",
+   "viewsLabel": "224K views",
+   "views": 224000,
+   "dur": "9:30",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=tAKx2RCgqow"
+  }
+ ],
+ "NET-20": [
+  {
+   "id": "EcWhJbEWxHU",
+   "title": "Lec-21: Unicast, Broadcast & Multicast in Computer Networks",
+   "channel": "Gate Smashers",
+   "viewsLabel": "565K views",
+   "views": 565000,
+   "dur": "5:53",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=EcWhJbEWxHU"
+  },
+  {
+   "id": "aDdArElVJvQ",
+   "title": "IPv4 Unicast, Multicast, and Broadcast",
+   "channel": "Neso Academy",
+   "viewsLabel": "200K views",
+   "views": 200000,
+   "dur": "7:09",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=aDdArElVJvQ"
+  }
+ ],
+ "SEC-01": [
+  {
+   "id": "kDEX1HXybrU",
+   "title": "What is a Firewall?",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "2.4M views",
+   "views": 2400000,
+   "dur": "6:26",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=kDEX1HXybrU"
+  },
+  {
+   "id": "o_vyfo3Hw0Y",
+   "title": "Lec-93: What is Firewalls and How it Works | Packet Filtering firewall explained in Hindi Part-1",
+   "channel": "Gate Smashers",
+   "viewsLabel": "932K views",
+   "views": 932000,
+   "dur": "13:45",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=o_vyfo3Hw0Y"
+  }
+ ],
+ "SEC-02": [
+  {
+   "id": "P8D6P-6KVNM",
+   "title": "Stateful vs Stateless Architecture - System Design Basics",
+   "channel": "Cloud Advocate",
+   "viewsLabel": "126K views",
+   "views": 126000,
+   "dur": "8:47",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=P8D6P-6KVNM"
+  },
+  {
+   "id": "rL4-vbsN35w",
+   "title": "Stateful vs Stateless Firewalls - You NEED to know the difference",
+   "channel": "LearnCantrill",
+   "viewsLabel": "106K views",
+   "views": 106000,
+   "dur": "14:04",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=rL4-vbsN35w"
+  }
+ ],
+ "SEC-03": [
+  {
+   "id": "fqIObtOigEM",
+   "title": "FortiGate 6.0: Understanding and Implementing Deep Packet Inspection",
+   "channel": "Mark Connelly of Imperion",
+   "viewsLabel": "43K views",
+   "views": 43000,
+   "dur": "7:36",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=fqIObtOigEM"
+  },
+  {
+   "id": "QHHYpwtwd5I",
+   "title": "What is deep packet inspection?",
+   "channel": "internet-class",
+   "viewsLabel": "42K views",
+   "views": 42000,
+   "dur": "4:30",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=QHHYpwtwd5I"
+  }
+ ],
+ "SEC-04": [
+  {
+   "id": "R1mF7Mxfynk",
+   "title": "Intrusion Detection System (IDS) ll Types Of Intruder Explained in Hindi",
+   "channel": "5 Minutes Engineering",
+   "viewsLabel": "523K views",
+   "views": 523000,
+   "dur": "6:58",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=R1mF7Mxfynk"
+  },
+  {
+   "id": "cMH4yGE73iQ",
+   "title": "IDS and IPS",
+   "channel": "Sunny Classroom",
+   "viewsLabel": "141K views",
+   "views": 141000,
+   "dur": "3:19",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=cMH4yGE73iQ"
+  }
+ ],
+ "SEC-05": [
+  {
+   "id": "dqlzQXo1wqo",
+   "title": "What is a DMZ? (Demilitarized Zone)",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "1.6M views",
+   "views": 1600000,
+   "dur": "6:14",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=dqlzQXo1wqo"
+  },
+  {
+   "id": "EU0fOJ0vXZo",
+   "title": "What is DMZ || Important concept || Network #lightboard #Informationsecurity #Demilitarizedzone",
+   "channel": "Kineto Klub",
+   "viewsLabel": "126K views",
+   "views": 126000,
+   "dur": "4:14",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=EU0fOJ0vXZo"
+  }
+ ],
+ "SEC-06": [
+  {
+   "id": "z023_eRUtSo",
+   "title": "Free CCNA | Standard ACLs | Day 34 | CCNA 200-301 Complete Course",
+   "channel": "Jeremy's IT Lab",
+   "viewsLabel": "357K views",
+   "views": 357000,
+   "dur": "46:51",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=z023_eRUtSo"
+  },
+  {
+   "id": "6gq16PfwRyU",
+   "title": "What is Standard ACL? | Access Control List Explained in Hindi",
+   "channel": "Network Kings",
+   "viewsLabel": "174K views",
+   "views": 174000,
+   "dur": "17:39",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=6gq16PfwRyU"
+  }
+ ],
+ "SEC-07": [
+  {
+   "id": "hExRDVZHhig",
+   "title": "SSL, TLS, HTTP, HTTPS Explained",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "2.8M views",
+   "views": 2800000,
+   "dur": "6:31",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=hExRDVZHhig"
+  },
+  {
+   "id": "j9QmMEWmcfo",
+   "title": "SSL, TLS, HTTPS Explained",
+   "channel": "ByteByteGo",
+   "viewsLabel": "1.2M views",
+   "views": 1200000,
+   "dur": "5:54",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=j9QmMEWmcfo"
+  }
+ ],
+ "SEC-08": [
+  {
+   "id": "CWy3x3Wux6o",
+   "title": "VPNs Explained | Site-to-Site + Remote Access",
+   "channel": "CertBros",
+   "viewsLabel": "950K views",
+   "views": 950000,
+   "dur": "9:08",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=CWy3x3Wux6o"
+  },
+  {
+   "id": "R-JUOpCgTZc",
+   "title": "VPN (Virtual Private Network) Explained",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "909K views",
+   "views": 909000,
+   "dur": "7:11",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=R-JUOpCgTZc"
+  }
+ ],
+ "SEC-09": [
+  {
+   "id": "CuxyZiSCSfc",
+   "title": "MicroNugget: IPsec Site to Site VPN Tunnels Explained | CBT Nuggets",
+   "channel": "CBT Nuggets",
+   "viewsLabel": "463K views",
+   "views": 463000,
+   "dur": "7:28",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=CuxyZiSCSfc"
+  },
+  {
+   "id": "15amNny_kKI",
+   "title": "IP Sec VPN Fundamentals",
+   "channel": "LearnCantrill",
+   "viewsLabel": "324K views",
+   "views": 324000,
+   "dur": "14:55",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=15amNny_kKI"
+  }
+ ],
+ "SEC-10": [
+  {
+   "id": "15amNny_kKI",
+   "title": "IP Sec VPN Fundamentals",
+   "channel": "LearnCantrill",
+   "viewsLabel": "324K views",
+   "views": 324000,
+   "dur": "14:55",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=15amNny_kKI"
+  },
+  {
+   "id": "9yZSgJHdzCI",
+   "title": "What is NAT-T ? What is use in Site to Site VPN with NAT -T wireshark capture and LAB explanation",
+   "channel": "Bikash's Tech",
+   "viewsLabel": "31K views",
+   "views": 31000,
+   "dur": "9:01",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=9yZSgJHdzCI"
+  }
+ ],
+ "SEC-11": [
+  {
+   "id": "p8CQcF_9280",
+   "title": "What is a Web Application Firewall (WAF)?",
+   "channel": "F5 DevCentral Community",
+   "viewsLabel": "283K views",
+   "views": 283000,
+   "dur": "10:04",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=p8CQcF_9280"
+  },
+  {
+   "id": "FHRXXrQ765M",
+   "title": "How to use AWS WAF (Web application firewall)/Web ACL? - Step By Step Tutorial (Part-11)#aws #devops",
+   "channel": "Rahul Wagh",
+   "viewsLabel": "109K views",
+   "views": 109000,
+   "dur": "27:41",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=FHRXXrQ765M"
+  }
+ ],
+ "SEC-12": [
+  {
+   "id": "zC_Pndpg8-c",
+   "title": "Zero Trust - CompTIA Security+ SY0-701 - 1.2",
+   "channel": "Professor Messer",
+   "viewsLabel": "623K views",
+   "views": 623000,
+   "dur": "10:05",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=zC_Pndpg8-c"
+  },
+  {
+   "id": "yn6CPQ9RioA",
+   "title": "Zero Trust Explained in 4 mins",
+   "channel": "IBM Technology",
+   "viewsLabel": "226K views",
+   "views": 226000,
+   "dur": "3:43",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=yn6CPQ9RioA"
+  }
+ ],
+ "SEC-13": [
+  {
+   "id": "AQDCe585Lnc",
+   "title": "Asymmetric Encryption - Simply explained",
+   "channel": "Simply Explained",
+   "viewsLabel": "1.6M views",
+   "views": 1600000,
+   "dur": "4:40",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=AQDCe585Lnc"
+  },
+  {
+   "id": "6AmmQiOWoXM",
+   "title": "Lec-89: Symmetric Key Cryptography in Network Security with examples",
+   "channel": "Gate Smashers",
+   "viewsLabel": "761K views",
+   "views": 761000,
+   "dur": "6:14",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=6AmmQiOWoXM"
+  }
+ ],
+ "SEC-14": [
+  {
+   "id": "EnY6fSng3Ew",
+   "title": "HTTPS, SSL, TLS & Certificate Authority Explained",
+   "channel": "Laiture",
+   "viewsLabel": "352K views",
+   "views": 352000,
+   "dur": "43:29",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=EnY6fSng3Ew"
+  },
+  {
+   "id": "i-rtxrEz_E8",
+   "title": "What is Public Key Infrastructure (PKI) by Securemetric",
+   "channel": "Securemetric",
+   "viewsLabel": "328K views",
+   "views": 328000,
+   "dur": "3:41",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=i-rtxrEz_E8"
+  }
+ ],
+ "SEC-15": [
+  {
+   "id": "hExRDVZHhig",
+   "title": "SSL, TLS, HTTP, HTTPS Explained",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "2.8M views",
+   "views": 2800000,
+   "dur": "6:31",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=hExRDVZHhig"
+  },
+  {
+   "id": "j9QmMEWmcfo",
+   "title": "SSL, TLS, HTTPS Explained",
+   "channel": "ByteByteGo",
+   "viewsLabel": "1.2M views",
+   "views": 1200000,
+   "dur": "5:54",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=j9QmMEWmcfo"
+  }
+ ],
+ "SEC-16": [
+  {
+   "id": "-enHfpHMBo4",
+   "title": "Man in the Middle Attacks & Superfish - Computerphile",
+   "channel": "Computerphile",
+   "viewsLabel": "1M views",
+   "views": 1000000,
+   "dur": "13:29",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=-enHfpHMBo4"
+  },
+  {
+   "id": "O1jpck31Ask",
+   "title": "iPhone and Android WiFi Man-in-the-middle attack // PYTHON Scapy scripts for attacking networks",
+   "channel": "David Bombal",
+   "viewsLabel": "380K views",
+   "views": 380000,
+   "dur": "15:24",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=O1jpck31Ask"
+  }
+ ],
+ "SEC-17": [
+  {
+   "id": "ilhGh9CEIwM",
+   "title": "DDoS Attack Explained",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "1.7M views",
+   "views": 1700000,
+   "dur": "5:43",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=ilhGh9CEIwM"
+  },
+  {
+   "id": "mf40o5hWjCY",
+   "title": "Real-Time DDoS Attack Showcase",
+   "channel": "Serverius IT infrastructure (serverius)",
+   "viewsLabel": "352K views",
+   "views": 352000,
+   "dur": "3:31",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=mf40o5hWjCY"
+  }
+ ],
+ "SEC-18": [
+  {
+   "id": "rxN4zWTNSds",
+   "title": "What is IP Spoofing?",
+   "channel": "caida org",
+   "viewsLabel": "206K views",
+   "views": 206000,
+   "dur": "3:52",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=rxN4zWTNSds"
+  },
+  {
+   "id": "40gzPZX4QNw",
+   "title": "IP Spoofing 🔥🔥",
+   "channel": "Perfect Computer Engineer",
+   "viewsLabel": "90K views",
+   "views": 90000,
+   "dur": "2:07",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=40gzPZX4QNw"
+  }
+ ],
+ "SEC-19": [
+  {
+   "id": "4t4kBkMsDbQ",
+   "title": "Nmap Tutorial to find Network Vulnerabilities",
+   "channel": "NetworkChuck",
+   "viewsLabel": "3.5M views",
+   "views": 3500000,
+   "dur": "17:09",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=4t4kBkMsDbQ"
+  },
+  {
+   "id": "g2fT-g9PX9o",
+   "title": "Network Ports Explained",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "2.6M views",
+   "views": 2600000,
+   "dur": "10:33",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=g2fT-g9PX9o"
+  }
+ ],
+ "SEC-20": [
+  {
+   "id": "s0sgiY93w9c",
+   "title": "What is botnet and how does it spread?",
+   "channel": "ESET",
+   "viewsLabel": "238K views",
+   "views": 238000,
+   "dur": "3:07",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=s0sgiY93w9c"
+  },
+  {
+   "id": "3BbxUCOFX8g",
+   "title": "What is a Botnet?",
+   "channel": "Kaspersky",
+   "viewsLabel": "194K views",
+   "views": 194000,
+   "dur": "2:38",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=3BbxUCOFX8g"
+  }
+ ],
+ "MAIL-01": [
+  {
+   "id": "cjPVlxmf_Vk",
+   "title": "Lec-85 : SMTP vs POP3 vs IMAP with real life example | All in 1 | Application layer Protocols",
+   "channel": "Gate Smashers",
+   "viewsLabel": "372K views",
+   "views": 372000,
+   "dur": "10:03",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=cjPVlxmf_Vk"
+  },
+  {
+   "id": "x28ciavQ4mI",
+   "title": "Lesson 13: How Email Works",
+   "channel": "Center for Cybersecurity Innovation & Outreach",
+   "viewsLabel": "173K views",
+   "views": 173000,
+   "dur": "10:13",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=x28ciavQ4mI"
+  }
+ ],
+ "MAIL-02": [
+  {
+   "id": "HnUDtycXSNE",
+   "title": "DNS Records Explained",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "520K views",
+   "views": 520000,
+   "dur": "14:14",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=HnUDtycXSNE"
+  },
+  {
+   "id": "o66UFsodUYo",
+   "title": "Mail server DNS records - setup and configuration explained",
+   "channel": "Christian Lempa",
+   "viewsLabel": "146K views",
+   "views": 146000,
+   "dur": "18:21",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=o66UFsodUYo"
+  }
+ ],
+ "MAIL-03": [
+  {
+   "id": "SBaARws0hy4",
+   "title": "POP3 vs IMAP - What's the difference?",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "1.5M views",
+   "views": 1500000,
+   "dur": "7:50",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=SBaARws0hy4"
+  },
+  {
+   "id": "PJo5yOtu7o8",
+   "title": "What is SMTP - Simple Mail Transfer Protocol",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "730K views",
+   "views": 730000,
+   "dur": "3:25",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=PJo5yOtu7o8"
+  }
+ ],
+ "MAIL-04": [
+  {
+   "id": "c9fLp5uIxp8",
+   "title": "How DKIM SPF & DMARC Work to Prevent Email Spoofing",
+   "channel": "Thobson Technologies",
+   "viewsLabel": "222K views",
+   "views": 222000,
+   "dur": "17:15",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=c9fLp5uIxp8"
+  },
+  {
+   "id": "KJM8IdP27cQ",
+   "title": "How DKIM SPF & DMARC Work to Protect Against Email Spoofing",
+   "channel": "MDaemon Technologies",
+   "viewsLabel": "123K views",
+   "views": 123000,
+   "dur": "17:15",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=KJM8IdP27cQ"
+  }
+ ],
+ "MAIL-05": [
+  {
+   "id": "c9fLp5uIxp8",
+   "title": "How DKIM SPF & DMARC Work to Prevent Email Spoofing",
+   "channel": "Thobson Technologies",
+   "viewsLabel": "222K views",
+   "views": 222000,
+   "dur": "17:15",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=c9fLp5uIxp8"
+  },
+  {
+   "id": "5fjmPQgqdzw",
+   "title": "What is DKIM? DomainKeys Identified Mail explained (in under 4 minutes)",
+   "channel": "Postmark",
+   "viewsLabel": "115K views",
+   "views": 115000,
+   "dur": "3:52",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=5fjmPQgqdzw"
+  }
+ ],
+ "MAIL-06": [
+  {
+   "id": "c9fLp5uIxp8",
+   "title": "How DKIM SPF & DMARC Work to Prevent Email Spoofing",
+   "channel": "Thobson Technologies",
+   "viewsLabel": "222K views",
+   "views": 222000,
+   "dur": "17:15",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=c9fLp5uIxp8"
+  },
+  {
+   "id": "nlFAj2raoj4",
+   "title": "[HINDI] SPF, DKIM, DMARC  DNS Records | How to check for missing SPF | Explained",
+   "channel": "Bitten Tech",
+   "viewsLabel": "94K views",
+   "views": 94000,
+   "dur": "15:18",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=nlFAj2raoj4"
+  }
+ ],
+ "MAIL-07": [
+  {
+   "id": "l3htAzOAx7c",
+   "title": "Build Your Own MAIL Server | SMTP Server",
+   "channel": "Piyush Garg",
+   "viewsLabel": "196K views",
+   "views": 196000,
+   "dur": "51:30",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=l3htAzOAx7c"
+  },
+  {
+   "id": "vCU_uVTNXo8",
+   "title": "How to relay emails from application using Office 365 | Client Submission, Direct Send, Smtp Relay",
+   "channel": "Office365Concepts",
+   "viewsLabel": "102K views",
+   "views": 102000,
+   "dur": "19:01",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=vCU_uVTNXo8"
+  }
+ ],
+ "MAIL-08": [
+  {
+   "id": "PJo5yOtu7o8",
+   "title": "What is SMTP - Simple Mail Transfer Protocol",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "730K views",
+   "views": 730000,
+   "dur": "3:25",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=PJo5yOtu7o8"
+  },
+  {
+   "id": "d-0W9Ox2LAE",
+   "title": "All About SMTP Ports - Explained by Mailtrap",
+   "channel": "Mailtrap",
+   "viewsLabel": "21K views",
+   "views": 21000,
+   "dur": "2:24",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=d-0W9Ox2LAE"
+  }
+ ],
+ "MAIL-09": [
+  {
+   "id": "03ZY0dRoiqQ",
+   "title": "SpamTitan Greylisting - Email Anti-Spam",
+   "channel": "CyberSentriq - SaaS Cybersecurity Platform",
+   "viewsLabel": "1.9K views",
+   "views": 1900,
+   "dur": "3:15",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=03ZY0dRoiqQ"
+  },
+  {
+   "id": "ljtU6I0sIiw",
+   "title": "Greylisting | cPanel Conference Session",
+   "channel": "cPanelTV",
+   "viewsLabel": "1.3K views",
+   "views": 1300,
+   "dur": "19:25",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=ljtU6I0sIiw"
+  }
+ ],
+ "MAIL-10": [
+  {
+   "id": "c9fLp5uIxp8",
+   "title": "How DKIM SPF & DMARC Work to Prevent Email Spoofing",
+   "channel": "Thobson Technologies",
+   "viewsLabel": "222K views",
+   "views": 222000,
+   "dur": "17:15",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=c9fLp5uIxp8"
+  },
+  {
+   "id": "isQ68dMCmPU",
+   "title": "Spam Filters - CompTIA Security+ SY0-401: 1.1",
+   "channel": "Professor Messer",
+   "viewsLabel": "164K views",
+   "views": 164000,
+   "dur": "4:26",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=isQ68dMCmPU"
+  }
+ ],
+ "MAIL-11": [
+  {
+   "id": "7RhcF66u5Zw",
+   "title": "UCEPROTECTL3 Blacklist: What You Actually Need To Know (No Fluff)",
+   "channel": "Damien - MailReach",
+   "viewsLabel": "129K views",
+   "views": 129000,
+   "dur": "8:49",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=7RhcF66u5Zw"
+  },
+  {
+   "id": "C-zdSiFWack",
+   "title": "Whitelisting vs. Blacklisting in Cybersecurity Explained with Real Example #cybersecurity #blacklist",
+   "channel": "TSECC",
+   "viewsLabel": "5.2K views",
+   "views": 5200,
+   "dur": "3:36",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=C-zdSiFWack"
+  }
+ ],
+ "MAIL-12": [
+  {
+   "id": "aAqp-66Q0dg",
+   "title": "Types of Bounces | Free Email Marketing Course",
+   "channel": "Sahil Khanna",
+   "viewsLabel": "35K views",
+   "views": 35000,
+   "dur": "4:23",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=aAqp-66Q0dg"
+  },
+  {
+   "id": "nGN6R_Wty-c",
+   "title": "Email Bounce Explained - Tutorial by Mailtrap",
+   "channel": "Mailtrap",
+   "viewsLabel": "21K views",
+   "views": 21000,
+   "dur": "1:47",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=nGN6R_Wty-c"
+  }
+ ],
+ "MAIL-13": [
+  {
+   "id": "PJo5yOtu7o8",
+   "title": "What is SMTP - Simple Mail Transfer Protocol",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "730K views",
+   "views": 730000,
+   "dur": "3:25",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=PJo5yOtu7o8"
+  },
+  {
+   "id": "cjPVlxmf_Vk",
+   "title": "Lec-85 : SMTP vs POP3 vs IMAP with real life example | All in 1 | Application layer Protocols",
+   "channel": "Gate Smashers",
+   "viewsLabel": "372K views",
+   "views": 372000,
+   "dur": "10:03",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=cjPVlxmf_Vk"
+  }
+ ],
+ "MAIL-14": [
+  {
+   "id": "cj0vk33q5qM",
+   "title": "How to Fix Queued/Not Sending Email on Gmail (100% Working)",
+   "channel": "Kerr TV",
+   "viewsLabel": "1M views",
+   "views": 1000000,
+   "dur": "1:55",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=cj0vk33q5qM"
+  },
+  {
+   "id": "1zPNFLwyO1o",
+   "title": "Gmail Not Receiving Emails Issues! [How To Fix]",
+   "channel": "Fix369",
+   "viewsLabel": "609K views",
+   "views": 609000,
+   "dur": "3:07",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=1zPNFLwyO1o"
+  }
+ ],
+ "MAIL-15": [
+  {
+   "id": "j9QmMEWmcfo",
+   "title": "SSL, TLS, HTTPS Explained",
+   "channel": "ByteByteGo",
+   "viewsLabel": "1.2M views",
+   "views": 1200000,
+   "dur": "5:54",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=j9QmMEWmcfo"
+  },
+  {
+   "id": "67Kfsmy_frM",
+   "title": "SSL/TLS Explained in 7 Minutes",
+   "channel": "Sematext",
+   "viewsLabel": "259K views",
+   "views": 259000,
+   "dur": "7:38",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=67Kfsmy_frM"
+  }
+ ],
+ "LNX-01": [
+  {
+   "id": "ITc09gOrqZk",
+   "title": "L-1.11: Process Vs Threads in Operating System",
+   "channel": "Gate Smashers",
+   "viewsLabel": "1.8M views",
+   "views": 1800000,
+   "dur": "11:17",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=ITc09gOrqZk"
+  },
+  {
+   "id": "LOfGJcVnvAk",
+   "title": "Introduction to Threads",
+   "channel": "Neso Academy",
+   "viewsLabel": "951K views",
+   "views": 951000,
+   "dur": "14:06",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=LOfGJcVnvAk"
+  }
+ ],
+ "LNX-02": [
+  {
+   "id": "rurs7cdT5cc",
+   "title": "Basic Networking Commands (Part 1)",
+   "channel": "Neso Academy",
+   "viewsLabel": "2M views",
+   "views": 2000000,
+   "dur": "14:11",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=rurs7cdT5cc"
+  },
+  {
+   "id": "8UZFpCQeXnM",
+   "title": "NETSTAT Command Explained",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "419K views",
+   "views": 419000,
+   "dur": "6:10",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=8UZFpCQeXnM"
+  }
+ ],
+ "LNX-03": [
+  {
+   "id": "vbhr4csDeI4",
+   "title": "IPTABLES [PART-1] :  \"UNDERSTANDING THE CONCEPT\"",
+   "channel": "XPSTECH",
+   "viewsLabel": "167K views",
+   "views": 167000,
+   "dur": "7:53",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=vbhr4csDeI4"
+  },
+  {
+   "id": "6Ra17Qpj68c",
+   "title": "iptables Complete Guide | HackerSploit Linux Security",
+   "channel": "Akamai Developers",
+   "viewsLabel": "167K views",
+   "views": 167000,
+   "dur": "31:02",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=6Ra17Qpj68c"
+  }
+ ],
+ "LNX-04": [
+  {
+   "id": "h3fJlmuGyos",
+   "title": "Linux tutorial: Find out which process is listening upon a port",
+   "channel": "nixCraft",
+   "viewsLabel": "121K views",
+   "views": 121000,
+   "dur": "3:05",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=h3fJlmuGyos"
+  },
+  {
+   "id": "0FIq6-frJv0",
+   "title": "How to Check Open and Listening Ports on Linux | Ubuntu 22.04",
+   "channel": "ZacsTech",
+   "viewsLabel": "25K views",
+   "views": 25000,
+   "dur": "3:15",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=0FIq6-frJv0"
+  }
+ ],
+ "LNX-05": [
+  {
+   "id": "XnepNult6UI",
+   "title": "The /etc/hosts.conf, /etc/resolv.conf, and /etc/nsswtich.conf files on Linux Explained",
+   "channel": "ComputerNetworkingNotes",
+   "viewsLabel": "11K views",
+   "views": 11000,
+   "dur": "27:54",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=XnepNult6UI"
+  },
+  {
+   "id": "zzFbFEOgtY0",
+   "title": "Why does /etc/resolv.conf point at 127.0.0.53 in Linux?",
+   "channel": "Slap Ya Administrator",
+   "viewsLabel": "8.9K views",
+   "views": 8900,
+   "dur": "4:20",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=zzFbFEOgtY0"
+  }
+ ],
+ "LNX-06": [
+  {
+   "id": "fayx4jWqyWk",
+   "title": "How to Set Static IP in Ubuntu Server 22.04",
+   "channel": "KeepItTechie",
+   "viewsLabel": "118K views",
+   "views": 118000,
+   "dur": "18:03",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=fayx4jWqyWk"
+  },
+  {
+   "id": "UrFwoRpSEJc",
+   "title": "88 - How to setup Static IP address in Ubuntu Linux 22.04 with netplan 2022",
+   "channel": "Crazy-Logic",
+   "viewsLabel": "66K views",
+   "views": 66000,
+   "dur": "5:15",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=UrFwoRpSEJc"
+  }
+ ],
+ "LNX-07": [
+  {
+   "id": "1lDfCRM6dWk",
+   "title": "tcpdump - Traffic Capture & Analysis",
+   "channel": "HackerSploit",
+   "viewsLabel": "278K views",
+   "views": 278000,
+   "dur": "23:20",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=1lDfCRM6dWk"
+  },
+  {
+   "id": "Mys_kwuQUhc",
+   "title": "How To Capture Packets From Any Website Using Wireshark (TCP/UDP/IP, etc.)",
+   "channel": "Fahim Amin",
+   "viewsLabel": "99K views",
+   "views": 99000,
+   "dur": "7:27",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=Mys_kwuQUhc"
+  }
+ ],
+ "LNX-08": [
+  {
+   "id": "Tc_jntovCM0",
+   "title": "Linux Crash Course - The grep Command",
+   "channel": "Learn Linux TV",
+   "viewsLabel": "172K views",
+   "views": 172000,
+   "dur": "14:57",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=Tc_jntovCM0"
+  },
+  {
+   "id": "8q8DHmA9puw",
+   "title": "Why Use CAT Or GREP When You Can AWK?",
+   "channel": "DistroTube",
+   "viewsLabel": "83K views",
+   "views": 83000,
+   "dur": "11:13",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=8q8DHmA9puw"
+  }
+ ],
+ "LNX-09": [
+  {
+   "id": "CIVI-DIzCFk",
+   "title": "How to schedule a Cron Job to run a script on Ubuntu 16.04",
+   "channel": "LinuxHelp",
+   "viewsLabel": "275K views",
+   "views": 275000,
+   "dur": "5:21",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=CIVI-DIzCFk"
+  },
+  {
+   "id": "v952m13p-b4",
+   "title": "Cron Jobs For Beginners | Linux Task Scheduling",
+   "channel": "Akamai Developers",
+   "viewsLabel": "273K views",
+   "views": 273000,
+   "dur": "12:47",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=v952m13p-b4"
+  }
+ ],
+ "LNX-10": [
+  {
+   "id": "A3G-3hp88mo",
+   "title": "the Linux File System explained in 1,233 seconds // Linux for Hackers // EP 2",
+   "channel": "NetworkChuck",
+   "viewsLabel": "2.6M views",
+   "views": 2600000,
+   "dur": "20:33",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=A3G-3hp88mo"
+  },
+  {
+   "id": "LnKoncbQBsM",
+   "title": "Linux File Permissions in 5 Minutes | MUST Know!",
+   "channel": "Travis Media",
+   "viewsLabel": "250K views",
+   "views": 250000,
+   "dur": "6:03",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=LnKoncbQBsM"
+  }
+ ],
+ "LNX-11": [
+  {
+   "id": "4-vye3QFTFo",
+   "title": "Hard vs Soft Links in Linux  (Linux Links)",
+   "channel": "Ahmed Alkabary",
+   "viewsLabel": "188K views",
+   "views": 188000,
+   "dur": "4:01",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=4-vye3QFTFo"
+  },
+  {
+   "id": "lW_V8oFxQgA",
+   "title": "MicroNuggets: Hard Links versus Soft Links Explained",
+   "channel": "CBT Nuggets",
+   "viewsLabel": "82K views",
+   "views": 82000,
+   "dur": "7:03",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=lW_V8oFxQgA"
+  }
+ ],
+ "LNX-12": [
+  {
+   "id": "IRN8ZsZa31E",
+   "title": "How to clear unwanted disk space | Linux Server Disk Capacity shows 100% full",
+   "channel": "Server Gyan",
+   "viewsLabel": "92K views",
+   "views": 92000,
+   "dur": "7:42",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=IRN8ZsZa31E"
+  },
+  {
+   "id": "0utcg3ztzuI",
+   "title": "Linux Command Line Tutorial For Beginners 26 - Viewing Resources (du , df, free command)",
+   "channel": "ProgrammingKnowledge",
+   "viewsLabel": "70K views",
+   "views": 70000,
+   "dur": "9:52",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=0utcg3ztzuI"
+  }
+ ],
+ "LNX-13": [
+  {
+   "id": "wOWhfNB_r-0",
+   "title": "start, stop, restart Linux services (daemon HUNTING!!) // Linux for Hackers // EP 6",
+   "channel": "NetworkChuck",
+   "viewsLabel": "548K views",
+   "views": 548000,
+   "dur": "24:20",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=wOWhfNB_r-0"
+  },
+  {
+   "id": "Kzpm-rGAXos",
+   "title": "Systemd Explained: How to Manage Linux Services Easily",
+   "channel": "Learn Linux TV",
+   "viewsLabel": "384K views",
+   "views": 384000,
+   "dur": "47:41",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=Kzpm-rGAXos"
+  }
+ ],
+ "LNX-14": [
+  {
+   "id": "wOWhfNB_r-0",
+   "title": "start, stop, restart Linux services (daemon HUNTING!!) // Linux for Hackers // EP 6",
+   "channel": "NetworkChuck",
+   "viewsLabel": "548K views",
+   "views": 548000,
+   "dur": "24:20",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=wOWhfNB_r-0"
+  },
+  {
+   "id": "gBuTIrEG87s",
+   "title": "Every LINUX Concept Explained in 8 Minutes.",
+   "channel": "Mr.PiwPiew",
+   "viewsLabel": "368K views",
+   "views": 368000,
+   "dur": "8:13",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=gBuTIrEG87s"
+  }
+ ],
+ "LNX-15": [
+  {
+   "id": "tA-32BLjrFA",
+   "title": "Linux Log Monitoring | How to Do Log Analysis? | MPrashant",
+   "channel": "M Prashant",
+   "viewsLabel": "119K views",
+   "views": 119000,
+   "dur": "19:47",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=tA-32BLjrFA"
+  },
+  {
+   "id": "6uP_f_z3CbM",
+   "title": "Linux Crash Course - Understanding Logging",
+   "channel": "Learn Linux TV",
+   "viewsLabel": "85K views",
+   "views": 85000,
+   "dur": "29:10",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=6uP_f_z3CbM"
+  }
+ ],
+ "LNX-16": [
+  {
+   "id": "vJV-GBZ6PeM",
+   "title": "PING and TRACERT (traceroute) networking commands",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "1M views",
+   "views": 1000000,
+   "dur": "4:40",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=vJV-GBZ6PeM"
+  },
+  {
+   "id": "up3bcBLZS74",
+   "title": "Traceroute (tracert) Explained - Network Troubleshooting",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "693K views",
+   "views": 693000,
+   "dur": "9:24",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=up3bcBLZS74"
+  }
+ ],
+ "LNX-17": [
+  {
+   "id": "4t4kBkMsDbQ",
+   "title": "Nmap Tutorial to find Network Vulnerabilities",
+   "channel": "NetworkChuck",
+   "viewsLabel": "3.5M views",
+   "views": 3500000,
+   "dur": "17:09",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=4t4kBkMsDbQ"
+  },
+  {
+   "id": "JHAMj2vN2oU",
+   "title": "NMAP Full Guide (You will never ask about NMAP again) #hackers #scanning #nmap",
+   "channel": "Hacker Joe",
+   "viewsLabel": "531K views",
+   "views": 531000,
+   "dur": "1:23:59",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=JHAMj2vN2oU"
+  }
+ ],
+ "LNX-18": [
+  {
+   "id": "rwVLa9me7e4",
+   "title": "Linux Performance Troubleshooting Demos",
+   "channel": "grobelDev",
+   "viewsLabel": "108K views",
+   "views": 108000,
+   "dur": "10:51",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=rwVLa9me7e4"
+  },
+  {
+   "id": "hK-tYkiIoqY",
+   "title": "Top Command: A Linux Command for Quickly Seeing What is Running on Your System",
+   "channel": "M Prashant",
+   "viewsLabel": "72K views",
+   "views": 72000,
+   "dur": "12:35",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=hK-tYkiIoqY"
+  }
+ ],
+ "LNX-19": [
+  {
+   "id": "XiERevpBTAk",
+   "title": "Linux Terminal 201: ifconfig vs ip - HakTip 154",
+   "channel": "Hak5",
+   "viewsLabel": "40K views",
+   "views": 40000,
+   "dur": "8:29",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=XiERevpBTAk"
+  },
+  {
+   "id": "wHfIFZlDxtU",
+   "title": "How to Use the ip Command in Linux: A Beginner’s Guide",
+   "channel": "Learn Linux TV",
+   "viewsLabel": "39K views",
+   "views": 39000,
+   "dur": "16:44",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=wHfIFZlDxtU"
+  }
+ ],
+ "LNX-20": [
+  {
+   "id": "ORcvSkgdA58",
+   "title": "How Secure Shell Works (SSH) - Computerphile",
+   "channel": "Computerphile",
+   "viewsLabel": "915K views",
+   "views": 915000,
+   "dur": "9:20",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=ORcvSkgdA58"
+  },
+  {
+   "id": "5JvLV2-ngCI",
+   "title": "How SSH Works",
+   "channel": "Mental Outlaw",
+   "viewsLabel": "786K views",
+   "views": 786000,
+   "dur": "8:54",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=5JvLV2-ngCI"
+  }
+ ],
+ "BCD-01": [
+  {
+   "id": "EDD0RjzQx9s",
+   "title": "Getting Started with a Barracuda Firewall",
+   "channel": "NETVN82",
+   "viewsLabel": "14K views",
+   "views": 14000,
+   "dur": "11:03",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=EDD0RjzQx9s"
+  },
+  {
+   "id": "dP_0dO7LO8E",
+   "title": "Barracuda CloudGen Firewall Initial Configuration",
+   "channel": "NetSec",
+   "viewsLabel": "9.2K views",
+   "views": 9200,
+   "dur": "15:24",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=dP_0dO7LO8E"
+  }
+ ],
+ "BCD-02": [
+  {
+   "id": "HuMxGXS6IxE",
+   "title": "Barracuda Email Security Solutions",
+   "channel": "Barracuda Networks",
+   "viewsLabel": "20K views",
+   "views": 20000,
+   "dur": "3:22",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=HuMxGXS6IxE"
+  },
+  {
+   "id": "zw1g9pnRu-M",
+   "title": "Barracuda Email Security end user training Video",
+   "channel": "ATS Communications Inc",
+   "viewsLabel": "20K views",
+   "views": 20000,
+   "dur": "4:22",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=zw1g9pnRu-M"
+  }
+ ],
+ "BCD-03": [
+  {
+   "id": "p8CQcF_9280",
+   "title": "What is a Web Application Firewall (WAF)?",
+   "channel": "F5 DevCentral Community",
+   "viewsLabel": "283K views",
+   "views": 283000,
+   "dur": "10:04",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=p8CQcF_9280"
+  },
+  {
+   "id": "FHRXXrQ765M",
+   "title": "How to use AWS WAF (Web application firewall)/Web ACL? - Step By Step Tutorial (Part-11)#aws #devops",
+   "channel": "Rahul Wagh",
+   "viewsLabel": "109K views",
+   "views": 109000,
+   "dur": "27:41",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=FHRXXrQ765M"
+  }
+ ],
+ "BCD-04": [
+  {
+   "id": "hBMSiy1frt0",
+   "title": "Barracuda Backup Service 5.0 with LiveBoot | Barracuda Networks",
+   "channel": "Barracuda Networks",
+   "viewsLabel": "256K views",
+   "views": 256000,
+   "dur": "1:05",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=hBMSiy1frt0"
+  },
+  {
+   "id": "MIzATPx-Eq8",
+   "title": "Barracuda Essentials for Office 365",
+   "channel": "Barracuda Networks",
+   "viewsLabel": "39K views",
+   "views": 39000,
+   "dur": "2:36",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=MIzATPx-Eq8"
+  }
+ ],
+ "BCD-05": [
+  {
+   "id": "otQKRt9uwno",
+   "title": "SASE Explained: What is Secure Access Service Edge?",
+   "channel": "Uniti Solutions",
+   "viewsLabel": "192K views",
+   "views": 192000,
+   "dur": "2:25",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=otQKRt9uwno"
+  },
+  {
+   "id": "Opy9D-8eyVg",
+   "title": "What is Secure Access Service Edge (SASE) ?",
+   "channel": "The CISO Perspective",
+   "viewsLabel": "175K views",
+   "views": 175000,
+   "dur": "7:50",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=Opy9D-8eyVg"
+  }
+ ],
+ "BCD-06": [
+  {
+   "id": "isMnWZqAh0k",
+   "title": "What is SD-WAN? say GOODBYE to MPLS, DMVPN, iWAN... w/ SDN, Cisco and Viptela",
+   "channel": "NetworkChuck",
+   "viewsLabel": "615K",
+   "views": 615000,
+   "dur": "17:53",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=isMnWZqAh0k"
+  },
+  {
+   "id": "cos4ujj80iI",
+   "title": "Fundamentals of SD-WAN",
+   "channel": "Kevin Wallace Training, LLC",
+   "viewsLabel": "350K",
+   "views": 350000,
+   "dur": "12:13",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=cos4ujj80iI"
+  }
+ ],
+ "BCD-07": [
+  {
+   "id": "fhoz0R2jnp0",
+   "title": "Microsoft Advanced Threat Protection (ATP) Explained",
+   "channel": "Pro Tech Show",
+   "viewsLabel": "37K views",
+   "views": 37000,
+   "dur": "13:05",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=fhoz0R2jnp0"
+  },
+  {
+   "id": "eUioEQM_R7Q",
+   "title": "How to Use Malware Sandboxing for Advanced Threat Analysis | IoC Extraction and MITRE Mapping",
+   "channel": "OPSWAT",
+   "viewsLabel": "31K views",
+   "views": 31000,
+   "dur": "16:53",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=eUioEQM_R7Q"
+  }
+ ],
+ "BCD-08": [
+  {
+   "id": "oPsxy9JF8FM",
+   "title": "How To Setup A Sandbox Environment For Malware Analysis",
+   "channel": "HackerSploit",
+   "viewsLabel": "302K views",
+   "views": 302000,
+   "dur": "18:17",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=oPsxy9JF8FM"
+  },
+  {
+   "id": "eUioEQM_R7Q",
+   "title": "How to Use Malware Sandboxing for Advanced Threat Analysis | IoC Extraction and MITRE Mapping",
+   "channel": "OPSWAT",
+   "viewsLabel": "31K views",
+   "views": 31000,
+   "dur": "16:53",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=eUioEQM_R7Q"
+  }
+ ],
+ "BCD-09": [
+  {
+   "id": "DmDp-aaXi9M",
+   "title": "How to Set up Sophos Email Security for Exchange Online: Sophos Email Security Office 365 Setup",
+   "channel": "Office365Concepts",
+   "viewsLabel": "17K",
+   "views": 17000,
+   "dur": "18:13",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=DmDp-aaXi9M"
+  },
+  {
+   "id": "z92j6WlxKtM",
+   "title": "Getting started with email security in Microsoft 365 | Phishing protections",
+   "channel": "T-Minus365",
+   "viewsLabel": "11K",
+   "views": 11000,
+   "dur": "27:25",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=z92j6WlxKtM"
+  }
+ ],
+ "BCD-10": [
+  {
+   "id": "eizn9TC68E8",
+   "title": "Protecting Yourself from Ransomware",
+   "channel": "IBM Technology",
+   "viewsLabel": "17K views",
+   "views": 17000,
+   "dur": "5:40",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=eizn9TC68E8"
+  },
+  {
+   "id": "wUWSs-7Cb1g",
+   "title": "Step-by-Step Guide to Building an Effective Ransomware Protection Plan",
+   "channel": "Prabh Nair",
+   "viewsLabel": "10K views",
+   "views": 10000,
+   "dur": "23:38",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=wUWSs-7Cb1g"
+  }
+ ],
+ "BCD-11": [
+  {
+   "id": "IWNfb4a1ay0",
+   "title": "What is a Firewall? | Traditional + Next Generation",
+   "channel": "CertBros",
+   "viewsLabel": "117K views",
+   "views": 117000,
+   "dur": "8:31",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=IWNfb4a1ay0"
+  },
+  {
+   "id": "12AqJdlqXzM",
+   "title": "5 Considerations: Sizing Your Next-Gen Firewall (NGFW)",
+   "channel": "The CISO Perspective",
+   "viewsLabel": "56K views",
+   "views": 56000,
+   "dur": "7:17",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=12AqJdlqXzM"
+  }
+ ],
+ "BCD-12": [
+  {
+   "id": "ZfJFbdP2PWQ",
+   "title": "Reyee Gateway Routers | How to configure Load Balancing and Failover",
+   "channel": "Scoop Distribution",
+   "viewsLabel": "163K views",
+   "views": 163000,
+   "dur": "5:58",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=ZfJFbdP2PWQ"
+  },
+  {
+   "id": "p4Xk45ymbbQ",
+   "title": "Dual WAN Setup with TP Link Omada - That was easy...",
+   "channel": "Raid Owl",
+   "viewsLabel": "150K views",
+   "views": 150000,
+   "dur": "13:43",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=p4Xk45ymbbQ"
+  }
+ ],
+ "BCD-13": [
+  {
+   "id": "sAiL68Jn2qw",
+   "title": "Skills Required for Technical Support Job Role | How to become a Technical Support Engineer?",
+   "channel": "BA Professional",
+   "viewsLabel": "122K views",
+   "views": 122000,
+   "dur": "4:08",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=sAiL68Jn2qw"
+  },
+  {
+   "id": "cppHX2bMjEc",
+   "title": "Technical Support Jobs - Careers, Growth, Responsibilities, salaries",
+   "channel": "Teamlease",
+   "viewsLabel": "102K views",
+   "views": 102000,
+   "dur": "3:31",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=cppHX2bMjEc"
+  }
+ ],
+ "TS-01": [
+  {
+   "id": "NVCh_ECxgGw",
+   "title": "How To Fix WiFi Connected But No Internet Access On Windows 10 - 5 Ways",
+   "channel": "Sandeep Singh",
+   "viewsLabel": "4.2M views",
+   "views": 4200000,
+   "dur": "8:44",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=NVCh_ECxgGw"
+  },
+  {
+   "id": "Hph_QcyWlBs",
+   "title": "mobile data on but internet not working | how to fix mobile data not working (android)",
+   "channel": "Make knowledge free",
+   "viewsLabel": "1.7M views",
+   "views": 1700000,
+   "dur": "2:30",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=Hph_QcyWlBs"
+  }
+ ],
+ "TS-02": [
+  {
+   "id": "c9fLp5uIxp8",
+   "title": "How DKIM SPF & DMARC Work to Prevent Email Spoofing",
+   "channel": "Thobson Technologies",
+   "viewsLabel": "222K views",
+   "views": 222000,
+   "dur": "17:15",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=c9fLp5uIxp8"
+  },
+  {
+   "id": "fsZaEce18FE",
+   "title": "How To Set Up Google Workspace SPF, DKIM & DMARC | Improve Email Deliverability",
+   "channel": "Stewart Gauld",
+   "viewsLabel": "187K views",
+   "views": 187000,
+   "dur": "8:01",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=fsZaEce18FE"
+  }
+ ],
+ "TS-03": [
+  {
+   "id": "CuxyZiSCSfc",
+   "title": "MicroNugget: IPsec Site to Site VPN Tunnels Explained | CBT Nuggets",
+   "channel": "CBT Nuggets",
+   "viewsLabel": "463K views",
+   "views": 463000,
+   "dur": "7:28",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=CuxyZiSCSfc"
+  },
+  {
+   "id": "15amNny_kKI",
+   "title": "IP Sec VPN Fundamentals",
+   "channel": "LearnCantrill",
+   "viewsLabel": "324K views",
+   "views": 324000,
+   "dur": "14:55",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=15amNny_kKI"
+  }
+ ],
+ "TS-04": [
+  {
+   "id": "AimCNTzDlVo",
+   "title": "Network Troubleshooting using PING, TRACERT, IPCONFIG, NSLOOKUP COMMANDS",
+   "channel": "sakitech",
+   "viewsLabel": "4.2M views",
+   "views": 4200000,
+   "dur": "14:34",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=AimCNTzDlVo"
+  },
+  {
+   "id": "IIicPE38O-s",
+   "title": "PING Command - Troubleshooting Networks",
+   "channel": "PowerCert Animated Videos",
+   "viewsLabel": "1.2M views",
+   "views": 1200000,
+   "dur": "9:14",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=IIicPE38O-s"
+  }
+ ],
+ "TS-05": [
+  {
+   "id": "Gz59MezA3r4",
+   "title": "How Easy Is It For Hackers To Brute Force Login Pages?!",
+   "channel": "Loi Liang Yang",
+   "viewsLabel": "462K views",
+   "views": 462000,
+   "dur": "4:29",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=Gz59MezA3r4"
+  },
+  {
+   "id": "FKVsz_2IWJs",
+   "title": "How Hackers Could Brute-Force SSH Credentials to Gain Access to Servers",
+   "channel": "Null Byte",
+   "viewsLabel": "214K views",
+   "views": 214000,
+   "dur": "17:15",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=FKVsz_2IWJs"
+  }
+ ],
+ "TS-06": [
+  {
+   "id": "o_vyfo3Hw0Y",
+   "title": "Lec-93: What is Firewalls and How it Works | Packet Filtering firewall explained in Hindi Part-1",
+   "channel": "Gate Smashers",
+   "viewsLabel": "932K views",
+   "views": 932000,
+   "dur": "13:45",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=o_vyfo3Hw0Y"
+  },
+  {
+   "id": "K4ilFsm2GvA",
+   "title": "Firewall Fundamentals Explained | Network Security for Beginners",
+   "channel": "Antisyphon Training",
+   "viewsLabel": "174K views",
+   "views": 174000,
+   "dur": "29:16",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=K4ilFsm2GvA"
+  }
+ ],
+ "TS-07": [
+  {
+   "id": "NiQTs9DbtW4",
+   "title": "What is DNS? (and how it makes the Internet work)",
+   "channel": "NetworkChuck",
+   "viewsLabel": "883K views",
+   "views": 883000,
+   "dur": "24:22",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=NiQTs9DbtW4"
+  },
+  {
+   "id": "ZjzG9FVEQaA",
+   "title": "How to Use NSLOOKUP to Troubleshoot DNS Issues",
+   "channel": "IT Geared",
+   "viewsLabel": "272K views",
+   "views": 272000,
+   "dur": "7:26",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=ZjzG9FVEQaA"
+  }
+ ],
+ "TS-08": [
+  {
+   "id": "1zPNFLwyO1o",
+   "title": "Gmail Not Receiving Emails Issues! [How To Fix]",
+   "channel": "Fix369",
+   "viewsLabel": "609K views",
+   "views": 609000,
+   "dur": "3:07",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=1zPNFLwyO1o"
+  },
+  {
+   "id": "sTzTINYyj7U",
+   "title": "10 Tips to Fix Outlook Not Receiving Emails Issue",
+   "channel": "Wondershare Recoverit Data Recovery",
+   "viewsLabel": "537K views",
+   "views": 537000,
+   "dur": "10:24",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=sTzTINYyj7U"
+  }
+ ],
+ "TS-09": [
+  {
+   "id": "rwVLa9me7e4",
+   "title": "Linux Performance Troubleshooting Demos",
+   "channel": "grobelDev",
+   "viewsLabel": "108K views",
+   "views": 108000,
+   "dur": "10:51",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=rwVLa9me7e4"
+  },
+  {
+   "id": "sjyLRS52zOg",
+   "title": "Troubleshooting IO performance issues on Linux",
+   "channel": "TECSTER",
+   "viewsLabel": "71K views",
+   "views": 71000,
+   "dur": "7:14",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=sjyLRS52zOg"
+  }
+ ],
+ "TS-10": [
+  {
+   "id": "-dZ4-mTNRs8",
+   "title": "How to troubleshoot a slow network",
+   "channel": "Ben Piper | Real World IT (BenPiper.com)",
+   "viewsLabel": "370K",
+   "views": 370000,
+   "dur": "7:36",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=-dZ4-mTNRs8"
+  },
+  {
+   "id": "xop7eC7Ep1w",
+   "title": "Traffic Troubleshooting in Palo Alto firewall | where packet is being dropped | palo alto training",
+   "channel": "Fresh Developer (Sapium Security)",
+   "viewsLabel": "36K",
+   "views": 36000,
+   "dur": "16:04",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=xop7eC7Ep1w"
+  }
+ ],
+ "TS-11": [
+  {
+   "id": "vgisbCjtHz4",
+   "title": "Network Troubleshooting for Beginners - 3 commands , 1 framework,  3 methods",
+   "channel": "IT k Funde",
+   "viewsLabel": "227K views",
+   "views": 227000,
+   "dur": "15:57",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=vgisbCjtHz4"
+  },
+  {
+   "id": "0Pk08wucjU8",
+   "title": "How did I improve my troubleshooting skills | My 5 steps framework for effective problem solving",
+   "channel": "IT k Funde",
+   "viewsLabel": "203K views",
+   "views": 203000,
+   "dur": "15:59",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=0Pk08wucjU8"
+  }
+ ],
+ "TS-12": [
+  {
+   "id": "bj5KpFR_LPU",
+   "title": "What is a UPS? (Uninterruptible Power Supply)",
+   "channel": "RealPars",
+   "viewsLabel": "769K views",
+   "views": 769000,
+   "dur": "7:56",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=bj5KpFR_LPU"
+  },
+  {
+   "id": "cxkoAmJJbAo",
+   "title": "Gamer power (for gamers) - Eaton Tripp Lite Gaming UPS",
+   "channel": "ShortCircuit",
+   "viewsLabel": "701K views",
+   "views": 701000,
+   "dur": "9:28",
+   "live": false,
+   "url": "https://www.youtube.com/watch?v=cxkoAmJJbAo"
+  }
+ ]
+}

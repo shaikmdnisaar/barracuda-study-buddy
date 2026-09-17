@@ -2,7 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#e94560">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Study Buddy">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest-studybuddy.json">
+<link rel="icon" href="icons/icon128.png">
+<link rel="apple-touch-icon" href="icons/icon128.png">
 <title>🎮 Study Buddy — Barracuda TSE Interview Prep</title>
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -283,6 +291,85 @@ select { width:100%; padding:9px; border-radius:10px; background:var(--bg3); col
   border-radius:12px; padding:12px 30px; font-size:15px; font-weight:700; cursor:pointer;
 }
 @keyframes luPop { from{transform:scale(.7);opacity:0} to{transform:scale(1);opacity:1} }
+
+/* ===== Mobile responsive ===== */
+@media(max-width:768px){
+  body { padding:8px; }
+  .container { max-width:100%; }
+  .hdr { padding:10px 12px; }
+  .hdr h1 { font-size:.95em; }
+  .hdr .sub { font-size:.65em; }
+  .stats { gap:5px; }
+  .stat { min-width:56px; padding:4px 8px; }
+  .stat .v { font-size:.9em; }
+  .stat .l { font-size:.5em; }
+  .ring { width:44px; height:44px; }
+  .ring svg { width:44px; height:44px; }
+  .ring .pct { font-size:.7em; }
+  .tabs { gap:4px; }
+  .tab { padding:7px 10px; font-size:.75em; }
+  .panel { padding:12px 10px; }
+  .watch-layout { grid-template-columns:1fr; gap:10px; }
+  .video-frame { padding-top:56.25%; }
+  .mission { padding:10px 12px; }
+  .mission .mitems { gap:5px; }
+  .mitem { padding:5px 8px; font-size:.72em; }
+  .precheck-bar { padding:10px 12px; }
+  .precheck-bar h4 { font-size:.85em; }
+  .precheck-bar .pc-sub { font-size:.7em; }
+  .pcbtn { padding:8px 16px; font-size:.82em; }
+  .pccard { padding:18px 16px; }
+  .pc-question { font-size:.95em; }
+  .pc-opt { padding:10px 12px; font-size:.85em; }
+  .quiz-q { font-size:.95em; }
+  .opt { padding:10px 12px; font-size:.85em; }
+  .flashcard { min-height:200px; font-size:1em; padding:20px; }
+  .grade-btn { padding:9px 14px; font-size:.82em; }
+  .int-q .iq-text { font-size:.95em; }
+  .int-controls button { padding:8px 14px; font-size:.8em; }
+  .readiness-grid { grid-template-columns:1fr; }
+  .achv-grid { grid-template-columns:repeat(auto-fill,minmax(110px,1fr)); gap:8px; }
+  .achv-item { padding:10px; }
+  .achv-item .ai { font-size:1.6em; }
+  .achv-item .an { font-size:.72em; }
+  .pet { width:48px; height:48px; font-size:1.3em; bottom:12px; right:12px; }
+  .pet-msg { bottom:68px; right:12px; max-width:200px; font-size:.75em; }
+  .lu-card { padding:22px 24px; }
+  .hype-frame { width:95vw; }
+  #toast { bottom:70px; font-size:.82em; padding:8px 16px; }
+  select { font-size:.85em; padding:8px; }
+  .searchbox { font-size:.85em; padding:8px 10px; }
+  .qtext { font-size:.8em; }
+  .vid-title { font-size:.9em; }
+  .vid-meta { font-size:.72em; }
+  .topic-filter { gap:4px; }
+  .chip { padding:4px 10px; font-size:.68em; }
+  .mode-card { padding:14px; }
+  .mode-card h3 { font-size:.9em; }
+  .mode-card p { font-size:.72em; }
+}
+@media(max-width:420px){
+  .hdr { flex-direction:column; align-items:flex-start; gap:8px; }
+  .hdr h1 { font-size:.88em; }
+  .stats { width:100%; justify-content:space-between; }
+  .stat { min-width:48px; padding:3px 6px; }
+  .stat .v { font-size:.8em; }
+  .stat .l { font-size:.48em; }
+  .ring { width:40px; height:40px; }
+  .ring svg { width:40px; height:40px; }
+  .tabs { overflow-x:auto; flex-wrap:nowrap; -webkit-overflow-scrolling:touch; }
+  .tab { white-space:nowrap; padding:6px 8px; font-size:.7em; }
+  .mission { flex-direction:column; align-items:flex-start; }
+  .mission .mitems { width:100%; }
+  .precheck-bar { flex-direction:column; align-items:flex-start; gap:8px; }
+  .pcbtn { width:100%; text-align:center; }
+  .flashcard { min-height:180px; font-size:.9em; padding:16px; }
+  .pccard { padding:14px 12px; }
+  .pc-question { font-size:.88em; }
+  .pc-opt { padding:9px 10px; font-size:.8em; }
+  .int-controls { flex-direction:column; }
+  .int-controls button { width:100%; }
+}
 </style>
 </head>
 <body>
@@ -1175,6 +1262,11 @@ updateCountdown();
 updateHeader();
 loadVideo(QUESTIONS[0].id);
 petMsg();
+
+// Register service worker for offline + installable PWA
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw-studybuddy.js').catch(e => console.warn('SW reg failed:', e));
+}
 </script>
 </body>
 </html>

@@ -1,0 +1,3102 @@
+{
+ "NET-01": {
+  "cat": "Networking",
+  "q": "What is the OSI model? Explain each layer with an example.",
+  "vids": [
+   {
+    "id": "vv4y_uOneC0",
+    "title": "OSI Model Explained | OSI Animation | Open System Interconnection Model | OSI 7 layers | TechTerms",
+    "channel": "TechTerms",
+    "views": "6.2M views",
+    "dur": "16:39",
+    "url": "https://www.youtube.com/watch?v=vv4y_uOneC0"
+   },
+   {
+    "id": "1msEo8PIcbw",
+    "title": "What is OSI Model? full Explanation | Networking",
+    "channel": "Learn Coding",
+    "views": "3M views",
+    "dur": "11:53",
+    "url": "https://www.youtube.com/watch?v=1msEo8PIcbw"
+   },
+   {
+    "id": "lil_NET-01",
+    "title": "The OSI model (LinkedIn Learning)",
+    "channel": "CompTIA Network+ (N10-009) Cert Prep",
+    "views": "13,100 learners",
+    "dur": "12m video",
+    "url": "https://www.linkedin.com/learning/search?keywords=The%20OSI%20model&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "NET-02": {
+  "cat": "Networking",
+  "q": "What is the difference between TCP and UDP? When would you use each?",
+  "vids": [
+   {
+    "id": "uwoD5YsGACg",
+    "title": "TCP vs UDP Comparison",
+    "channel": "PowerCert Animated Videos",
+    "views": "2M views",
+    "dur": "4:37",
+    "url": "https://www.youtube.com/watch?v=uwoD5YsGACg"
+   },
+   {
+    "id": "jJyXpMmXJI0",
+    "title": "Lec-77: TCP vs UDP differences in hindi",
+    "channel": "Gate Smashers",
+    "views": "759K views",
+    "dur": "11:58",
+    "url": "https://www.youtube.com/watch?v=jJyXpMmXJI0"
+   },
+   {
+    "id": "lil_NET-02",
+    "title": "TCP vs. UDP (LinkedIn Learning)",
+    "channel": "Cisco CCNA v1.1 (200-301) Cert Prep",
+    "views": "13,594 learners",
+    "dur": "7m 57s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=TCP%20vs.%20UDP&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "NET-03": {
+  "cat": "Networking",
+  "q": "What happens when you type a URL into a browser? Walk through the full flow.",
+  "vids": [
+   {
+    "id": "0yw-z6f7Mb4",
+    "title": "How SSL Certificate Works?  - HTTPS Explained",
+    "channel": "Piyush Garg",
+    "views": "775K views",
+    "dur": "20:42",
+    "url": "https://www.youtube.com/watch?v=0yw-z6f7Mb4"
+   },
+   {
+    "id": "hJHvdBlSxug",
+    "title": "How The Web Works - The Big Picture",
+    "channel": "Academind",
+    "views": "678K views",
+    "dur": "12:25",
+    "url": "https://www.youtube.com/watch?v=hJHvdBlSxug"
+   },
+   {
+    "id": "lil_NET-03",
+    "title": "HTTP and requests (LinkedIn Learning)",
+    "channel": "Computer Science Principles: The Internet",
+    "views": "31,811 learners",
+    "dur": "4m 13s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=HTTP%20and%20requests&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "NET-04": {
+  "cat": "Networking",
+  "q": "Explain the TCP 3-way handshake.",
+  "vids": [
+   {
+    "id": "qIEHUUt2Wfc",
+    "title": "Lec-71: TCP connection Establishment and connection Termination | Transport layer",
+    "channel": "Gate Smashers",
+    "views": "908K views",
+    "dur": "15:12",
+    "url": "https://www.youtube.com/watch?v=qIEHUUt2Wfc"
+   },
+   {
+    "id": "rmFX1V49K8U",
+    "title": "How TCP really works // Three-way handshake // TCP/IP Deep Dive",
+    "channel": "David Bombal",
+    "views": "859K views",
+    "dur": "1:01:10",
+    "url": "https://www.youtube.com/watch?v=rmFX1V49K8U"
+   },
+   {
+    "id": "lil_NET-04",
+    "title": "TCP three-way handshake (LinkedIn Learning)",
+    "channel": "Cisco Networking Foundations: Fundamentals of Cisco Networking",
+    "views": "29,597 learners",
+    "dur": "3m 22s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=TCP%20three-way%20handshake&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "NET-05": {
+  "cat": "Networking",
+  "q": "What is the difference between a hub, switch, and router?",
+  "vids": [
+   {
+    "id": "1z0ULvg_pW8",
+    "title": "Hub, Switch, & Router Explained - What's the difference?",
+    "channel": "PowerCert Animated Videos",
+    "views": "6.2M views",
+    "dur": "7:22",
+    "url": "https://www.youtube.com/watch?v=1z0ULvg_pW8"
+   },
+   {
+    "id": "Vc16CCAAz7Q",
+    "title": "Routers vs. Switches vs. Access Points - And More",
+    "channel": "Techquickie",
+    "views": "1.6M views",
+    "dur": "5:42",
+    "url": "https://www.youtube.com/watch?v=Vc16CCAAz7Q"
+   },
+   {
+    "id": "lil_NET-05",
+    "title": "Routers (LinkedIn Learning)",
+    "channel": "Networking Foundations: Networking Basics",
+    "views": "49,203 learners",
+    "dur": "4m 28s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Routers&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "NET-06": {
+  "cat": "Networking",
+  "q": "What is ARP and how does it work?",
+  "vids": [
+   {
+    "id": "cn8Zxh9bPio",
+    "title": "ARP Explained - Address Resolution Protocol",
+    "channel": "PowerCert Animated Videos",
+    "views": "1.1M views",
+    "dur": "4:22",
+    "url": "https://www.youtube.com/watch?v=cn8Zxh9bPio"
+   },
+   {
+    "id": "IUSyV2BVh4A",
+    "title": "Lec-65: ARP Explained- Address Resolution Protocol | Network Layer",
+    "channel": "Gate Smashers",
+    "views": "770K views",
+    "dur": "8:13",
+    "url": "https://www.youtube.com/watch?v=IUSyV2BVh4A"
+   },
+   {
+    "id": "lil_NET-06",
+    "title": "Poisoning the ARP cache (LinkedIn Learning)",
+    "channel": "IT Security Foundations: Network Security",
+    "views": "38,761 learners",
+    "dur": "3m 57s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Poisoning%20the%20ARP%20cache&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "NET-07": {
+  "cat": "Networking",
+  "q": "What is the difference between a public and private IP address?",
+  "vids": [
+   {
+    "id": "FTUV0t6JaDA",
+    "title": "NAT Explained - Network Address Translation",
+    "channel": "PowerCert Animated Videos",
+    "views": "2M views",
+    "dur": "4:26",
+    "url": "https://www.youtube.com/watch?v=FTUV0t6JaDA"
+   },
+   {
+    "id": "po8ZFG0Xc4Q",
+    "title": "Public vs Private IP Address",
+    "channel": "PowerCert Animated Videos",
+    "views": "1M views",
+    "dur": "7:11",
+    "url": "https://www.youtube.com/watch?v=po8ZFG0Xc4Q"
+   },
+   {
+    "id": "lil_NET-07",
+    "title": "The IP address and its purpose (LinkedIn Learning)",
+    "channel": "Networking Foundations: IP Addressing",
+    "views": "45,761 learners",
+    "dur": "9m 18s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=The%20IP%20address%20and%20its%20purpose&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "NET-08": {
+  "cat": "Networking",
+  "q": "What is NAT? What are the types of NAT?",
+  "vids": [
+   {
+    "id": "FTUV0t6JaDA",
+    "title": "NAT Explained - Network Address Translation",
+    "channel": "PowerCert Animated Videos",
+    "views": "2M views",
+    "dur": "4:26",
+    "url": "https://www.youtube.com/watch?v=FTUV0t6JaDA"
+   },
+   {
+    "id": "QBqPzHEDzvo",
+    "title": "How Network Address Translation Works",
+    "channel": "PieterExplainsTech",
+    "views": "809K views",
+    "dur": "10:05",
+    "url": "https://www.youtube.com/watch?v=QBqPzHEDzvo"
+   },
+   {
+    "id": "lil_NET-08",
+    "title": "Introducing NAT (LinkedIn Learning)",
+    "channel": "Networking Foundations: IP Addressing",
+    "views": "31,551 learners",
+    "dur": "3m 12s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Introducing%20NAT&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "NET-09": {
+  "cat": "Networking",
+  "q": "Explain subnetting. What is the subnet mask for /24, /28 and /30?",
+  "vids": [
+   {
+    "id": "s_Ntt6eTn94",
+    "title": "Subnet Mask - Explained",
+    "channel": "PowerCert Animated Videos",
+    "views": "4.2M views",
+    "dur": "17:55",
+    "url": "https://www.youtube.com/watch?v=s_Ntt6eTn94"
+   },
+   {
+    "id": "5WfiTHiU4x8",
+    "title": "what is an IP Address? // You SUCK at Subnetting // EP 1",
+    "channel": "NetworkChuck",
+    "views": "2.5M views",
+    "dur": "18:45",
+    "url": "https://www.youtube.com/watch?v=5WfiTHiU4x8"
+   },
+   {
+    "id": "lil_NET-09",
+    "title": "Subnet masks (LinkedIn Learning)",
+    "channel": "Networking Foundations: IP Addressing",
+    "views": "37,264 learners",
+    "dur": "2m 56s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Subnet%20masks&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "NET-10": {
+  "cat": "Networking",
+  "q": "What is a VLAN and why is it used?",
+  "vids": [
+   {
+    "id": "jC6MJTh9fRE",
+    "title": "VLAN Explained",
+    "channel": "PowerCert Animated Videos",
+    "views": "2M views",
+    "dur": "4:38",
+    "url": "https://www.youtube.com/watch?v=jC6MJTh9fRE"
+   },
+   {
+    "id": "6_giEv20En0",
+    "title": "Subnets vs VLANs",
+    "channel": "PowerCert Animated Videos",
+    "views": "919K views",
+    "dur": "5:51",
+    "url": "https://www.youtube.com/watch?v=6_giEv20En0"
+   },
+   {
+    "id": "lil_NET-10",
+    "title": "VLANs and network segmentation (LinkedIn Learning)",
+    "channel": "ISC2 Certified in Cybersecurity (CC) Cert Prep",
+    "views": "36,330 learners",
+    "dur": "2m 19s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=VLANs%20and%20network%20segmentation&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "NET-11": {
+  "cat": "Networking",
+  "q": "What is the difference between static and dynamic routing?",
+  "vids": [
+   {
+    "id": "rA0p0ouD3aE",
+    "title": "Lec-61: What is Routing Protocols | Various types of Routing Protocols",
+    "channel": "Gate Smashers",
+    "views": "1.3M views",
+    "dur": "6:57",
+    "url": "https://www.youtube.com/watch?v=rA0p0ouD3aE"
+   },
+   {
+    "id": "CGmTvukObOw",
+    "title": "Routing Tables | CCNA - Explained",
+    "channel": "PowerCert Animated Videos",
+    "views": "207K views",
+    "dur": "13:13",
+    "url": "https://www.youtube.com/watch?v=CGmTvukObOw"
+   },
+   {
+    "id": "lil_NET-11",
+    "title": "Static and dynamic routing (LinkedIn Learning)",
+    "channel": "Career Essentials in System Administration by Microsoft and LinkedIn",
+    "views": "1,01,659 learners",
+    "dur": "6m 58s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Static%20and%20dynamic%20routing&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "NET-12": {
+  "cat": "Networking",
+  "q": "What are common routing protocols? Compare RIP, OSPF and BGP.",
+  "vids": [
+   {
+    "id": "rA0p0ouD3aE",
+    "title": "Lec-61: What is Routing Protocols | Various types of Routing Protocols",
+    "channel": "Gate Smashers",
+    "views": "1.3M views",
+    "dur": "6:57",
+    "url": "https://www.youtube.com/watch?v=rA0p0ouD3aE"
+   },
+   {
+    "id": "N8PiZDld6Zc",
+    "title": "Free CCNA | RIP & EIGRP | Day 25 | CCNA 200-301 Complete Course",
+    "channel": "Jeremy's IT Lab",
+    "views": "445K views",
+    "dur": "43:42",
+    "url": "https://www.youtube.com/watch?v=N8PiZDld6Zc"
+   },
+   {
+    "id": "lil_NET-12",
+    "title": "Routing protocol categories (LinkedIn Learning)",
+    "channel": "Cisco Networking Foundations: Switching and Routing",
+    "views": "15,703 learners",
+    "dur": "4m 33s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Routing%20protocol%20categories&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "NET-13": {
+  "cat": "Networking",
+  "q": "What is DHCP and how does it work? Explain the DORA steps.",
+  "vids": [
+   {
+    "id": "e6-TaH5bkjo",
+    "title": "DHCP Explained - Dynamic Host Configuration Protocol",
+    "channel": "PowerCert Animated Videos",
+    "views": "3.4M",
+    "dur": "10:10",
+    "url": "https://www.youtube.com/watch?v=e6-TaH5bkjo"
+   },
+   {
+    "id": "S43CFcpOZSI",
+    "title": "DHCP Explained | Step by Step",
+    "channel": "CertBros",
+    "views": "1M",
+    "dur": "5:30",
+    "url": "https://www.youtube.com/watch?v=S43CFcpOZSI"
+   },
+   {
+    "id": "lil_NET-13",
+    "title": "Lease generation (LinkedIn Learning)",
+    "channel": "Windows Server 2019: DHCP and DNS",
+    "views": "24,327 learners",
+    "dur": "3m 29s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Lease%20generation&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "NET-14": {
+  "cat": "Networking",
+  "q": "What is the difference between half-duplex and full-duplex?",
+  "vids": [
+   {
+    "id": "ttBKCvczcIQ",
+    "title": "Data Transmission Modes | Simplex, Half Duplex & Full Duplex",
+    "channel": "Learn Coding",
+    "views": "606K views",
+    "dur": "5:39",
+    "url": "https://www.youtube.com/watch?v=ttBKCvczcIQ"
+   },
+   {
+    "id": "LMRSS7ZYM50",
+    "title": "Half Duplex vs Full Duplex",
+    "channel": "PowerCert Animated Videos",
+    "views": "272K views",
+    "dur": "4:23",
+    "url": "https://www.youtube.com/watch?v=LMRSS7ZYM50"
+   },
+   {
+    "id": "lil_NET-14",
+    "title": "Configure a router interface (LinkedIn Learning)",
+    "channel": "Cisco Networking Foundations: Fundamentals of Cisco Networking",
+    "views": "22,840 learners",
+    "dur": "5m 13s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Configure%20a%20router%20interface&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "NET-15": {
+  "cat": "Networking",
+  "q": "What is MTU and what happens when a packet exceeds it?",
+  "vids": [
+   {
+    "id": "k8VgrqDOIUo",
+    "title": "Lec-55: Fragmentation(MTU) of IPv4 Datagram | Identification, Flags and Fragment Offset | Networks",
+    "channel": "Gate Smashers",
+    "views": "732K views",
+    "dur": "13:22",
+    "url": "https://www.youtube.com/watch?v=k8VgrqDOIUo"
+   },
+   {
+    "id": "XMcYwr-yJGA",
+    "title": "How TCP Works - MTU vs MSS",
+    "channel": "Chris Greer",
+    "views": "204K views",
+    "dur": "6:59",
+    "url": "https://www.youtube.com/watch?v=XMcYwr-yJGA"
+   },
+   {
+    "id": "lil_NET-15",
+    "title": "Ethernet frame format (LinkedIn Learning)",
+    "channel": "Cisco Networking Foundations: Switching and Routing",
+    "views": "21,979 learners",
+    "dur": "3m 55s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Ethernet%20frame%20format&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "NET-16": {
+  "cat": "Networking",
+  "q": "What is QoS and why is it important?",
+  "vids": [
+   {
+    "id": "H6FKJMiiL6E",
+    "title": "Free CCNA | QoS (Part 1) | Day 46 | CCNA 200-301 Complete Course",
+    "channel": "Jeremy's IT Lab",
+    "views": "229K views",
+    "dur": "32:33",
+    "url": "https://www.youtube.com/watch?v=H6FKJMiiL6E"
+   },
+   {
+    "id": "dP5c6Kr0WV8",
+    "title": "Quality of service in networking (QOS) | Data Communication | Lec-34 | Bhanu Priya",
+    "channel": "Education 4u",
+    "views": "194K views",
+    "dur": "6:45",
+    "url": "https://www.youtube.com/watch?v=dP5c6Kr0WV8"
+   },
+   {
+    "id": "lil_NET-16",
+    "title": "QoS overview (LinkedIn Learning)",
+    "channel": "Networking Foundations: Networking Basics",
+    "views": "40,604 learners",
+    "dur": "4m 44s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=QoS%20overview&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "NET-17": {
+  "cat": "Networking",
+  "q": "What is a default gateway and how does a host use it?",
+  "vids": [
+   {
+    "id": "pCcJFdYNamc",
+    "title": "Default Gateway Explained",
+    "channel": "PowerCert Animated Videos",
+    "views": "1.1M views",
+    "dur": "6:35",
+    "url": "https://www.youtube.com/watch?v=pCcJFdYNamc"
+   },
+   {
+    "id": "ai5bFPVToMU",
+    "title": "What is Gateway | Function of gateway in computer network | Difference between Gateway and Router",
+    "channel": "NETWORKING PLUS",
+    "views": "676K views",
+    "dur": "3:40",
+    "url": "https://www.youtube.com/watch?v=ai5bFPVToMU"
+   },
+   {
+    "id": "lil_NET-17",
+    "title": "Understanding networking terms (LinkedIn Learning)",
+    "channel": "Help Yourself: Tech Tips Weekly",
+    "views": "20,605 learners",
+    "dur": "3m 8s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Understanding%20networking%20terms&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "NET-18": {
+  "cat": "Networking",
+  "q": "Explain the difference between Layer 2 and Layer 3 switches.",
+  "vids": [
+   {
+    "id": "bdNS0K4Bt8U",
+    "title": "Layer 2 vs Layer 3 Switches",
+    "channel": "PowerCert Animated Videos",
+    "views": "1.6M views",
+    "dur": "6:02",
+    "url": "https://www.youtube.com/watch?v=bdNS0K4Bt8U"
+   },
+   {
+    "id": "Bpp2Zn6LQCY",
+    "title": "Difference Between Layer 2 Switch & Layer 3 Switch |  Difference Between Layer 3 Switch & Router",
+    "channel": "Network Engineer Stuff",
+    "views": "175K views",
+    "dur": "3:32",
+    "url": "https://www.youtube.com/watch?v=Bpp2Zn6LQCY"
+   },
+   {
+    "id": "lil_NET-18",
+    "title": "Cisco Networking Foundations: Switching and Routing (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/cisco-networking-foundations-switching-and-routing?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "NET-19": {
+  "cat": "Networking",
+  "q": "What is ICMP? How is it used in troubleshooting?",
+  "vids": [
+   {
+    "id": "IIicPE38O-s",
+    "title": "PING Command - Troubleshooting Networks",
+    "channel": "PowerCert Animated Videos",
+    "views": "1.2M views",
+    "dur": "9:14",
+    "url": "https://www.youtube.com/watch?v=IIicPE38O-s"
+   },
+   {
+    "id": "tAKx2RCgqow",
+    "title": "Internet Control Message Protocol (ICMP) Part-1 Explained in Hindi l Computer Network Course",
+    "channel": "5 Minutes Engineering",
+    "views": "224K views",
+    "dur": "9:30",
+    "url": "https://www.youtube.com/watch?v=tAKx2RCgqow"
+   },
+   {
+    "id": "lil_NET-19",
+    "title": "CompTIA Network+ (N10-009) Cert Prep (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/comptia-network-plus-n10-009-cert-prep?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "NET-20": {
+  "cat": "Networking",
+  "q": "What is the difference between unicast, multicast and broadcast?",
+  "vids": [
+   {
+    "id": "EcWhJbEWxHU",
+    "title": "Lec-21: Unicast, Broadcast & Multicast in Computer Networks",
+    "channel": "Gate Smashers",
+    "views": "565K views",
+    "dur": "5:53",
+    "url": "https://www.youtube.com/watch?v=EcWhJbEWxHU"
+   },
+   {
+    "id": "aDdArElVJvQ",
+    "title": "IPv4 Unicast, Multicast, and Broadcast",
+    "channel": "Neso Academy",
+    "views": "200K views",
+    "dur": "7:09",
+    "url": "https://www.youtube.com/watch?v=aDdArElVJvQ"
+   },
+   {
+    "id": "lil_NET-20",
+    "title": "Cisco Networking Foundations: Switching and Routing (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/cisco-networking-foundations-switching-and-routing?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "SEC-01": {
+  "cat": "Security",
+  "q": "What is a firewall and what are its types?",
+  "vids": [
+   {
+    "id": "kDEX1HXybrU",
+    "title": "What is a Firewall?",
+    "channel": "PowerCert Animated Videos",
+    "views": "2.4M views",
+    "dur": "6:26",
+    "url": "https://www.youtube.com/watch?v=kDEX1HXybrU"
+   },
+   {
+    "id": "o_vyfo3Hw0Y",
+    "title": "Lec-93: What is Firewalls and How it Works | Packet Filtering firewall explained in Hindi Part-1",
+    "channel": "Gate Smashers",
+    "views": "932K views",
+    "dur": "13:45",
+    "url": "https://www.youtube.com/watch?v=o_vyfo3Hw0Y"
+   },
+   {
+    "id": "lil_SEC-01",
+    "title": "Firewall Administration Essential Training (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/firewall-administration-essential-training-24372798?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "SEC-02": {
+  "cat": "Security",
+  "q": "What is the difference between stateful and stateless firewalls?",
+  "vids": [
+   {
+    "id": "P8D6P-6KVNM",
+    "title": "Stateful vs Stateless Architecture - System Design Basics",
+    "channel": "Cloud Advocate",
+    "views": "126K views",
+    "dur": "8:47",
+    "url": "https://www.youtube.com/watch?v=P8D6P-6KVNM"
+   },
+   {
+    "id": "rL4-vbsN35w",
+    "title": "Stateful vs Stateless Firewalls - You NEED to know the difference",
+    "channel": "LearnCantrill",
+    "views": "106K views",
+    "dur": "14:04",
+    "url": "https://www.youtube.com/watch?v=rL4-vbsN35w"
+   },
+   {
+    "id": "lil_SEC-02",
+    "title": "Cisco Network Security: Cisco Firewall Technologies (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/cisco-network-security-cisco-firewall-technologies-19313765?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "SEC-03": {
+  "cat": "Security",
+  "q": "What is Deep Packet Inspection (DPI)?",
+  "vids": [
+   {
+    "id": "fqIObtOigEM",
+    "title": "FortiGate 6.0: Understanding and Implementing Deep Packet Inspection",
+    "channel": "Mark Connelly of Imperion",
+    "views": "43K views",
+    "dur": "7:36",
+    "url": "https://www.youtube.com/watch?v=fqIObtOigEM"
+   },
+   {
+    "id": "QHHYpwtwd5I",
+    "title": "What is deep packet inspection?",
+    "channel": "internet-class",
+    "views": "42K views",
+    "dur": "4:30",
+    "url": "https://www.youtube.com/watch?v=QHHYpwtwd5I"
+   },
+   {
+    "id": "lil_SEC-03",
+    "title": "Firewall Administration Essential Training (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/firewall-administration-essential-training-24372798?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "SEC-04": {
+  "cat": "Security",
+  "q": "What is IDS vs IPS? How do they differ from a firewall?",
+  "vids": [
+   {
+    "id": "R1mF7Mxfynk",
+    "title": "Intrusion Detection System (IDS) ll Types Of Intruder Explained in Hindi",
+    "channel": "5 Minutes Engineering",
+    "views": "523K views",
+    "dur": "6:58",
+    "url": "https://www.youtube.com/watch?v=R1mF7Mxfynk"
+   },
+   {
+    "id": "cMH4yGE73iQ",
+    "title": "IDS and IPS",
+    "channel": "Sunny Classroom",
+    "views": "141K views",
+    "dur": "3:19",
+    "url": "https://www.youtube.com/watch?v=cMH4yGE73iQ"
+   },
+   {
+    "id": "lil_SEC-04",
+    "title": "Advanced Intrusion Detection by Infosec (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/advanced-intrusion-detection-by-infosec?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "SEC-05": {
+  "cat": "Security",
+  "q": "What is a DMZ and why is it used?",
+  "vids": [
+   {
+    "id": "dqlzQXo1wqo",
+    "title": "What is a DMZ? (Demilitarized Zone)",
+    "channel": "PowerCert Animated Videos",
+    "views": "1.6M views",
+    "dur": "6:14",
+    "url": "https://www.youtube.com/watch?v=dqlzQXo1wqo"
+   },
+   {
+    "id": "EU0fOJ0vXZo",
+    "title": "What is DMZ || Important concept || Network #lightboard #Informationsecurity #Demilitarizedzone",
+    "channel": "Kineto Klub",
+    "views": "126K views",
+    "dur": "4:14",
+    "url": "https://www.youtube.com/watch?v=EU0fOJ0vXZo"
+   },
+   {
+    "id": "lil_SEC-05",
+    "title": "Complete Guide to Enterprise Cyber Defense (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/complete-guide-to-enterprise-cyber-defense?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "SEC-06": {
+  "cat": "Security",
+  "q": "What are ACLs and how are they applied in firewalls?",
+  "vids": [
+   {
+    "id": "z023_eRUtSo",
+    "title": "Free CCNA | Standard ACLs | Day 34 | CCNA 200-301 Complete Course",
+    "channel": "Jeremy's IT Lab",
+    "views": "357K views",
+    "dur": "46:51",
+    "url": "https://www.youtube.com/watch?v=z023_eRUtSo"
+   },
+   {
+    "id": "6gq16PfwRyU",
+    "title": "What is Standard ACL? | Access Control List Explained in Hindi",
+    "channel": "Network Kings",
+    "views": "174K views",
+    "dur": "17:39",
+    "url": "https://www.youtube.com/watch?v=6gq16PfwRyU"
+   },
+   {
+    "id": "lil_SEC-06",
+    "title": "Cisco Network Security: Cisco Firewall Technologies (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/cisco-network-security-cisco-firewall-technologies-19313765?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "SEC-07": {
+  "cat": "Security",
+  "q": "What is SSL/TLS inspection and why is it done at the firewall?",
+  "vids": [
+   {
+    "id": "hExRDVZHhig",
+    "title": "SSL, TLS, HTTP, HTTPS Explained",
+    "channel": "PowerCert Animated Videos",
+    "views": "2.8M views",
+    "dur": "6:31",
+    "url": "https://www.youtube.com/watch?v=hExRDVZHhig"
+   },
+   {
+    "id": "j9QmMEWmcfo",
+    "title": "SSL, TLS, HTTPS Explained",
+    "channel": "ByteByteGo",
+    "views": "1.2M views",
+    "dur": "5:54",
+    "url": "https://www.youtube.com/watch?v=j9QmMEWmcfo"
+   },
+   {
+    "id": "lil_SEC-07",
+    "title": "ISC2 Certified Information Systems Security Professional (CISSP) (2024) Cert Prep (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/isc2-certified-information-systems-security-professional-cissp-2024-cert-prep?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "SEC-08": {
+  "cat": "Security",
+  "q": "Site-to-site VPN vs remote-access VPN? What are the differences?",
+  "vids": [
+   {
+    "id": "CWy3x3Wux6o",
+    "title": "VPNs Explained | Site-to-Site + Remote Access",
+    "channel": "CertBros",
+    "views": "950K views",
+    "dur": "9:08",
+    "url": "https://www.youtube.com/watch?v=CWy3x3Wux6o"
+   },
+   {
+    "id": "R-JUOpCgTZc",
+    "title": "VPN (Virtual Private Network) Explained",
+    "channel": "PowerCert Animated Videos",
+    "views": "909K views",
+    "dur": "7:11",
+    "url": "https://www.youtube.com/watch?v=R-JUOpCgTZc"
+   },
+   {
+    "id": "lil_SEC-08",
+    "title": "Windows Server 2019: Remote Access Solutions (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/windows-server-2019-remote-access-solutions?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "SEC-09": {
+  "cat": "Security",
+  "q": "What is IPSec? What are tunnel and transport modes?",
+  "vids": [
+   {
+    "id": "CuxyZiSCSfc",
+    "title": "MicroNugget: IPsec Site to Site VPN Tunnels Explained | CBT Nuggets",
+    "channel": "CBT Nuggets",
+    "views": "463K views",
+    "dur": "7:28",
+    "url": "https://www.youtube.com/watch?v=CuxyZiSCSfc"
+   },
+   {
+    "id": "15amNny_kKI",
+    "title": "IP Sec VPN Fundamentals",
+    "channel": "LearnCantrill",
+    "views": "324K views",
+    "dur": "14:55",
+    "url": "https://www.youtube.com/watch?v=15amNny_kKI"
+   },
+   {
+    "id": "lil_SEC-09",
+    "title": "Cisco Network Security: VPN (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/cisco-network-security-vpn-17334607?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "SEC-10": {
+  "cat": "Security",
+  "q": "What is NAT traversal and why is it needed for VPNs?",
+  "vids": [
+   {
+    "id": "15amNny_kKI",
+    "title": "IP Sec VPN Fundamentals",
+    "channel": "LearnCantrill",
+    "views": "324K views",
+    "dur": "14:55",
+    "url": "https://www.youtube.com/watch?v=15amNny_kKI"
+   },
+   {
+    "id": "9yZSgJHdzCI",
+    "title": "What is NAT-T ? What is use in Site to Site VPN with NAT -T wireshark capture and LAB explanation",
+    "channel": "Bikash's Tech",
+    "views": "31K views",
+    "dur": "9:01",
+    "url": "https://www.youtube.com/watch?v=9yZSgJHdzCI"
+   },
+   {
+    "id": "lil_SEC-10",
+    "title": "Cisco Network Security: VPN (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/cisco-network-security-vpn-17334607?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "SEC-11": {
+  "cat": "Security",
+  "q": "What is a WAF and how does it differ from a network firewall?",
+  "vids": [
+   {
+    "id": "p8CQcF_9280",
+    "title": "What is a Web Application Firewall (WAF)?",
+    "channel": "F5 DevCentral Community",
+    "views": "283K views",
+    "dur": "10:04",
+    "url": "https://www.youtube.com/watch?v=p8CQcF_9280"
+   },
+   {
+    "id": "FHRXXrQ765M",
+    "title": "How to use AWS WAF (Web application firewall)/Web ACL? - Step By Step Tutorial (Part-11)#aws #devops",
+    "channel": "Rahul Wagh",
+    "views": "109K views",
+    "dur": "27:41",
+    "url": "https://www.youtube.com/watch?v=FHRXXrQ765M"
+   },
+   {
+    "id": "lil_SEC-11",
+    "title": "Complete Guide to Enterprise Cyber Defense (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/complete-guide-to-enterprise-cyber-defense?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "SEC-12": {
+  "cat": "Security",
+  "q": "What is Zero Trust and what are its core principles?",
+  "vids": [
+   {
+    "id": "zC_Pndpg8-c",
+    "title": "Zero Trust - CompTIA Security+ SY0-701 - 1.2",
+    "channel": "Professor Messer",
+    "views": "623K views",
+    "dur": "10:05",
+    "url": "https://www.youtube.com/watch?v=zC_Pndpg8-c"
+   },
+   {
+    "id": "yn6CPQ9RioA",
+    "title": "Zero Trust Explained in 4 mins",
+    "channel": "IBM Technology",
+    "views": "226K views",
+    "dur": "3:43",
+    "url": "https://www.youtube.com/watch?v=yn6CPQ9RioA"
+   },
+   {
+    "id": "lil_SEC-12",
+    "title": "Microsoft Security Essentials: Concepts, Solutions, and AI-Powered Protection (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/microsoft-security-essentials-concepts-solutions-and-ai-powered-protection?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "SEC-13": {
+  "cat": "Security",
+  "q": "What is the difference between symmetric and asymmetric encryption?",
+  "vids": [
+   {
+    "id": "AQDCe585Lnc",
+    "title": "Asymmetric Encryption - Simply explained",
+    "channel": "Simply Explained",
+    "views": "1.6M views",
+    "dur": "4:40",
+    "url": "https://www.youtube.com/watch?v=AQDCe585Lnc"
+   },
+   {
+    "id": "6AmmQiOWoXM",
+    "title": "Lec-89: Symmetric Key Cryptography in Network Security with examples",
+    "channel": "Gate Smashers",
+    "views": "761K views",
+    "dur": "6:14",
+    "url": "https://www.youtube.com/watch?v=6AmmQiOWoXM"
+   },
+   {
+    "id": "lil_SEC-13",
+    "title": "ISC2 Certified in Cybersecurity (CC) Cert Prep (2025) (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/isc2-certified-in-cybersecurity-cc-cert-prep-2025?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "SEC-14": {
+  "cat": "Security",
+  "q": "What is a digital certificate, CA, and PKI?",
+  "vids": [
+   {
+    "id": "EnY6fSng3Ew",
+    "title": "HTTPS, SSL, TLS & Certificate Authority Explained",
+    "channel": "Laiture",
+    "views": "352K views",
+    "dur": "43:29",
+    "url": "https://www.youtube.com/watch?v=EnY6fSng3Ew"
+   },
+   {
+    "id": "i-rtxrEz_E8",
+    "title": "What is Public Key Infrastructure (PKI) by Securemetric",
+    "channel": "Securemetric",
+    "views": "328K views",
+    "dur": "3:41",
+    "url": "https://www.youtube.com/watch?v=i-rtxrEz_E8"
+   },
+   {
+    "id": "lil_SEC-14",
+    "title": "ISC2 Certified Information Systems Security Professional (CISSP) (2024) Cert Prep (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/isc2-certified-information-systems-security-professional-cissp-2024-cert-prep?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "SEC-15": {
+  "cat": "Security",
+  "q": "What is HTTPS and what does it protect against?",
+  "vids": [
+   {
+    "id": "hExRDVZHhig",
+    "title": "SSL, TLS, HTTP, HTTPS Explained",
+    "channel": "PowerCert Animated Videos",
+    "views": "2.8M views",
+    "dur": "6:31",
+    "url": "https://www.youtube.com/watch?v=hExRDVZHhig"
+   },
+   {
+    "id": "j9QmMEWmcfo",
+    "title": "SSL, TLS, HTTPS Explained",
+    "channel": "ByteByteGo",
+    "views": "1.2M views",
+    "dur": "5:54",
+    "url": "https://www.youtube.com/watch?v=j9QmMEWmcfo"
+   },
+   {
+    "id": "lil_SEC-15",
+    "title": "ISC2 Certified Information Systems Security Professional (CISSP) (2024) Cert Prep (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/isc2-certified-information-systems-security-professional-cissp-2024-cert-prep?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "SEC-16": {
+  "cat": "Security",
+  "q": "What is a man-in-the-middle (MITM) attack and how is it prevented?",
+  "vids": [
+   {
+    "id": "-enHfpHMBo4",
+    "title": "Man in the Middle Attacks & Superfish - Computerphile",
+    "channel": "Computerphile",
+    "views": "1M views",
+    "dur": "13:29",
+    "url": "https://www.youtube.com/watch?v=-enHfpHMBo4"
+   },
+   {
+    "id": "O1jpck31Ask",
+    "title": "iPhone and Android WiFi Man-in-the-middle attack // PYTHON Scapy scripts for attacking networks",
+    "channel": "David Bombal",
+    "views": "380K views",
+    "dur": "15:24",
+    "url": "https://www.youtube.com/watch?v=O1jpck31Ask"
+   },
+   {
+    "id": "lil_SEC-16",
+    "title": "CCNA Cybersecurity (200-201) v1.2 Cert Prep (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/ccna-cybersecurity-200-201-v1-2-cert-prep?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "SEC-17": {
+  "cat": "Security",
+  "q": "What is a DDoS attack and how can firewalls and cloud services mitigate it?",
+  "vids": [
+   {
+    "id": "ilhGh9CEIwM",
+    "title": "DDoS Attack Explained",
+    "channel": "PowerCert Animated Videos",
+    "views": "1.7M views",
+    "dur": "5:43",
+    "url": "https://www.youtube.com/watch?v=ilhGh9CEIwM"
+   },
+   {
+    "id": "mf40o5hWjCY",
+    "title": "Real-Time DDoS Attack Showcase",
+    "channel": "Serverius IT infrastructure (serverius)",
+    "views": "352K views",
+    "dur": "3:31",
+    "url": "https://www.youtube.com/watch?v=mf40o5hWjCY"
+   },
+   {
+    "id": "lil_SEC-17",
+    "title": "The Cybersecurity Threat Landscape (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/the-cybersecurity-threat-landscape-18018064?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "SEC-18": {
+  "cat": "Security",
+  "q": "What is IP spoofing and how do you protect against it?",
+  "vids": [
+   {
+    "id": "rxN4zWTNSds",
+    "title": "What is IP Spoofing?",
+    "channel": "caida org",
+    "views": "206K views",
+    "dur": "3:52",
+    "url": "https://www.youtube.com/watch?v=rxN4zWTNSds"
+   },
+   {
+    "id": "40gzPZX4QNw",
+    "title": "IP Spoofing 🔥🔥",
+    "channel": "Perfect Computer Engineer",
+    "views": "90K views",
+    "dur": "2:07",
+    "url": "https://www.youtube.com/watch?v=40gzPZX4QNw"
+   },
+   {
+    "id": "lil_SEC-18",
+    "title": "Cisco Network Security: Secure Routing and Switching (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/cisco-network-security-secure-routing-and-switching?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "SEC-19": {
+  "cat": "Security",
+  "q": "What is port scanning and how do you detect and analyze it?",
+  "vids": [
+   {
+    "id": "4t4kBkMsDbQ",
+    "title": "Nmap Tutorial to find Network Vulnerabilities",
+    "channel": "NetworkChuck",
+    "views": "3.5M views",
+    "dur": "17:09",
+    "url": "https://www.youtube.com/watch?v=4t4kBkMsDbQ"
+   },
+   {
+    "id": "g2fT-g9PX9o",
+    "title": "Network Ports Explained",
+    "channel": "PowerCert Animated Videos",
+    "views": "2.6M views",
+    "dur": "10:33",
+    "url": "https://www.youtube.com/watch?v=g2fT-g9PX9o"
+   },
+   {
+    "id": "lil_SEC-19",
+    "title": "Practical Cybersecurity for IT Professionals (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/practical-cybersecurity-for-it-professionals?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "SEC-20": {
+  "cat": "Security",
+  "q": "What is a botnet and how do you detect and defend against it?",
+  "vids": [
+   {
+    "id": "s0sgiY93w9c",
+    "title": "What is botnet and how does it spread?",
+    "channel": "ESET",
+    "views": "238K views",
+    "dur": "3:07",
+    "url": "https://www.youtube.com/watch?v=s0sgiY93w9c"
+   },
+   {
+    "id": "3BbxUCOFX8g",
+    "title": "What is a Botnet?",
+    "channel": "Kaspersky",
+    "views": "194K views",
+    "dur": "2:38",
+    "url": "https://www.youtube.com/watch?v=3BbxUCOFX8g"
+   },
+   {
+    "id": "lil_SEC-20",
+    "title": "Cisco Secure Firewall (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/cisco-secure-firewall?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "MAIL-01": {
+  "cat": "Email & SMTP",
+  "q": "Explain SMTP and mail flow end-to-end.",
+  "vids": [
+   {
+    "id": "cjPVlxmf_Vk",
+    "title": "Lec-85 : SMTP vs POP3 vs IMAP with real life example | All in 1 | Application layer Protocols",
+    "channel": "Gate Smashers",
+    "views": "372K views",
+    "dur": "10:03",
+    "url": "https://www.youtube.com/watch?v=cjPVlxmf_Vk"
+   },
+   {
+    "id": "x28ciavQ4mI",
+    "title": "Lesson 13: How Email Works",
+    "channel": "Center for Cybersecurity Innovation & Outreach",
+    "views": "173K views",
+    "dur": "10:13",
+    "url": "https://www.youtube.com/watch?v=x28ciavQ4mI"
+   },
+   {
+    "id": "lil_MAIL-01",
+    "title": "Learning DNS (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/learning-dns?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "MAIL-02": {
+  "cat": "Email & SMTP",
+  "q": "What are MX records and how do they work?",
+  "vids": [
+   {
+    "id": "HnUDtycXSNE",
+    "title": "DNS Records Explained",
+    "channel": "PowerCert Animated Videos",
+    "views": "520K views",
+    "dur": "14:14",
+    "url": "https://www.youtube.com/watch?v=HnUDtycXSNE"
+   },
+   {
+    "id": "o66UFsodUYo",
+    "title": "Mail server DNS records - setup and configuration explained",
+    "channel": "Christian Lempa",
+    "views": "146K views",
+    "dur": "18:21",
+    "url": "https://www.youtube.com/watch?v=o66UFsodUYo"
+   },
+   {
+    "id": "lil_MAIL-02",
+    "title": "Learning DNS (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/learning-dns?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "MAIL-03": {
+  "cat": "Email & SMTP",
+  "q": "SMTP vs IMAP vs POP3: What are the differences and when is each used?",
+  "vids": [
+   {
+    "id": "SBaARws0hy4",
+    "title": "POP3 vs IMAP - What's the difference?",
+    "channel": "PowerCert Animated Videos",
+    "views": "1.5M views",
+    "dur": "7:50",
+    "url": "https://www.youtube.com/watch?v=SBaARws0hy4"
+   },
+   {
+    "id": "PJo5yOtu7o8",
+    "title": "What is SMTP - Simple Mail Transfer Protocol",
+    "channel": "PowerCert Animated Videos",
+    "views": "730K views",
+    "dur": "3:25",
+    "url": "https://www.youtube.com/watch?v=PJo5yOtu7o8"
+   },
+   {
+    "id": "lil_MAIL-03",
+    "title": "How to Conduct a Phishing Email Investigation (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/how-to-conduct-a-phishing-email-investigation?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "MAIL-04": {
+  "cat": "Email & SMTP",
+  "q": "What is SPF? How does it prevent email spoofing?",
+  "vids": [
+   {
+    "id": "c9fLp5uIxp8",
+    "title": "How DKIM SPF & DMARC Work to Prevent Email Spoofing",
+    "channel": "Thobson Technologies",
+    "views": "222K views",
+    "dur": "17:15",
+    "url": "https://www.youtube.com/watch?v=c9fLp5uIxp8"
+   },
+   {
+    "id": "KJM8IdP27cQ",
+    "title": "How DKIM SPF & DMARC Work to Protect Against Email Spoofing",
+    "channel": "MDaemon Technologies",
+    "views": "123K views",
+    "dur": "17:15",
+    "url": "https://www.youtube.com/watch?v=KJM8IdP27cQ"
+   },
+   {
+    "id": "lil_MAIL-04",
+    "title": "How to Conduct a Phishing Email Investigation (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/how-to-conduct-a-phishing-email-investigation?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "MAIL-05": {
+  "cat": "Email & SMTP",
+  "q": "What is DKIM and how does it work?",
+  "vids": [
+   {
+    "id": "c9fLp5uIxp8",
+    "title": "How DKIM SPF & DMARC Work to Prevent Email Spoofing",
+    "channel": "Thobson Technologies",
+    "views": "222K views",
+    "dur": "17:15",
+    "url": "https://www.youtube.com/watch?v=c9fLp5uIxp8"
+   },
+   {
+    "id": "5fjmPQgqdzw",
+    "title": "What is DKIM? DomainKeys Identified Mail explained (in under 4 minutes)",
+    "channel": "Postmark",
+    "views": "115K views",
+    "dur": "3:52",
+    "url": "https://www.youtube.com/watch?v=5fjmPQgqdzw"
+   },
+   {
+    "id": "lil_MAIL-05",
+    "title": "IT Security Foundations: Operating System Security (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/it-security-foundations-operating-system-security-14816522?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "MAIL-06": {
+  "cat": "Email & SMTP",
+  "q": "What is DMARC and what policy options does it have?",
+  "vids": [
+   {
+    "id": "c9fLp5uIxp8",
+    "title": "How DKIM SPF & DMARC Work to Prevent Email Spoofing",
+    "channel": "Thobson Technologies",
+    "views": "222K views",
+    "dur": "17:15",
+    "url": "https://www.youtube.com/watch?v=c9fLp5uIxp8"
+   },
+   {
+    "id": "nlFAj2raoj4",
+    "title": "[HINDI] SPF, DKIM, DMARC  DNS Records | How to check for missing SPF | Explained",
+    "channel": "Bitten Tech",
+    "views": "94K views",
+    "dur": "15:18",
+    "url": "https://www.youtube.com/watch?v=nlFAj2raoj4"
+   },
+   {
+    "id": "lil_MAIL-06",
+    "title": "How to Conduct a Phishing Email Investigation (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/how-to-conduct-a-phishing-email-investigation?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "MAIL-07": {
+  "cat": "Email & SMTP",
+  "q": "What is email relaying and what is an open relay?",
+  "vids": [
+   {
+    "id": "l3htAzOAx7c",
+    "title": "Build Your Own MAIL Server | SMTP Server",
+    "channel": "Piyush Garg",
+    "views": "196K views",
+    "dur": "51:30",
+    "url": "https://www.youtube.com/watch?v=l3htAzOAx7c"
+   },
+   {
+    "id": "vCU_uVTNXo8",
+    "title": "How to relay emails from application using Office 365 | Client Submission, Direct Send, Smtp Relay",
+    "channel": "Office365Concepts",
+    "views": "102K views",
+    "dur": "19:01",
+    "url": "https://www.youtube.com/watch?v=vCU_uVTNXo8"
+   },
+   {
+    "id": "lil_MAIL-07",
+    "title": "Practical Cybersecurity for IT Professionals (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/practical-cybersecurity-for-it-professionals?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "MAIL-08": {
+  "cat": "Email & SMTP",
+  "q": "What port does SMTP use? Explain ports 25, 587, and 465.",
+  "vids": [
+   {
+    "id": "PJo5yOtu7o8",
+    "title": "What is SMTP - Simple Mail Transfer Protocol",
+    "channel": "PowerCert Animated Videos",
+    "views": "730K views",
+    "dur": "3:25",
+    "url": "https://www.youtube.com/watch?v=PJo5yOtu7o8"
+   },
+   {
+    "id": "d-0W9Ox2LAE",
+    "title": "All About SMTP Ports - Explained by Mailtrap",
+    "channel": "Mailtrap",
+    "views": "21K views",
+    "dur": "2:24",
+    "url": "https://www.youtube.com/watch?v=d-0W9Ox2LAE"
+   },
+   {
+    "id": "lil_MAIL-08",
+    "title": "Practical Cybersecurity for IT Professionals (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/practical-cybersecurity-for-it-professionals?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "MAIL-09": {
+  "cat": "Email & SMTP",
+  "q": "What is greylisting and what are its pros and cons?",
+  "vids": [
+   {
+    "id": "03ZY0dRoiqQ",
+    "title": "SpamTitan Greylisting - Email Anti-Spam",
+    "channel": "CyberSentriq - SaaS Cybersecurity Platform",
+    "views": "1.9K views",
+    "dur": "3:15",
+    "url": "https://www.youtube.com/watch?v=03ZY0dRoiqQ"
+   },
+   {
+    "id": "ljtU6I0sIiw",
+    "title": "Greylisting | cPanel Conference Session",
+    "channel": "cPanelTV",
+    "views": "1.3K views",
+    "dur": "19:25",
+    "url": "https://www.youtube.com/watch?v=ljtU6I0sIiw"
+   },
+   {
+    "id": "lil_MAIL-09",
+    "title": "Cybersecurity Awareness: Social Engineering (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/cybersecurity-awareness-social-engineering-22875721?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "MAIL-10": {
+  "cat": "Email & SMTP",
+  "q": "What is a spam filter and what detection techniques does modern email security use?",
+  "vids": [
+   {
+    "id": "c9fLp5uIxp8",
+    "title": "How DKIM SPF & DMARC Work to Prevent Email Spoofing",
+    "channel": "Thobson Technologies",
+    "views": "222K views",
+    "dur": "17:15",
+    "url": "https://www.youtube.com/watch?v=c9fLp5uIxp8"
+   },
+   {
+    "id": "isQ68dMCmPU",
+    "title": "Spam Filters - CompTIA Security+ SY0-401: 1.1",
+    "channel": "Professor Messer",
+    "views": "164K views",
+    "dur": "4:26",
+    "url": "https://www.youtube.com/watch?v=isQ68dMCmPU"
+   },
+   {
+    "id": "lil_MAIL-10",
+    "title": "Cybersecurity Awareness: Social Engineering (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/cybersecurity-awareness-social-engineering-22875721?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "MAIL-11": {
+  "cat": "Email & SMTP",
+  "q": "What is an email blacklist/RBL and how does it work?",
+  "vids": [
+   {
+    "id": "7RhcF66u5Zw",
+    "title": "UCEPROTECTL3 Blacklist: What You Actually Need To Know (No Fluff)",
+    "channel": "Damien - MailReach",
+    "views": "129K views",
+    "dur": "8:49",
+    "url": "https://www.youtube.com/watch?v=7RhcF66u5Zw"
+   },
+   {
+    "id": "C-zdSiFWack",
+    "title": "Whitelisting vs. Blacklisting in Cybersecurity Explained with Real Example #cybersecurity #blacklist",
+    "channel": "TSECC",
+    "views": "5.2K views",
+    "dur": "3:36",
+    "url": "https://www.youtube.com/watch?v=C-zdSiFWack"
+   },
+   {
+    "id": "lil_MAIL-11",
+    "title": "How to Conduct a Phishing Email Investigation (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/how-to-conduct-a-phishing-email-investigation?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "MAIL-12": {
+  "cat": "Email & SMTP",
+  "q": "What causes an email to bounce? Hard bounce vs soft bounce.",
+  "vids": [
+   {
+    "id": "aAqp-66Q0dg",
+    "title": "Types of Bounces | Free Email Marketing Course",
+    "channel": "Sahil Khanna",
+    "views": "35K views",
+    "dur": "4:23",
+    "url": "https://www.youtube.com/watch?v=aAqp-66Q0dg"
+   },
+   {
+    "id": "nGN6R_Wty-c",
+    "title": "Email Bounce Explained - Tutorial by Mailtrap",
+    "channel": "Mailtrap",
+    "views": "21K views",
+    "dur": "1:47",
+    "url": "https://www.youtube.com/watch?v=nGN6R_Wty-c"
+   },
+   {
+    "id": "lil_MAIL-12",
+    "title": "How to Conduct a Phishing Email Investigation (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/how-to-conduct-a-phishing-email-investigation?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "MAIL-13": {
+  "cat": "Email & SMTP",
+  "q": "What is the difference between an email security gateway and an MTA?",
+  "vids": [
+   {
+    "id": "PJo5yOtu7o8",
+    "title": "What is SMTP - Simple Mail Transfer Protocol",
+    "channel": "PowerCert Animated Videos",
+    "views": "730K views",
+    "dur": "3:25",
+    "url": "https://www.youtube.com/watch?v=PJo5yOtu7o8"
+   },
+   {
+    "id": "cjPVlxmf_Vk",
+    "title": "Lec-85 : SMTP vs POP3 vs IMAP with real life example | All in 1 | Application layer Protocols",
+    "channel": "Gate Smashers",
+    "views": "372K views",
+    "dur": "10:03",
+    "url": "https://www.youtube.com/watch?v=cjPVlxmf_Vk"
+   },
+   {
+    "id": "lil_MAIL-13",
+    "title": "How to Conduct a Phishing Email Investigation (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/how-to-conduct-a-phishing-email-investigation?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "MAIL-14": {
+  "cat": "Email & SMTP",
+  "q": "How would you troubleshoot an email not being delivered?",
+  "vids": [
+   {
+    "id": "cj0vk33q5qM",
+    "title": "How to Fix Queued/Not Sending Email on Gmail (100% Working)",
+    "channel": "Kerr TV",
+    "views": "1M views",
+    "dur": "1:55",
+    "url": "https://www.youtube.com/watch?v=cj0vk33q5qM"
+   },
+   {
+    "id": "1zPNFLwyO1o",
+    "title": "Gmail Not Receiving Emails Issues! [How To Fix]",
+    "channel": "Fix369",
+    "views": "609K views",
+    "dur": "3:07",
+    "url": "https://www.youtube.com/watch?v=1zPNFLwyO1o"
+   },
+   {
+    "id": "lil_MAIL-14",
+    "title": "Supporting Windows, macOS, and Mobile Devices in the Real World by Pearson (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/supporting-windows-macos-and-mobile-devices-in-the-real-world-by-pearson?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "MAIL-15": {
+  "cat": "Email & SMTP",
+  "q": "What is TLS encryption in email and how is STARTTLS different from SMTPS?",
+  "vids": [
+   {
+    "id": "j9QmMEWmcfo",
+    "title": "SSL, TLS, HTTPS Explained",
+    "channel": "ByteByteGo",
+    "views": "1.2M views",
+    "dur": "5:54",
+    "url": "https://www.youtube.com/watch?v=j9QmMEWmcfo"
+   },
+   {
+    "id": "67Kfsmy_frM",
+    "title": "SSL/TLS Explained in 7 Minutes",
+    "channel": "Sematext",
+    "views": "259K views",
+    "dur": "7:38",
+    "url": "https://www.youtube.com/watch?v=67Kfsmy_frM"
+   },
+   {
+    "id": "lil_MAIL-15",
+    "title": "Certified Ethical Hacker (CEH) (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/certified-ethical-hacker-ceh?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "LNX-01": {
+  "cat": "Linux",
+  "q": "What is the difference between a process and a thread in Linux?",
+  "vids": [
+   {
+    "id": "ITc09gOrqZk",
+    "title": "L-1.11: Process Vs Threads in Operating System",
+    "channel": "Gate Smashers",
+    "views": "1.8M views",
+    "dur": "11:17",
+    "url": "https://www.youtube.com/watch?v=ITc09gOrqZk"
+   },
+   {
+    "id": "LOfGJcVnvAk",
+    "title": "Introduction to Threads",
+    "channel": "Neso Academy",
+    "views": "951K views",
+    "dur": "14:06",
+    "url": "https://www.youtube.com/watch?v=LOfGJcVnvAk"
+   },
+   {
+    "id": "lil_LNX-01",
+    "title": "Red Hat Certified System Administrator (RHCSA) (EX200) Cert Prep (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/red-hat-certified-system-administrator-rhcsa-ex200-cert-prep?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "LNX-02": {
+  "cat": "Linux",
+  "q": "How do you check network connections on a Linux server?",
+  "vids": [
+   {
+    "id": "rurs7cdT5cc",
+    "title": "Basic Networking Commands (Part 1)",
+    "channel": "Neso Academy",
+    "views": "2M views",
+    "dur": "14:11",
+    "url": "https://www.youtube.com/watch?v=rurs7cdT5cc"
+   },
+   {
+    "id": "8UZFpCQeXnM",
+    "title": "NETSTAT Command Explained",
+    "channel": "PowerCert Animated Videos",
+    "views": "419K views",
+    "dur": "6:10",
+    "url": "https://www.youtube.com/watch?v=8UZFpCQeXnM"
+   },
+   {
+    "id": "lil_LNX-02",
+    "title": "Learning Linux Command Line (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/learning-linux-command-line-26594217?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "LNX-03": {
+  "cat": "Linux",
+  "q": "What does iptables do? Explain tables, chains, and give an example rule.",
+  "vids": [
+   {
+    "id": "vbhr4csDeI4",
+    "title": "IPTABLES [PART-1] :  \"UNDERSTANDING THE CONCEPT\"",
+    "channel": "XPSTECH",
+    "views": "167K views",
+    "dur": "7:53",
+    "url": "https://www.youtube.com/watch?v=vbhr4csDeI4"
+   },
+   {
+    "id": "6Ra17Qpj68c",
+    "title": "iptables Complete Guide | HackerSploit Linux Security",
+    "channel": "Akamai Developers",
+    "views": "167K views",
+    "dur": "31:02",
+    "url": "https://www.youtube.com/watch?v=6Ra17Qpj68c"
+   },
+   {
+    "id": "lil_LNX-03",
+    "title": "Practical Cybersecurity for IT Professionals (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/practical-cybersecurity-for-it-professionals?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "LNX-04": {
+  "cat": "Linux",
+  "q": "How do you check which process is using a specific port in Linux?",
+  "vids": [
+   {
+    "id": "h3fJlmuGyos",
+    "title": "Linux tutorial: Find out which process is listening upon a port",
+    "channel": "nixCraft",
+    "views": "121K views",
+    "dur": "3:05",
+    "url": "https://www.youtube.com/watch?v=h3fJlmuGyos"
+   },
+   {
+    "id": "0FIq6-frJv0",
+    "title": "How to Check Open and Listening Ports on Linux | Ubuntu 22.04",
+    "channel": "ZacsTech",
+    "views": "25K views",
+    "dur": "3:15",
+    "url": "https://www.youtube.com/watch?v=0FIq6-frJv0"
+   },
+   {
+    "id": "lil_LNX-04",
+    "title": "Learning Linux Command Line (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/learning-linux-command-line-26594217?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "LNX-05": {
+  "cat": "Linux",
+  "q": "What is the difference between /etc/hosts and DNS resolution in Linux?",
+  "vids": [
+   {
+    "id": "XnepNult6UI",
+    "title": "The /etc/hosts.conf, /etc/resolv.conf, and /etc/nsswtich.conf files on Linux Explained",
+    "channel": "ComputerNetworkingNotes",
+    "views": "11K views",
+    "dur": "27:54",
+    "url": "https://www.youtube.com/watch?v=XnepNult6UI"
+   },
+   {
+    "id": "zzFbFEOgtY0",
+    "title": "Why does /etc/resolv.conf point at 127.0.0.53 in Linux?",
+    "channel": "Slap Ya Administrator",
+    "views": "8.9K views",
+    "dur": "4:20",
+    "url": "https://www.youtube.com/watch?v=zzFbFEOgtY0"
+   },
+   {
+    "id": "lil_LNX-05",
+    "title": "Learning DNS (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/learning-dns?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "LNX-06": {
+  "cat": "Linux",
+  "q": "How do you check and set a static IP address in Linux?",
+  "vids": [
+   {
+    "id": "fayx4jWqyWk",
+    "title": "How to Set Static IP in Ubuntu Server 22.04",
+    "channel": "KeepItTechie",
+    "views": "118K views",
+    "dur": "18:03",
+    "url": "https://www.youtube.com/watch?v=fayx4jWqyWk"
+   },
+   {
+    "id": "UrFwoRpSEJc",
+    "title": "88 - How to setup Static IP address in Ubuntu Linux 22.04 with netplan 2022",
+    "channel": "Crazy-Logic",
+    "views": "66K views",
+    "dur": "5:15",
+    "url": "https://www.youtube.com/watch?v=UrFwoRpSEJc"
+   },
+   {
+    "id": "lil_LNX-06",
+    "title": "Networking Foundations: IP Addressing (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/networking-foundations-ip-addressing-2020?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "LNX-07": {
+  "cat": "Linux",
+  "q": "What is tcpdump? Give example commands to capture traffic on port 80.",
+  "vids": [
+   {
+    "id": "1lDfCRM6dWk",
+    "title": "tcpdump - Traffic Capture & Analysis",
+    "channel": "HackerSploit",
+    "views": "278K views",
+    "dur": "23:20",
+    "url": "https://www.youtube.com/watch?v=1lDfCRM6dWk"
+   },
+   {
+    "id": "Mys_kwuQUhc",
+    "title": "How To Capture Packets From Any Website Using Wireshark (TCP/UDP/IP, etc.)",
+    "channel": "Fahim Amin",
+    "views": "99K views",
+    "dur": "7:27",
+    "url": "https://www.youtube.com/watch?v=Mys_kwuQUhc"
+   },
+   {
+    "id": "lil_LNX-07",
+    "title": "Learning Linux Command Line (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/learning-linux-command-line-26594217?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "LNX-08": {
+  "cat": "Linux",
+  "q": "What is the difference between grep, awk and sed? When do you use each?",
+  "vids": [
+   {
+    "id": "Tc_jntovCM0",
+    "title": "Linux Crash Course - The grep Command",
+    "channel": "Learn Linux TV",
+    "views": "172K views",
+    "dur": "14:57",
+    "url": "https://www.youtube.com/watch?v=Tc_jntovCM0"
+   },
+   {
+    "id": "8q8DHmA9puw",
+    "title": "Why Use CAT Or GREP When You Can AWK?",
+    "channel": "DistroTube",
+    "views": "83K views",
+    "dur": "11:13",
+    "url": "https://www.youtube.com/watch?v=8q8DHmA9puw"
+   },
+   {
+    "id": "lil_LNX-08",
+    "title": "Learning Linux Command Line (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/learning-linux-command-line-26594217?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "LNX-09": {
+  "cat": "Linux",
+  "q": "How do you schedule tasks in Linux? Explain crontab syntax.",
+  "vids": [
+   {
+    "id": "CIVI-DIzCFk",
+    "title": "How to schedule a Cron Job to run a script on Ubuntu 16.04",
+    "channel": "LinuxHelp",
+    "views": "275K views",
+    "dur": "5:21",
+    "url": "https://www.youtube.com/watch?v=CIVI-DIzCFk"
+   },
+   {
+    "id": "v952m13p-b4",
+    "title": "Cron Jobs For Beginners | Linux Task Scheduling",
+    "channel": "Akamai Developers",
+    "views": "273K views",
+    "dur": "12:47",
+    "url": "https://www.youtube.com/watch?v=v952m13p-b4"
+   },
+   {
+    "id": "lil_LNX-09",
+    "title": "Red Hat Certified System Administrator (RHCSA) (EX200) Cert Prep (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/red-hat-certified-system-administrator-rhcsa-ex200-cert-prep?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "LNX-10": {
+  "cat": "Linux",
+  "q": "What are Linux file permissions? Explain chmod 755.",
+  "vids": [
+   {
+    "id": "A3G-3hp88mo",
+    "title": "the Linux File System explained in 1,233 seconds // Linux for Hackers // EP 2",
+    "channel": "NetworkChuck",
+    "views": "2.6M views",
+    "dur": "20:33",
+    "url": "https://www.youtube.com/watch?v=A3G-3hp88mo"
+   },
+   {
+    "id": "LnKoncbQBsM",
+    "title": "Linux File Permissions in 5 Minutes | MUST Know!",
+    "channel": "Travis Media",
+    "views": "250K views",
+    "dur": "6:03",
+    "url": "https://www.youtube.com/watch?v=LnKoncbQBsM"
+   },
+   {
+    "id": "lil_LNX-10",
+    "title": "Learning Linux Command Line (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/learning-linux-command-line-26594217?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "LNX-11": {
+  "cat": "Linux",
+  "q": "What is the difference between a hard link and a soft (symbolic) link?",
+  "vids": [
+   {
+    "id": "4-vye3QFTFo",
+    "title": "Hard vs Soft Links in Linux  (Linux Links)",
+    "channel": "Ahmed Alkabary",
+    "views": "188K views",
+    "dur": "4:01",
+    "url": "https://www.youtube.com/watch?v=4-vye3QFTFo"
+   },
+   {
+    "id": "lW_V8oFxQgA",
+    "title": "MicroNuggets: Hard Links versus Soft Links Explained",
+    "channel": "CBT Nuggets",
+    "views": "82K views",
+    "dur": "7:03",
+    "url": "https://www.youtube.com/watch?v=lW_V8oFxQgA"
+   },
+   {
+    "id": "lil_LNX-11",
+    "title": "Ubuntu Linux: Essential Commands and System Administration (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/ubuntu-linux-essential-commands-and-system-administration?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "LNX-12": {
+  "cat": "Linux",
+  "q": "How do you check disk space usage and locate large files in Linux?",
+  "vids": [
+   {
+    "id": "IRN8ZsZa31E",
+    "title": "How to clear unwanted disk space | Linux Server Disk Capacity shows 100% full",
+    "channel": "Server Gyan",
+    "views": "92K views",
+    "dur": "7:42",
+    "url": "https://www.youtube.com/watch?v=IRN8ZsZa31E"
+   },
+   {
+    "id": "0utcg3ztzuI",
+    "title": "Linux Command Line Tutorial For Beginners 26 - Viewing Resources (du , df, free command)",
+    "channel": "ProgrammingKnowledge",
+    "views": "70K views",
+    "dur": "9:52",
+    "url": "https://www.youtube.com/watch?v=0utcg3ztzuI"
+   },
+   {
+    "id": "lil_LNX-12",
+    "title": "Red Hat Certified System Administrator (RHCSA) (EX200) Cert Prep (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/red-hat-certified-system-administrator-rhcsa-ex200-cert-prep?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "LNX-13": {
+  "cat": "Linux",
+  "q": "What is systemctl? How do you manage, start, stop, restart, and enable services?",
+  "vids": [
+   {
+    "id": "wOWhfNB_r-0",
+    "title": "start, stop, restart Linux services (daemon HUNTING!!) // Linux for Hackers // EP 6",
+    "channel": "NetworkChuck",
+    "views": "548K views",
+    "dur": "24:20",
+    "url": "https://www.youtube.com/watch?v=wOWhfNB_r-0"
+   },
+   {
+    "id": "Kzpm-rGAXos",
+    "title": "Systemd Explained: How to Manage Linux Services Easily",
+    "channel": "Learn Linux TV",
+    "views": "384K views",
+    "dur": "47:41",
+    "url": "https://www.youtube.com/watch?v=Kzpm-rGAXos"
+   },
+   {
+    "id": "lil_LNX-13",
+    "title": "Red Hat Certified System Administrator (RHCSA) (EX200) Cert Prep (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/red-hat-certified-system-administrator-rhcsa-ex200-cert-prep?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "LNX-14": {
+  "cat": "Linux",
+  "q": "What is a Linux daemon? Give examples and explain how they run.",
+  "vids": [
+   {
+    "id": "wOWhfNB_r-0",
+    "title": "start, stop, restart Linux services (daemon HUNTING!!) // Linux for Hackers // EP 6",
+    "channel": "NetworkChuck",
+    "views": "548K views",
+    "dur": "24:20",
+    "url": "https://www.youtube.com/watch?v=wOWhfNB_r-0"
+   },
+   {
+    "id": "gBuTIrEG87s",
+    "title": "Every LINUX Concept Explained in 8 Minutes.",
+    "channel": "Mr.PiwPiew",
+    "views": "368K views",
+    "dur": "8:13",
+    "url": "https://www.youtube.com/watch?v=gBuTIrEG87s"
+   },
+   {
+    "id": "lil_LNX-14",
+    "title": "Red Hat Certified System Administrator (RHCSA) (EX200) Cert Prep (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/red-hat-certified-system-administrator-rhcsa-ex200-cert-prep?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "LNX-15": {
+  "cat": "Linux",
+  "q": "How do you read and troubleshoot logs in Linux? Key log files and journalctl.",
+  "vids": [
+   {
+    "id": "tA-32BLjrFA",
+    "title": "Linux Log Monitoring | How to Do Log Analysis? | MPrashant",
+    "channel": "M Prashant",
+    "views": "119K views",
+    "dur": "19:47",
+    "url": "https://www.youtube.com/watch?v=tA-32BLjrFA"
+   },
+   {
+    "id": "6uP_f_z3CbM",
+    "title": "Linux Crash Course - Understanding Logging",
+    "channel": "Learn Linux TV",
+    "views": "85K views",
+    "dur": "29:10",
+    "url": "https://www.youtube.com/watch?v=6uP_f_z3CbM"
+   },
+   {
+    "id": "lil_LNX-15",
+    "title": "CompTIA Linux+ (XK0-006) V8 Cert Prep (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/comptia-linux-plus-xk0-006-v8-cert-prep?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "LNX-16": {
+  "cat": "Linux",
+  "q": "What does traceroute do and how does it work? Compare traceroute and mtr.",
+  "vids": [
+   {
+    "id": "vJV-GBZ6PeM",
+    "title": "PING and TRACERT (traceroute) networking commands",
+    "channel": "PowerCert Animated Videos",
+    "views": "1M views",
+    "dur": "4:40",
+    "url": "https://www.youtube.com/watch?v=vJV-GBZ6PeM"
+   },
+   {
+    "id": "up3bcBLZS74",
+    "title": "Traceroute (tracert) Explained - Network Troubleshooting",
+    "channel": "PowerCert Animated Videos",
+    "views": "693K views",
+    "dur": "9:24",
+    "url": "https://www.youtube.com/watch?v=up3bcBLZS74"
+   },
+   {
+    "id": "lil_LNX-16",
+    "title": "CompTIA Linux+ (XK0-006) V8 Cert Prep (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/comptia-linux-plus-xk0-006-v8-cert-prep?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "LNX-17": {
+  "cat": "Linux",
+  "q": "What is Nmap and how is it used in troubleshooting and security assessments?",
+  "vids": [
+   {
+    "id": "4t4kBkMsDbQ",
+    "title": "Nmap Tutorial to find Network Vulnerabilities",
+    "channel": "NetworkChuck",
+    "views": "3.5M views",
+    "dur": "17:09",
+    "url": "https://www.youtube.com/watch?v=4t4kBkMsDbQ"
+   },
+   {
+    "id": "JHAMj2vN2oU",
+    "title": "NMAP Full Guide (You will never ask about NMAP again) #hackers #scanning #nmap",
+    "channel": "Hacker Joe",
+    "views": "531K views",
+    "dur": "1:23:59",
+    "url": "https://www.youtube.com/watch?v=JHAMj2vN2oU"
+   },
+   {
+    "id": "lil_LNX-17",
+    "title": "CompTIA Cybersecurity Analyst (CySA+) (CS0-004) Cert Prep (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/comptia-cybersecurity-analyst-cysa-plus-cs0-004-cert-prep?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "LNX-18": {
+  "cat": "Linux",
+  "q": "How do you check CPU, memory, and load average in Linux? Explain top and free.",
+  "vids": [
+   {
+    "id": "rwVLa9me7e4",
+    "title": "Linux Performance Troubleshooting Demos",
+    "channel": "grobelDev",
+    "views": "108K views",
+    "dur": "10:51",
+    "url": "https://www.youtube.com/watch?v=rwVLa9me7e4"
+   },
+   {
+    "id": "hK-tYkiIoqY",
+    "title": "Top Command: A Linux Command for Quickly Seeing What is Running on Your System",
+    "channel": "M Prashant",
+    "views": "72K views",
+    "dur": "12:35",
+    "url": "https://www.youtube.com/watch?v=hK-tYkiIoqY"
+   },
+   {
+    "id": "lil_LNX-18",
+    "title": "Docker Certified Associate (DCA) Cert Prep (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/docker-certified-associate-dca-cert-prep-53221041?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "LNX-19": {
+  "cat": "Linux",
+  "q": "What is the difference between ifconfig and ip commands?",
+  "vids": [
+   {
+    "id": "XiERevpBTAk",
+    "title": "Linux Terminal 201: ifconfig vs ip - HakTip 154",
+    "channel": "Hak5",
+    "views": "40K views",
+    "dur": "8:29",
+    "url": "https://www.youtube.com/watch?v=XiERevpBTAk"
+   },
+   {
+    "id": "wHfIFZlDxtU",
+    "title": "How to Use the ip Command in Linux: A Beginner’s Guide",
+    "channel": "Learn Linux TV",
+    "views": "39K views",
+    "dur": "16:44",
+    "url": "https://www.youtube.com/watch?v=wHfIFZlDxtU"
+   },
+   {
+    "id": "lil_LNX-19",
+    "title": "Red Hat Certified System Administrator (RHCSA) (EX200) Cert Prep (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/red-hat-certified-system-administrator-rhcsa-ex200-cert-prep?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "LNX-20": {
+  "cat": "Linux",
+  "q": "What is SSH and how does key-based authentication work?",
+  "vids": [
+   {
+    "id": "ORcvSkgdA58",
+    "title": "How Secure Shell Works (SSH) - Computerphile",
+    "channel": "Computerphile",
+    "views": "915K views",
+    "dur": "9:20",
+    "url": "https://www.youtube.com/watch?v=ORcvSkgdA58"
+   },
+   {
+    "id": "5JvLV2-ngCI",
+    "title": "How SSH Works",
+    "channel": "Mental Outlaw",
+    "views": "786K views",
+    "dur": "8:54",
+    "url": "https://www.youtube.com/watch?v=5JvLV2-ngCI"
+   },
+   {
+    "id": "lil_LNX-20",
+    "title": "Red Hat Certified System Administrator (RHCSA) (EX200) Cert Prep (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/red-hat-certified-system-administrator-rhcsa-ex200-cert-prep?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "BCD-01": {
+  "cat": "Barracuda",
+  "q": "What is Barracuda CloudGen Firewall? What are its key features?",
+  "vids": [
+   {
+    "id": "EDD0RjzQx9s",
+    "title": "Getting Started with a Barracuda Firewall",
+    "channel": "NETVN82",
+    "views": "14K views",
+    "dur": "11:03",
+    "url": "https://www.youtube.com/watch?v=EDD0RjzQx9s"
+   },
+   {
+    "id": "dP_0dO7LO8E",
+    "title": "Barracuda CloudGen Firewall Initial Configuration",
+    "channel": "NetSec",
+    "views": "9.2K views",
+    "dur": "15:24",
+    "url": "https://www.youtube.com/watch?v=dP_0dO7LO8E"
+   },
+   {
+    "id": "lil_BCD-01",
+    "title": "Define a software-defined wide area network (SD-WAN) (LinkedIn Learning)",
+    "channel": "Google Cloud Digital Leader Cert Prep",
+    "views": "LinkedIn Learning",
+    "dur": "1m 31s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Define%20a%20software-defined%20wide%20area%20network%20(SD-WAN)&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "BCD-02": {
+  "cat": "Barracuda",
+  "q": "What is Barracuda Email Security Gateway and how does it filter emails?",
+  "vids": [
+   {
+    "id": "HuMxGXS6IxE",
+    "title": "Barracuda Email Security Solutions",
+    "channel": "Barracuda Networks",
+    "views": "20K views",
+    "dur": "3:22",
+    "url": "https://www.youtube.com/watch?v=HuMxGXS6IxE"
+   },
+   {
+    "id": "zw1g9pnRu-M",
+    "title": "Barracuda Email Security end user training Video",
+    "channel": "ATS Communications Inc",
+    "views": "20K views",
+    "dur": "4:22",
+    "url": "https://www.youtube.com/watch?v=zw1g9pnRu-M"
+   },
+   {
+    "id": "lil_BCD-02",
+    "title": "Protect against phishing and smishing (LinkedIn Learning)",
+    "channel": "The Cybersecurity Threat Landscape",
+    "views": "1,92,897 learners",
+    "dur": "3m 13s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Protect%20against%20phishing%20and%20smishing&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "BCD-03": {
+  "cat": "Barracuda",
+  "q": "What is Barracuda Web Application Firewall (WAF)? What attacks does it protect against?",
+  "vids": [
+   {
+    "id": "p8CQcF_9280",
+    "title": "What is a Web Application Firewall (WAF)?",
+    "channel": "F5 DevCentral Community",
+    "views": "283K views",
+    "dur": "10:04",
+    "url": "https://www.youtube.com/watch?v=p8CQcF_9280"
+   },
+   {
+    "id": "FHRXXrQ765M",
+    "title": "How to use AWS WAF (Web application firewall)/Web ACL? - Step By Step Tutorial (Part-11)#aws #devops",
+    "channel": "Rahul Wagh",
+    "views": "109K views",
+    "dur": "27:41",
+    "url": "https://www.youtube.com/watch?v=FHRXXrQ765M"
+   },
+   {
+    "id": "lil_BCD-03",
+    "title": "Web application firewall (WAF) (LinkedIn Learning)",
+    "channel": "Cybersecurity Foundations: Application Security",
+    "views": "38,198 learners",
+    "dur": "7m 15s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Web%20application%20firewall%20(WAF)&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "BCD-04": {
+  "cat": "Barracuda",
+  "q": "What is Barracuda Backup and how does it provide data resilience?",
+  "vids": [
+   {
+    "id": "hBMSiy1frt0",
+    "title": "Barracuda Backup Service 5.0 with LiveBoot | Barracuda Networks",
+    "channel": "Barracuda Networks",
+    "views": "256K views",
+    "dur": "1:05",
+    "url": "https://www.youtube.com/watch?v=hBMSiy1frt0"
+   },
+   {
+    "id": "MIzATPx-Eq8",
+    "title": "Barracuda Essentials for Office 365",
+    "channel": "Barracuda Networks",
+    "views": "39K views",
+    "dur": "2:36",
+    "url": "https://www.youtube.com/watch?v=MIzATPx-Eq8"
+   },
+   {
+    "id": "lil_BCD-04",
+    "title": "Protect against malware and ransomware (LinkedIn Learning)",
+    "channel": "The Cybersecurity Threat Landscape",
+    "views": "2,04,045 learners",
+    "dur": "2m 27s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Protect%20against%20malware%20and%20ransomware&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "BCD-05": {
+  "cat": "Barracuda",
+  "q": "What is Barracuda SecureEdge and how does it support hybrid workforces?",
+  "vids": [
+   {
+    "id": "otQKRt9uwno",
+    "title": "SASE Explained: What is Secure Access Service Edge?",
+    "channel": "Uniti Solutions",
+    "views": "192K views",
+    "dur": "2:25",
+    "url": "https://www.youtube.com/watch?v=otQKRt9uwno"
+   },
+   {
+    "id": "Opy9D-8eyVg",
+    "title": "What is Secure Access Service Edge (SASE) ?",
+    "channel": "The CISO Perspective",
+    "views": "175K views",
+    "dur": "7:50",
+    "url": "https://www.youtube.com/watch?v=Opy9D-8eyVg"
+   },
+   {
+    "id": "lil_BCD-05",
+    "title": "Implementing network security measures in the cloud (LinkedIn Learning)",
+    "channel": "Cloud Computing: Understanding Networking",
+    "views": "15,895 learners",
+    "dur": "3m 6s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Implementing%20network%20security%20measures%20in%20the%20cloud&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "BCD-06": {
+  "cat": "Barracuda",
+  "q": "What is SD-WAN and how does Barracuda CloudGen Firewall implement it?",
+  "vids": [
+   {
+    "id": "isMnWZqAh0k",
+    "title": "What is SD-WAN? say GOODBYE to MPLS, DMVPN, iWAN... w/ SDN, Cisco and Viptela",
+    "channel": "NetworkChuck",
+    "views": "615K",
+    "dur": "17:53",
+    "url": "https://www.youtube.com/watch?v=isMnWZqAh0k"
+   },
+   {
+    "id": "cos4ujj80iI",
+    "title": "Fundamentals of SD-WAN",
+    "channel": "Kevin Wallace Training, LLC",
+    "views": "350K",
+    "dur": "12:13",
+    "url": "https://www.youtube.com/watch?v=cos4ujj80iI"
+   },
+   {
+    "id": "lil_BCD-06",
+    "title": "Google Cloud Digital Leader Cert Prep (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/google-cloud-digital-leader-cert-prep?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "BCD-07": {
+  "cat": "Barracuda",
+  "q": "What is Barracuda's approach to Advanced Threat Protection (ATP)?",
+  "vids": [
+   {
+    "id": "fhoz0R2jnp0",
+    "title": "Microsoft Advanced Threat Protection (ATP) Explained",
+    "channel": "Pro Tech Show",
+    "views": "37K views",
+    "dur": "13:05",
+    "url": "https://www.youtube.com/watch?v=fhoz0R2jnp0"
+   },
+   {
+    "id": "eUioEQM_R7Q",
+    "title": "How to Use Malware Sandboxing for Advanced Threat Analysis | IoC Extraction and MITRE Mapping",
+    "channel": "OPSWAT",
+    "views": "31K views",
+    "dur": "16:53",
+    "url": "https://www.youtube.com/watch?v=eUioEQM_R7Q"
+   },
+   {
+    "id": "lil_BCD-07",
+    "title": "Threat hunting overview (LinkedIn Learning)",
+    "channel": "Threat Hunting Essential Training",
+    "views": "10,265 learners",
+    "dur": "1m 46s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Threat%20hunting%20overview&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "BCD-08": {
+  "cat": "Barracuda",
+  "q": "What is sandboxing in email security and why is it essential?",
+  "vids": [
+   {
+    "id": "oPsxy9JF8FM",
+    "title": "How To Setup A Sandbox Environment For Malware Analysis",
+    "channel": "HackerSploit",
+    "views": "302K views",
+    "dur": "18:17",
+    "url": "https://www.youtube.com/watch?v=oPsxy9JF8FM"
+   },
+   {
+    "id": "eUioEQM_R7Q",
+    "title": "How to Use Malware Sandboxing for Advanced Threat Analysis | IoC Extraction and MITRE Mapping",
+    "channel": "OPSWAT",
+    "views": "31K views",
+    "dur": "16:53",
+    "url": "https://www.youtube.com/watch?v=eUioEQM_R7Q"
+   },
+   {
+    "id": "lil_BCD-08",
+    "title": "Cybersecurity Awareness: Malware (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/cybersecurity-awareness-malware?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "BCD-09": {
+  "cat": "Barracuda",
+  "q": "What is Barracuda Essentials and what core services does it include?",
+  "vids": [
+   {
+    "id": "DmDp-aaXi9M",
+    "title": "How to Set up Sophos Email Security for Exchange Online: Sophos Email Security Office 365 Setup",
+    "channel": "Office365Concepts",
+    "views": "17K",
+    "dur": "18:13",
+    "url": "https://www.youtube.com/watch?v=DmDp-aaXi9M"
+   },
+   {
+    "id": "z92j6WlxKtM",
+    "title": "Getting started with email security in Microsoft 365 | Phishing protections",
+    "channel": "T-Minus365",
+    "views": "11K",
+    "dur": "27:25",
+    "url": "https://www.youtube.com/watch?v=z92j6WlxKtM"
+   },
+   {
+    "id": "lil_BCD-09",
+    "title": "Securing email (LinkedIn Learning)",
+    "channel": "IT Security Foundations: Core Concepts",
+    "views": "39,180 learners",
+    "dur": "3m 31s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Securing%20email&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "BCD-10": {
+  "cat": "Barracuda",
+  "q": "How does Barracuda provide multi-layered protection against ransomware?",
+  "vids": [
+   {
+    "id": "eizn9TC68E8",
+    "title": "Protecting Yourself from Ransomware",
+    "channel": "IBM Technology",
+    "views": "17K views",
+    "dur": "5:40",
+    "url": "https://www.youtube.com/watch?v=eizn9TC68E8"
+   },
+   {
+    "id": "wUWSs-7Cb1g",
+    "title": "Step-by-Step Guide to Building an Effective Ransomware Protection Plan",
+    "channel": "Prabh Nair",
+    "views": "10K views",
+    "dur": "23:38",
+    "url": "https://www.youtube.com/watch?v=wUWSs-7Cb1g"
+   },
+   {
+    "id": "lil_BCD-10",
+    "title": "Cybersecurity Foundations: Computer Forensics (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/cybersecurity-foundations-computer-forensics?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "BCD-11": {
+  "cat": "Barracuda",
+  "q": "Difference between Barracuda hardware, virtual, and cloud-native offerings?",
+  "vids": [
+   {
+    "id": "IWNfb4a1ay0",
+    "title": "What is a Firewall? | Traditional + Next Generation",
+    "channel": "CertBros",
+    "views": "117K views",
+    "dur": "8:31",
+    "url": "https://www.youtube.com/watch?v=IWNfb4a1ay0"
+   },
+   {
+    "id": "12AqJdlqXzM",
+    "title": "5 Considerations: Sizing Your Next-Gen Firewall (NGFW)",
+    "channel": "The CISO Perspective",
+    "views": "56K views",
+    "dur": "7:17",
+    "url": "https://www.youtube.com/watch?v=12AqJdlqXzM"
+   },
+   {
+    "id": "lil_BCD-11",
+    "title": "DevOps Foundations: Infrastructure as Code (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/devops-foundations-infrastructure-as-code-18965758?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "BCD-12": {
+  "cat": "Barracuda",
+  "q": "What is Link Balancing in Barracuda CloudGen Firewall?",
+  "vids": [
+   {
+    "id": "ZfJFbdP2PWQ",
+    "title": "Reyee Gateway Routers | How to configure Load Balancing and Failover",
+    "channel": "Scoop Distribution",
+    "views": "163K views",
+    "dur": "5:58",
+    "url": "https://www.youtube.com/watch?v=ZfJFbdP2PWQ"
+   },
+   {
+    "id": "p4Xk45ymbbQ",
+    "title": "Dual WAN Setup with TP Link Omada - That was easy...",
+    "channel": "Raid Owl",
+    "views": "150K views",
+    "dur": "13:43",
+    "url": "https://www.youtube.com/watch?v=p4Xk45ymbbQ"
+   },
+   {
+    "id": "lil_BCD-12",
+    "title": "Cisco CCNP Enterprise: ENARSI (300-410) Cert Prep (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/cisco-ccnp-enterprise-enarsi-300-410-cert-prep?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "BCD-13": {
+  "cat": "Barracuda",
+  "q": "What is the role of a TAC engineer at Barracuda vs a regular support engineer?",
+  "vids": [
+   {
+    "id": "sAiL68Jn2qw",
+    "title": "Skills Required for Technical Support Job Role | How to become a Technical Support Engineer?",
+    "channel": "BA Professional",
+    "views": "122K views",
+    "dur": "4:08",
+    "url": "https://www.youtube.com/watch?v=sAiL68Jn2qw"
+   },
+   {
+    "id": "cppHX2bMjEc",
+    "title": "Technical Support Jobs - Careers, Growth, Responsibilities, salaries",
+    "channel": "Teamlease",
+    "views": "102K views",
+    "dur": "3:31",
+    "url": "https://www.youtube.com/watch?v=cppHX2bMjEc"
+   },
+   {
+    "id": "lil_BCD-13",
+    "title": "Strategies for Your First 90 Days in a New Job (LinkedIn Learning)",
+    "channel": "LinkedIn Learning",
+    "views": "LinkedIn Learning",
+    "dur": "",
+    "url": "https://www.linkedin.com/learning/strategies-for-your-first-90-days-in-a-new-job?u=76281980",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "TS-01": {
+  "cat": "Troubleshooting",
+  "q": "A user cannot access the internet. Troubleshoot step by step.",
+  "vids": [
+   {
+    "id": "NVCh_ECxgGw",
+    "title": "How To Fix WiFi Connected But No Internet Access On Windows 10 - 5 Ways",
+    "channel": "Sandeep Singh",
+    "views": "4.2M views",
+    "dur": "8:44",
+    "url": "https://www.youtube.com/watch?v=NVCh_ECxgGw"
+   },
+   {
+    "id": "Hph_QcyWlBs",
+    "title": "mobile data on but internet not working | how to fix mobile data not working (android)",
+    "channel": "Make knowledge free",
+    "views": "1.7M views",
+    "dur": "2:30",
+    "url": "https://www.youtube.com/watch?v=Hph_QcyWlBs"
+   },
+   {
+    "id": "lil_TS-01",
+    "title": "Understand networks and internet access (LinkedIn Learning)",
+    "channel": "Computer Literacy for Windows 10",
+    "views": "30,088 learners",
+    "dur": "2m 58s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Understand%20networks%20and%20internet%20access&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "TS-02": {
+  "cat": "Troubleshooting",
+  "q": "Emails from your domain are landing in spam folders. What do you check?",
+  "vids": [
+   {
+    "id": "c9fLp5uIxp8",
+    "title": "How DKIM SPF & DMARC Work to Prevent Email Spoofing",
+    "channel": "Thobson Technologies",
+    "views": "222K views",
+    "dur": "17:15",
+    "url": "https://www.youtube.com/watch?v=c9fLp5uIxp8"
+   },
+   {
+    "id": "fsZaEce18FE",
+    "title": "How To Set Up Google Workspace SPF, DKIM & DMARC | Improve Email Deliverability",
+    "channel": "Stewart Gauld",
+    "views": "187K views",
+    "dur": "8:01",
+    "url": "https://www.youtube.com/watch?v=fsZaEce18FE"
+   },
+   {
+    "id": "lil_TS-02",
+    "title": "Email and SPAM (LinkedIn Learning)",
+    "channel": "IT Security Foundations: Operating System Security",
+    "views": "23,199 learners",
+    "dur": "4m 33s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Email%20and%20SPAM&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "TS-03": {
+  "cat": "Troubleshooting",
+  "q": "A site-to-site IPsec VPN tunnel is down. How do you diagnose and restore it?",
+  "vids": [
+   {
+    "id": "CuxyZiSCSfc",
+    "title": "MicroNugget: IPsec Site to Site VPN Tunnels Explained | CBT Nuggets",
+    "channel": "CBT Nuggets",
+    "views": "463K views",
+    "dur": "7:28",
+    "url": "https://www.youtube.com/watch?v=CuxyZiSCSfc"
+   },
+   {
+    "id": "15amNny_kKI",
+    "title": "IP Sec VPN Fundamentals",
+    "channel": "LearnCantrill",
+    "views": "324K views",
+    "dur": "14:55",
+    "url": "https://www.youtube.com/watch?v=15amNny_kKI"
+   },
+   {
+    "id": "lil_TS-03",
+    "title": "Setting up an IPsec site-to-site VPN (LinkedIn Learning)",
+    "channel": "Cisco Network Security: VPN",
+    "views": "4,355 learners",
+    "dur": "3m 35s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Setting%20up%20an%20IPsec%20site-to-site%20VPN&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "TS-04": {
+  "cat": "Troubleshooting",
+  "q": "A website is slow for some users but fast for others. Cause and isolation?",
+  "vids": [
+   {
+    "id": "AimCNTzDlVo",
+    "title": "Network Troubleshooting using PING, TRACERT, IPCONFIG, NSLOOKUP COMMANDS",
+    "channel": "sakitech",
+    "views": "4.2M views",
+    "dur": "14:34",
+    "url": "https://www.youtube.com/watch?v=AimCNTzDlVo"
+   },
+   {
+    "id": "IIicPE38O-s",
+    "title": "PING Command - Troubleshooting Networks",
+    "channel": "PowerCert Animated Videos",
+    "views": "1.2M views",
+    "dur": "9:14",
+    "url": "https://www.youtube.com/watch?v=IIicPE38O-s"
+   },
+   {
+    "id": "lil_TS-04",
+    "title": "Ping and traceroute (LinkedIn Learning)",
+    "channel": "ISC2 Certified in Cybersecurity (CC) Cert Prep",
+    "views": "38,278 learners",
+    "dur": "6m 6s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Ping%20and%20traceroute&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "TS-05": {
+  "cat": "Troubleshooting",
+  "q": "A server is getting a massive volume of connection attempts. Respond?",
+  "vids": [
+   {
+    "id": "Gz59MezA3r4",
+    "title": "How Easy Is It For Hackers To Brute Force Login Pages?!",
+    "channel": "Loi Liang Yang",
+    "views": "462K views",
+    "dur": "4:29",
+    "url": "https://www.youtube.com/watch?v=Gz59MezA3r4"
+   },
+   {
+    "id": "FKVsz_2IWJs",
+    "title": "How Hackers Could Brute-Force SSH Credentials to Gain Access to Servers",
+    "channel": "Null Byte",
+    "views": "214K views",
+    "dur": "17:15",
+    "url": "https://www.youtube.com/watch?v=FKVsz_2IWJs"
+   },
+   {
+    "id": "lil_TS-05",
+    "title": "Brute-force attacks (LinkedIn Learning)",
+    "channel": "CISSP (2024) Cert Prep",
+    "views": "12,056 learners",
+    "dur": "2m 57s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Brute-force%20attacks&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "TS-06": {
+  "cat": "Troubleshooting",
+  "q": "A firewall rule is blocking legitimate traffic. Identify, fix, verify safely?",
+  "vids": [
+   {
+    "id": "o_vyfo3Hw0Y",
+    "title": "Lec-93: What is Firewalls and How it Works | Packet Filtering firewall explained in Hindi Part-1",
+    "channel": "Gate Smashers",
+    "views": "932K views",
+    "dur": "13:45",
+    "url": "https://www.youtube.com/watch?v=o_vyfo3Hw0Y"
+   },
+   {
+    "id": "K4ilFsm2GvA",
+    "title": "Firewall Fundamentals Explained | Network Security for Beginners",
+    "channel": "Antisyphon Training",
+    "views": "174K views",
+    "dur": "29:16",
+    "url": "https://www.youtube.com/watch?v=K4ilFsm2GvA"
+   },
+   {
+    "id": "lil_TS-06",
+    "title": "Solution: Firewall rules (LinkedIn Learning)",
+    "channel": "Wireshark: Malware and Forensics",
+    "views": "8,622 learners",
+    "dur": "3m 37s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Solution%3A%20Firewall%20rules&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "TS-07": {
+  "cat": "Troubleshooting",
+  "q": "DNS resolution is failing for a specific domain. Walk through your steps.",
+  "vids": [
+   {
+    "id": "NiQTs9DbtW4",
+    "title": "What is DNS? (and how it makes the Internet work)",
+    "channel": "NetworkChuck",
+    "views": "883K views",
+    "dur": "24:22",
+    "url": "https://www.youtube.com/watch?v=NiQTs9DbtW4"
+   },
+   {
+    "id": "ZjzG9FVEQaA",
+    "title": "How to Use NSLOOKUP to Troubleshoot DNS Issues",
+    "channel": "IT Geared",
+    "views": "272K views",
+    "dur": "7:26",
+    "url": "https://www.youtube.com/watch?v=ZjzG9FVEQaA"
+   },
+   {
+    "id": "lil_TS-07",
+    "title": "Testing DNS name resolution (LinkedIn Learning)",
+    "channel": "Windows 10 for IT Support: Advanced Troubleshooting",
+    "views": "14,112 learners",
+    "dur": "2m 33s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Testing%20DNS%20name%20resolution&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "TS-08": {
+  "cat": "Troubleshooting",
+  "q": "Customer can send but not receive emails. What do you check?",
+  "vids": [
+   {
+    "id": "1zPNFLwyO1o",
+    "title": "Gmail Not Receiving Emails Issues! [How To Fix]",
+    "channel": "Fix369",
+    "views": "609K views",
+    "dur": "3:07",
+    "url": "https://www.youtube.com/watch?v=1zPNFLwyO1o"
+   },
+   {
+    "id": "sTzTINYyj7U",
+    "title": "10 Tips to Fix Outlook Not Receiving Emails Issue",
+    "channel": "Wondershare Recoverit Data Recovery",
+    "views": "537K views",
+    "dur": "10:24",
+    "url": "https://www.youtube.com/watch?v=sTzTINYyj7U"
+   },
+   {
+    "id": "lil_TS-08",
+    "title": "DNS record types (LinkedIn Learning)",
+    "channel": "Learning DNS",
+    "views": "7,327 learners",
+    "dur": "6m 18s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=DNS%20record%20types&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "TS-09": {
+  "cat": "Troubleshooting",
+  "q": "CPU on a Linux production server is spiking to 100%. Diagnose and resolve?",
+  "vids": [
+   {
+    "id": "rwVLa9me7e4",
+    "title": "Linux Performance Troubleshooting Demos",
+    "channel": "grobelDev",
+    "views": "108K views",
+    "dur": "10:51",
+    "url": "https://www.youtube.com/watch?v=rwVLa9me7e4"
+   },
+   {
+    "id": "sjyLRS52zOg",
+    "title": "Troubleshooting IO performance issues on Linux",
+    "channel": "TECSTER",
+    "views": "71K views",
+    "dur": "7:14",
+    "url": "https://www.youtube.com/watch?v=sjyLRS52zOg"
+   },
+   {
+    "id": "lil_TS-09",
+    "title": "top for CPU usage (LinkedIn Learning)",
+    "channel": "Linux Performance Tuning",
+    "views": "8,960 learners",
+    "dur": "1m 43s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=top%20for%20CPU%20usage&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "TS-10": {
+  "cat": "Troubleshooting",
+  "q": "A newly deployed firewall is causing packet drops. Your approach?",
+  "vids": [
+   {
+    "id": "-dZ4-mTNRs8",
+    "title": "How to troubleshoot a slow network",
+    "channel": "Ben Piper | Real World IT (BenPiper.com)",
+    "views": "370K",
+    "dur": "7:36",
+    "url": "https://www.youtube.com/watch?v=-dZ4-mTNRs8"
+   },
+   {
+    "id": "xop7eC7Ep1w",
+    "title": "Traffic Troubleshooting in Palo Alto firewall | where packet is being dropped | palo alto training",
+    "channel": "Fresh Developer (Sapium Security)",
+    "views": "36K",
+    "dur": "16:04",
+    "url": "https://www.youtube.com/watch?v=xop7eC7Ep1w"
+   },
+   {
+    "id": "lil_TS-10",
+    "title": "Overview of firewalls (LinkedIn Learning)",
+    "channel": "Windows 11: Security",
+    "views": "10,262 learners",
+    "dur": "3m 5s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Overview%20of%20firewalls&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "TS-11": {
+  "cat": "Troubleshooting",
+  "q": "A Barracuda appliance is not syncing/connecting to the cloud. What do you check?",
+  "vids": [
+   {
+    "id": "vgisbCjtHz4",
+    "title": "Network Troubleshooting for Beginners - 3 commands , 1 framework,  3 methods",
+    "channel": "IT k Funde",
+    "views": "227K views",
+    "dur": "15:57",
+    "url": "https://www.youtube.com/watch?v=vgisbCjtHz4"
+   },
+   {
+    "id": "0Pk08wucjU8",
+    "title": "How did I improve my troubleshooting skills | My 5 steps framework for effective problem solving",
+    "channel": "IT k Funde",
+    "views": "203K views",
+    "dur": "15:59",
+    "url": "https://www.youtube.com/watch?v=0Pk08wucjU8"
+   },
+   {
+    "id": "lil_TS-11",
+    "title": "Security as a service (LinkedIn Learning)",
+    "channel": "Cybersecurity with Cloud Computing",
+    "views": "57,235 learners",
+    "dur": "2m 2s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Security%20as%20a%20service&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ },
+ "TS-12": {
+  "cat": "Troubleshooting",
+  "q": "After a power outage, a core appliance does not come back online. Steps?",
+  "vids": [
+   {
+    "id": "bj5KpFR_LPU",
+    "title": "What is a UPS? (Uninterruptible Power Supply)",
+    "channel": "RealPars",
+    "views": "769K views",
+    "dur": "7:56",
+    "url": "https://www.youtube.com/watch?v=bj5KpFR_LPU"
+   },
+   {
+    "id": "cxkoAmJJbAo",
+    "title": "Gamer power (for gamers) - Eaton Tripp Lite Gaming UPS",
+    "channel": "ShortCircuit",
+    "views": "701K views",
+    "dur": "9:28",
+    "url": "https://www.youtube.com/watch?v=cxkoAmJJbAo"
+   },
+   {
+    "id": "lil_TS-12",
+    "title": "Using the network troubleshooter (LinkedIn Learning)",
+    "channel": "Windows 10 for IT Support: Advanced Troubleshooting",
+    "views": "13,440 learners",
+    "dur": "2m 3s video",
+    "url": "https://www.linkedin.com/learning/search?keywords=Using%20the%20network%20troubleshooter&u=29100701830437",
+    "source": "linkedin"
+   }
+  ]
+ }
+}
