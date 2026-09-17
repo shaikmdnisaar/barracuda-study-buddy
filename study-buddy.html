@@ -292,6 +292,67 @@ select { width:100%; padding:9px; border-radius:10px; background:var(--bg3); col
 }
 @keyframes luPop { from{transform:scale(.7);opacity:0} to{transform:scale(1);opacity:1} }
 
+/* Active listening quiz popup */
+.al-toggle {
+  display:flex; align-items:center; gap:8px; margin:8px 0;
+  background:var(--card); border:1px solid var(--line); border-radius:10px; padding:8px 12px;
+  font-size:.82em; cursor:pointer; user-select:none;
+}
+.al-toggle .al-switch {
+  width:36px; height:20px; border-radius:10px; background:var(--line); position:relative; transition:.2s;
+}
+.al-toggle .al-switch:after {
+  content:''; position:absolute; top:2px; left:2px; width:16px; height:16px; border-radius:50%;
+  background:#fff; transition:.2s;
+}
+.al-toggle.on .al-switch { background:var(--green); }
+.al-toggle.on .al-switch:after { left:18px; }
+.al-toggle .al-label { color:var(--txt); font-weight:600; }
+.al-toggle .al-hint { color:var(--mut); font-size:.85em; margin-left:auto; }
+
+.al-quiz {
+  position:fixed; inset:0; z-index:9002; background:rgba(0,0,0,.85);
+  display:none; align-items:center; justify-content:center; padding:16px;
+}
+.al-quiz.show { display:flex; }
+.al-quiz-card {
+  background:var(--card); border:2px solid var(--green); border-radius:18px;
+  padding:24px; max-width:520px; width:100%; box-shadow:0 0 40px rgba(34,197,94,.3); animation:fadeIn .25s;
+}
+.al-quiz-card .al-header {
+  display:flex; align-items:center; gap:8px; margin-bottom:12px;
+  font-size:.78em; color:var(--green); font-weight:700; text-transform:uppercase; letter-spacing:1px;
+}
+.al-quiz-card .al-pulse {
+  width:8px; height:8px; border-radius:50%; background:var(--green); animation:pulse 1.5s infinite;
+}
+.al-quiz-card .al-q { font-size:1.05em; color:#1a2233; margin-bottom:16px; line-height:1.5; font-weight:600; }
+.al-quiz-card .al-opt {
+  display:block; width:100%; text-align:left; padding:11px 14px; margin-bottom:8px;
+  background:var(--bg3); border:2px solid var(--line); border-radius:12px; color:var(--txt);
+  font-size:.9em; cursor:pointer; transition:.15s;
+}
+.al-quiz-card .al-opt:hover:not(:disabled) { border-color:var(--green); transform:translateX(4px); }
+.al-quiz-card .al-opt.correct { border-color:var(--green); background:rgba(34,197,94,.12); }
+.al-quiz-card .al-opt.wrong { border-color:var(--pink); background:rgba(233,69,96,.12); }
+.al-quiz-card .al-fb {
+  background:var(--bg3); border-left:4px solid var(--gold); border-radius:0 10px 10px 0;
+  padding:10px 12px; margin:10px 0; font-size:.84em; line-height:1.55; color:#445; display:none;
+}
+.al-quiz-card .al-fb.show { display:block; }
+.al-quiz-card .al-actions { display:flex; gap:8px; justify-content:flex-end; margin-top:12px; }
+.al-quiz-card .al-resume {
+  padding:10px 24px; background:linear-gradient(135deg,var(--green),var(--cyan));
+  border:none; border-radius:10px; color:#fff; font-weight:700; cursor:pointer; font-size:.9em;
+}
+.al-quiz-card .al-skip {
+  padding:10px 18px; background:var(--bg3); border:1px solid var(--line);
+  border-radius:10px; color:var(--mut); cursor:pointer; font-size:.85em;
+}
+.al-quiz-card .al-stats {
+  font-size:.75em; color:var(--mut); margin-top:8px; text-align:center;
+}
+
 /* STAR practice */
 .star-box textarea:focus { outline:none; border-color:var(--gold); }
 
@@ -366,6 +427,10 @@ select { width:100%; padding:9px; border-radius:10px; background:var(--bg3); col
   .prod-grid { grid-template-columns:1fr; }
   .tips-grid { grid-template-columns:1fr; }
   .star-box textarea { font-size:.82em; }
+  .al-toggle { font-size:.75em; padding:6px 10px; }
+  .al-quiz-card { padding:18px 14px; }
+  .al-quiz-card .al-q { font-size:.9em; }
+  .al-quiz-card .al-opt { padding:9px 11px; font-size:.82em; }
   select { font-size:.85em; padding:8px; }
   .searchbox { font-size:.85em; padding:8px 10px; }
   .qtext { font-size:.8em; }
@@ -457,6 +522,11 @@ select { width:100%; padding:9px; border-radius:10px; background:var(--bg3); col
       <div>
         <select id="vidSelect"></select>
         <div class="video-frame" id="vidFrame"></div>
+        <div class="al-toggle" id="alToggle">
+          <div class="al-switch"></div>
+          <div class="al-label">🎧 Active Listening</div>
+          <div class="al-hint">Quiz every 30s — stay engaged!</div>
+        </div>
         <div class="vid-title" id="vidTitle">Pick a video to start</div>
         <div class="vid-meta" id="vidMeta"></div>
       </div>
@@ -624,6 +694,21 @@ select { width:100%; padding:9px; border-radius:10px; background:var(--bg3); col
     </div>
   </div>
 
+</div>
+
+<!-- Active listening quiz overlay -->
+<div class="al-quiz" id="alQuiz">
+  <div class="al-quiz-card">
+    <div class="al-header"><div class="al-pulse"></div> ⏸️ Video paused — Active Listening Check</div>
+    <div class="al-q" id="alQ"></div>
+    <div id="alOpts"></div>
+    <div class="al-fb" id="alFb"></div>
+    <div class="al-actions">
+      <button class="al-skip" id="alSkip">Skip quiz</button>
+      <button class="al-resume" id="alResume" style="display:none">▶ Resume video</button>
+    </div>
+    <div class="al-stats" id="alStats"></div>
+  </div>
 </div>
 
 <!-- Hype ritual -->
@@ -834,7 +919,12 @@ function watchCurrentVideo() {
 function playActualVideo(qid, vid) {
   const isYT = vid.id && !vid.source;
   if (isYT) {
-    document.getElementById('vidFrame').innerHTML = '<iframe src="https://www.youtube.com/embed/' + vid.id + '?rel=0&autoplay=1" allowfullscreen allow="autoplay;encrypted-media"></iframe>';
+    // Use YouTube IFrame API for play/pause control (active listening)
+    if (!window.YT || !window.YT.Player) {
+      loadYTAPI(() => createYTPlayer(vid));
+    } else {
+      createYTPlayer(vid);
+    }
   } else {
     document.getElementById('vidFrame').innerHTML = '<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#f0f4f9;color:#6b7a90;font-size:.9em;text-align:center;padding:20px"><a href="' + vid.url + '" target="_blank" style="color:var(--cyan)">Open LinkedIn Learning video →</a></div>';
   }
@@ -851,6 +941,118 @@ function playActualVideo(qid, vid) {
     save();
   }
 }
+
+// ====== YouTube IFrame API + Active Listening ======
+let ytPlayer = null, ytReady = false;
+let alEnabled = false, alTimer = null, alInterval = 30; // seconds
+let alQuizPool = [], alQuizIdx = 0, alCorrect = 0, alTotal = 0;
+let alCurQ = null;
+
+function loadYTAPI(cb) {
+  if (document.getElementById('yt-iframe-api')) { window.onYouTubeIframeAPIReady = cb; return; }
+  const tag = document.createElement('script');
+  tag.id = 'yt-iframe-api';
+  tag.src = 'https://www.youtube.com/iframe_api';
+  document.body.appendChild(tag);
+  window.onYouTubeIframeAPIReady = cb;
+}
+function createYTPlayer(vid) {
+  document.getElementById('vidFrame').innerHTML = '<div id="ytPlayerDiv" style="position:absolute;inset:0"></div>';
+  if (ytPlayer) { try { ytPlayer.destroy(); } catch(e){} ytPlayer = null; }
+  ytReady = false;
+  ytPlayer = new YT.Player('ytPlayerDiv', {
+    videoId: vid.id,
+    playerVars: { autoplay: 1, rel: 0, modestbranding: 1 },
+    events: {
+      onReady: () => { ytReady = true; startALTimer(); },
+      onStateChange: (e) => {
+        if (e.data === YT.PlayerState.PLAYING) startALTimer();
+        if (e.data === YT.PlayerState.PAUSED) stopALTimer();
+        if (e.data === YT.PlayerState.ENDED) stopALTimer();
+      }
+    }
+  });
+}
+function startALTimer() {
+  stopALTimer();
+  if (!alEnabled || !ytReady) return;
+  alTimer = setInterval(() => {
+    if (!ytPlayer || !ytPlayer.getCurrentTime) return;
+    if (ytPlayer.getPlayerState() === 1) { // playing
+      ytPlayer.pauseVideo();
+      showALQuiz();
+    }
+  }, alInterval * 1000);
+}
+function stopALTimer() { clearInterval(alTimer); alTimer = null; }
+
+// Toggle active listening
+document.getElementById('alToggle').onclick = () => {
+  alEnabled = !alEnabled;
+  document.getElementById('alToggle').classList.toggle('on', alEnabled);
+  if (alEnabled) {
+    toast('🎧 Active Listening ON — quiz every 30s!');
+    startALTimer();
+  } else {
+    toast('🎧 Active Listening OFF');
+    stopALTimer();
+  }
+};
+
+function showALQuiz() {
+  // Build quiz pool from current question's challenge bank + category
+  const BANK = window.CHALLENGE_BANK || {};
+  const q = QUESTIONS.find(x => x.id === curQid);
+  if (!q) { resumeVideo(); return; }
+  let pool = [...(BANK[q.id] || []), ...(BANK['_cat_' + q.cat] || [])];
+  if (pool.length < 1) {
+    // Borrow from same category
+    const catQs = QUESTIONS.filter(x => x.cat === q.cat && x.id !== q.id);
+    for (const oq of catQs) { pool.push(...(BANK[oq.id] || [])); if (pool.length >= 3) break; }
+  }
+  if (pool.length < 1) { resumeVideo(); return; }
+  alCurQ = pool[Math.floor(Math.random() * pool.length)];
+  alTotal++;
+  const opts = [...alCurQ.opts].sort(() => Math.random() - 0.5);
+  document.getElementById('alQ').textContent = alCurQ.q;
+  document.getElementById('alOpts').innerHTML = opts.map((o, i) =>
+    '<button class="al-opt" data-o="' + esc(o) + '">' + esc(o) + '</button>').join('');
+  document.querySelectorAll('#alOpts .al-opt').forEach(b => b.onclick = () => alAnswer(b));
+  document.getElementById('alFb').classList.remove('show');
+  document.getElementById('alResume').style.display = 'none';
+  document.getElementById('alSkip').style.display = 'inline-block';
+  document.getElementById('alStats').textContent = 'Quiz ' + alTotal + ' · Correct: ' + alCorrect;
+  document.getElementById('alQuiz').classList.add('show');
+}
+function alAnswer(btn) {
+  document.querySelectorAll('#alOpts .al-opt').forEach(b => b.disabled = true);
+  const cor = btn.dataset.o === alCurQ.opts[0];
+  if (cor) {
+    btn.classList.add('correct'); alCorrect++; addXP(10);
+    toast('✅ Correct! +10 XP'); burstConfetti(10);
+  } else {
+    btn.classList.add('wrong');
+    document.querySelectorAll('#alOpts .al-opt').forEach(b => { if (b.dataset.o === alCurQ.opts[0]) b.classList.add('correct'); });
+    addXP(2);
+    toast('📌 Pay attention — +2 XP');
+  }
+  const fb = document.getElementById('alFb');
+  fb.innerHTML = (cor ? '✅ <b>Correct!</b> ' : '❌ <b>Listen carefully.</b> ') + (alCurQ.explain || '');
+  fb.classList.add('show');
+  document.getElementById('alResume').style.display = 'inline-block';
+  document.getElementById('alSkip').style.display = 'none';
+  document.getElementById('alStats').textContent = 'Quiz ' + alTotal + ' · Correct: ' + alCorrect + '/' + alTotal;
+  save();
+}
+function resumeVideo() {
+  document.getElementById('alQuiz').classList.remove('show');
+  if (ytPlayer && ytPlayer.playVideo) {
+    ytPlayer.playVideo();
+    startALTimer();
+  }
+}
+document.getElementById('alResume').onclick = resumeVideo;
+document.getElementById('alSkip').onclick = resumeVideo;
 function renderQList(qid) {
   const q = QUESTIONS.find(x => x.id === qid);
   const list = document.getElementById('qList');
