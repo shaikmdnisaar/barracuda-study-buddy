@@ -941,11 +941,12 @@ function playActualVideo(qid, vid) {
 // ====== YouTube IFrame API + Active Listening ======
 let ytPlayer = null, ytReady = false;
 let alEnabled = false, alTimer = null, alInterval = 30; // seconds
-let alQuizPool = [], alQuizIdx = 0, alCorrect = 0, alTotal = 0;
 let alCurQ = null;
 let alAskedIds = []; // track which questions have been asked to avoid repeats
 let alLastTimestamp = 0; // video timestamp at last quiz
-let alLearnedConcepts = []; // concepts covered in the last 30s segment
+let alSegmentNum = 0; // which 30s segment we're on
+let alTranscript = null; // fetched transcript for current video
+let alFollowUpChain = []; // sequential follow-up question chain
 
 function loadYTAPI(cb) {
   if (document.getElementById('yt-iframe-api')) { window.onYouTubeIframeAPIReady = cb; return; }
@@ -956,7 +957,6 @@ function loadYTAPI(cb) {
   window.onYouTubeIframeAPIReady = cb;
 }
 function createYTPlayer(vid) {
-  // Use a plain iframe with enablejsapi=1 — more reliable than YT.Player constructor
   const origin = encodeURIComponent(window.location.origin);
   document.getElementById('vidFrame').innerHTML =
     '<iframe id="ytPlayerDiv" style="position:absolute;inset:0;width:100%;height:100%;border:none" ' +
@@ -964,64 +964,172 @@ function createYTPlayer(vid) {
     'allowfullscreen allow="autoplay;encrypted-media;picture-in-picture"></iframe>';
   if (ytPlayer) { try { ytPlayer.destroy(); } catch(e){} ytPlayer = null; }
   ytReady = false;
-  // Wait for the iframe to load, then init the postMessage-based controller
+  // Reset active listening state for new video
+  alAskedIds = [];
+  alLastTimestamp = 0;
+  alSegmentNum = 0;
+  alTranscript = null;
+  alFollowUpChain = [];
+  // Try to fetch transcript for this video
+  fetchTranscript(vid.id);
   const iframe = document.getElementById('ytPlayerDiv');
   iframe.onload = () => {
     ytReady = true;
-    // Try to autoplay via postMessage
     try { iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*'); } catch(e) {}
     startALTimer();
   };
 }
 
-// Control the YouTube iframe via postMessage (no YT.Player object needed)
+// Fetch YouTube transcript (timedtext) to know what's being said
+function fetchTranscript(videoId) {
+  alTranscript = null;
+  // Try the timedtext API (works for videos with captions)
+  const url = 'https://video.google.com/timedtext?lang=en&v=' + videoId;
+  fetch(url).then(r => r.text()).then(xml => {
+    if (xml && xml.trim()) {
+      // Parse XML transcript: <text start="0.5" dur="3.2">caption text</text>
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(xml, 'text/xml');
+      const texts = doc.querySelectorAll('text');
+      if (texts.length > 0) {
+        alTranscript = [];
+        texts.forEach(t => {
+          alTranscript.push({
+            start: parseFloat(t.getAttribute('start') || 0),
+            dur: parseFloat(t.getAttribute('dur') || 0),
+            text: t.textContent.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&#39;/g, "'")
+          });
+        });
+      }
+    }
+  }).catch(() => { alTranscript = null; });
+}
+
+// Get transcript text for a time segment
+function getTranscriptSegment(start, end) {
+  if (!alTranscript || !alTranscript.length) return '';
+  let text = '';
+  for (const t of alTranscript) {
+    if (t.start >= start && t.start < end) text += ' ' + t.text;
+  }
+  return text.trim();
+}
+
+// Generate follow-up questions based on transcript content + challenge bank
+function buildFollowUpChain(q) {
+  const BANK = window.CHALLENGE_BANK || {};
+  const bankQs = BANK[q.id] || [];
+  const catBank = BANK['_cat_' + q.cat] || [];
+  // Start with the topic's challenge questions (ordered by difficulty — basics first)
+  // Then add category-level questions
+  // Then add follow-up "why" and "how" questions that build on the topic
+  const chain = [];
+  // Level 1: Basic definition/fact questions from the bank
+  if (bankQs.length > 0) chain.push({ ...bankQs[0], level: 'basic', source: 'bank' });
+  if (bankQs.length > 1) chain.push({ ...bankQs[1], level: 'basic', source: 'bank' });
+  // Level 2: Application/scenario questions
+  if (bankQs.length > 2) chain.push({ ...bankQs[2], level: 'intermediate', source: 'bank' });
+  if (bankQs.length > 3) chain.push({ ...bankQs[3], level: 'intermediate', source: 'bank' });
+  // Level 3: Deep understanding / follow-up
+  if (bankQs.length > 4) chain.push({ ...bankQs[4], level: 'advanced', source: 'bank' });
+  // Add category-level questions if we need more
+  for (const cq of catBank) {
+    if (chain.length >= 10) break;
+    chain.push({ ...cq, level: 'intermediate', source: 'category' });
+  }
+  // Add generated follow-up questions based on the topic
+  const followUps = generateFollowUps(q);
+  for (const fu of followUps) {
+    if (chain.length >= 15) break;
+    chain.push({ ...fu, level: 'followup', source: 'generated' });
+  }
+  return chain;
+}
+
+// Generate "follow-up" questions that build on the topic like a conversation
+function generateFollowUps(q) {
+  const followUps = [];
+  const topic = q.q;
+  const cat = q.cat;
+  // "Why does this matter?" question
+  followUps.push({
+    q: 'Why is understanding "' + topic.substring(0, 60) + '" important for a TAC engineer?',
+    opts: [
+      'It\'s a common interview question and a fundamental concept for troubleshooting real customer issues',
+      'It\'s only theoretical and never used in practice',
+      'It\'s only relevant for developers, not support engineers',
+      'It\'s outdated and no longer relevant'
+    ],
+    explain: 'TAC engineers need to explain these concepts to customers and use them to diagnose real issues daily.'
+  });
+  // "How would you apply this?" question
+  followUps.push({
+    q: 'How would you apply knowledge of "' + topic.substring(0, 50) + '" in a real troubleshooting scenario?',
+    opts: [
+      'Use it to systematically isolate and diagnose the issue, then explain the root cause to the customer',
+      'Ignore it and just reboot the device',
+      'Escalate immediately without investigating',
+      'Only use it for documentation, not troubleshooting'
+    ],
+    explain: 'TAC engineers apply concepts to isolate issues methodically and communicate findings clearly to customers.'
+  });
+  // "What comes next?" — builds on the previous topic
+  followUps.push({
+    q: 'After understanding this concept, what related topic should you learn next?',
+    opts: [
+      'The next layer/protocol/feature that builds on this one (e.g., after OSI layers → learn TCP/IP model)',
+      'Nothing — this is all you need to know',
+      'Only memorize port numbers',
+      'Skip to advanced topics without fundamentals'
+    ],
+    explain: 'Learning builds sequentially — master fundamentals before moving to related advanced topics.'
+  });
+  // "Common mistake" question
+  followUps.push({
+    q: 'What is a common mistake people make regarding "' + topic.substring(0, 50) + '"?',
+    opts: [
+      'Confusing it with a similar concept (e.g., TCP vs UDP, stateful vs stateless, Layer 2 vs Layer 3)',
+      'There are no common mistakes',
+      'Only experts make mistakes with this',
+      'Mistakes don\'t matter in troubleshooting'
+    ],
+    explain: 'Knowing common confusions helps you avoid them in interviews and troubleshooting.'
+  });
+  return followUps;
+}
+
+// Control the YouTube iframe via postMessage
 function ytControl(func) {
   const iframe = document.getElementById('ytPlayerDiv');
   if (!iframe || !iframe.contentWindow) return;
   try { iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: func, args: '' }), '*'); } catch(e) {}
 }
-function ytGetState(cb) {
-  // Request state via postMessage
-  const iframe = document.getElementById('ytPlayerDiv');
-  if (!iframe || !iframe.contentWindow) { cb(-1); return; }
-  try { iframe.contentWindow.postMessage(JSON.stringify({ event: 'listening' }), '*'); } catch(e) {}
-  // Listen for state response
-  const handler = (e) => {
-    if (e.data && typeof e.data === 'string') {
-      try { const d = JSON.parse(e.data); if (d.event === 'onStateChange' && d.info !== undefined) { cb(d.info); window.removeEventListener('message', handler); } } catch(err) {}
-    }
-  };
-  window.addEventListener('message', handler);
-  // Fallback after 500ms
-  setTimeout(() => { window.removeEventListener('message', handler); }, 500);
-}
+
 function startALTimer() {
   stopALTimer();
   if (!alEnabled || !ytReady) return;
-  // Reset asked questions when starting a new video segment
   alAskedIds = [];
   alLastTimestamp = 0;
-  alLearnedConcepts = [];
+  alSegmentNum = 0;
+  // Build the follow-up question chain for the current topic
+  const q = QUESTIONS.find(x => x.id === curQid);
+  if (q) alFollowUpChain = buildFollowUpChain(q);
   alTimer = setInterval(() => {
-    // Get current video timestamp via postMessage
     const iframe = document.getElementById('ytPlayerDiv');
     if (!iframe || !iframe.contentWindow) return;
     // Request current time
     try { iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'getCurrentTime', args: '' }), '*'); } catch(e) {}
-    // Listen for the response
     const timeHandler = (e) => {
       if (e.data && typeof e.data === 'string') {
         try {
           const d = JSON.parse(e.data);
           if (d.event === 'onInfoDelivery' && d.info && d.info.currentTime !== undefined) {
             const curTime = Math.floor(d.info.currentTime);
-            // Track what was covered in this 30s segment
             const segmentStart = alLastTimestamp;
             const segmentEnd = curTime;
-            alLearnedConcepts.push({ start: segmentStart, end: segmentEnd, qid: curQid });
             alLastTimestamp = segmentEnd;
+            alSegmentNum++;
             window.removeEventListener('message', timeHandler);
-            // Pause and show quiz about what was just covered
             ytControl('pauseVideo');
             showALQuiz(segmentStart, segmentEnd);
           }
@@ -1029,10 +1137,7 @@ function startALTimer() {
       }
     };
     window.addEventListener('message', timeHandler);
-    // Fallback: if no response in 500ms, just pause and quiz
-    setTimeout(() => {
-      window.removeEventListener('message', timeHandler);
-    }, 500);
+    setTimeout(() => { window.removeEventListener('message', timeHandler); }, 500);
   }, alInterval * 1000);
 }
 function stopALTimer() { clearInterval(alTimer); alTimer = null; }
@@ -1042,7 +1147,7 @@ document.getElementById('alToggle').onclick = () => {
   alEnabled = !alEnabled;
   document.getElementById('alToggle').classList.toggle('on', alEnabled);
   if (alEnabled) {
-    toast('🎧 Active Listening ON — quiz every 30s!');
+    toast('🎧 Active Listening ON — follow-up questions every 30s!');
     startALTimer();
   } else {
     toast('🎧 Active Listening OFF');
@@ -1051,43 +1156,58 @@ document.getElementById('alToggle').onclick = () => {
 };
 
 function showALQuiz(segStart, segEnd) {
-  // Build quiz pool from current question's challenge bank + category
-  const BANK = window.CHALLENGE_BANK || {};
   const q = QUESTIONS.find(x => x.id === curQid);
   if (!q) { resumeVideo(); return; }
-  // Get all questions for this topic + category
-  let pool = [...(BANK[q.id] || []), ...(BANK['_cat_' + q.cat] || [])];
-  if (pool.length < 1) {
-    // Borrow from same category
-    const catQs = QUESTIONS.filter(x => x.cat === q.cat && x.id !== q.id);
-    for (const oq of catQs) { pool.push(...(BANK[oq.id] || [])); if (pool.length >= 3) break; }
+  // Get transcript text for this segment (if available)
+  const segmentText = getTranscriptSegment(segStart, segEnd);
+  // Pick the next question from the follow-up chain (sequential, no repeats)
+  let nextQ = null;
+  for (let i = 0; i < alFollowUpChain.length; i++) {
+    if (!alAskedIds.includes(i)) {
+      nextQ = alFollowUpChain[i];
+      alAskedIds.push(i);
+      break;
+    }
   }
-  if (pool.length < 1) { resumeVideo(); return; }
-  // Filter out already-asked questions (avoid repeats)
-  let available = pool.filter((item, idx) => !alAskedIds.includes(idx));
-  // If all asked, reset and start over
-  if (available.length === 0) { alAskedIds = []; available = pool; }
-  // Pick the next question (sequential rotation, not random — covers different aspects)
-  const poolIdx = pool.indexOf(available[0]);
-  alAskedIds.push(poolIdx);
-  alCurQ = available[0];
+  // If all asked, generate a "review" question
+  if (!nextQ) {
+    nextQ = {
+      q: '🎬 Quick review: Can you summarize the key points from the video so far?',
+      opts: [
+        'Yes — I can explain the main concepts covered in my own words',
+        'I only remember some parts',
+        'I wasn\'t paying close attention',
+        'I need to rewatch the video'
+      ],
+      explain: 'Being able to summarize in your own words shows true understanding — practice explaining concepts out loud!',
+      level: 'review',
+      source: 'generated'
+    };
+  }
+  alCurQ = nextQ;
   alTotal++;
-  // Format timestamp for display
   const fmtTS = (s) => {
     const m = Math.floor(s / 60), sec = Math.floor(s % 60);
     return m + ':' + (sec < 10 ? '0' : '') + sec;
   };
-  const opts = [...alCurQ.opts].sort(() => Math.random() - 0.5);
-  // Show "recently covered" context before the question
-  const contextMsg = '📺 You just watched ' + fmtTS(segStart || 0) + ' → ' + fmtTS(segEnd || 0) + ' of the video. Let\'s check what you learned!';
-  document.getElementById('alQ').innerHTML = '<div style="font-size:.75em;color:var(--green);margin-bottom:8px;font-weight:600">' + contextMsg + '</div>' + esc(alCurQ.q);
+  const opts = [...nextQ.opts].sort(() => Math.random() - 0.5);
+  // Build context message showing what was covered + question level
+  const levelLabels = { basic: '🟢 Basic', intermediate: '🟡 Intermediate', advanced: '🔴 Advanced', followup: '🔗 Follow-up', review: '🔄 Review' };
+  const levelLabel = levelLabels[nextQ.level] || '🟢';
+  let contextMsg = '📺 Segment ' + alSegmentNum + ' · ' + fmtTS(segStart || 0) + ' → ' + fmtTS(segEnd || 0) + ' · ' + levelLabel;
+  if (segmentText) {
+    // Show a snippet of what was said in the video
+    const snippet = segmentText.substring(0, 120) + (segmentText.length > 120 ? '…' : '');
+    contextMsg += '<br><div style="font-size:.72em;color:var(--mut);margin-top:4px;font-style:italic">💬 Video said: "' + esc(snippet) + '"</div>';
+  }
+  document.getElementById('alQ').innerHTML = '<div style="font-size:.75em;color:var(--green);margin-bottom:8px;font-weight:600">' + contextMsg + '</div>' + esc(nextQ.q);
   document.getElementById('alOpts').innerHTML = opts.map((o, i) =>
     '<button class="al-opt" data-o="' + esc(o) + '">' + esc(o) + '</button>').join('');
   document.querySelectorAll('#alOpts .al-opt').forEach(b => b.onclick = () => alAnswer(b));
   document.getElementById('alFb').classList.remove('show');
   document.getElementById('alResume').style.display = 'none';
   document.getElementById('alSkip').style.display = 'inline-block';
-  document.getElementById('alStats').textContent = 'Quiz ' + alTotal + ' · Correct: ' + alCorrect + '/' + alTotal + ' · Segment: ' + fmtTS(segStart || 0) + '-' + fmtTS(segEnd || 0);
+  document.getElementById('alStats').textContent = 'Q' + alTotal + ' · Correct: ' + alCorrect + '/' + alTotal + ' · ' + levelLabel;
   document.getElementById('alQuiz').classList.add('show');
 }
 function alAnswer(btn) {
