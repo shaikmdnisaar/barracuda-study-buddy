@@ -919,12 +919,8 @@ function watchCurrentVideo() {
 function playActualVideo(qid, vid) {
   const isYT = vid.id && !vid.source;
   if (isYT) {
-    // Use YouTube IFrame API for play/pause control (active listening)
-    if (!window.YT || !window.YT.Player) {
-      loadYTAPI(() => createYTPlayer(vid));
-    } else {
-      createYTPlayer(vid);
-    }
+    // Use plain iframe with enablejsapi=1 + postMessage for play/pause control
+    createYTPlayer(vid);
   } else {
     document.getElementById('vidFrame').innerHTML = '<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#f0f4f9;color:#6b7a90;font-size:.9em;text-align:center;padding:20px"><a href="' + vid.url + '" target="_blank" style="color:var(--cyan)">Open LinkedIn Learning video →</a></div>';
   }
@@ -957,31 +953,52 @@ function loadYTAPI(cb) {
   window.onYouTubeIframeAPIReady = cb;
 }
 function createYTPlayer(vid) {
-  document.getElementById('vidFrame').innerHTML = '<div id="ytPlayerDiv" style="position:absolute;inset:0"></div>';
+  // Use a plain iframe with enablejsapi=1 — more reliable than YT.Player constructor
+  const origin = encodeURIComponent(window.location.origin);
+  document.getElementById('vidFrame').innerHTML =
+    '<iframe id="ytPlayerDiv" style="position:absolute;inset:0;width:100%;height:100%;border:none" ' +
+    'src="https://www.youtube.com/embed/' + vid.id + '?rel=0&modestbranding=1&playsinline=1&enablejsapi=1&origin=' + origin + '" ' +
+    'allowfullscreen allow="autoplay;encrypted-media;picture-in-picture"></iframe>';
   if (ytPlayer) { try { ytPlayer.destroy(); } catch(e){} ytPlayer = null; }
   ytReady = false;
-  ytPlayer = new YT.Player('ytPlayerDiv', {
-    videoId: vid.id,
-    playerVars: { autoplay: 1, rel: 0, modestbranding: 1 },
-    events: {
-      onReady: () => { ytReady = true; startALTimer(); },
-      onStateChange: (e) => {
-        if (e.data === YT.PlayerState.PLAYING) startALTimer();
-        if (e.data === YT.PlayerState.PAUSED) stopALTimer();
-        if (e.data === YT.PlayerState.ENDED) stopALTimer();
-      }
+  // Wait for the iframe to load, then init the postMessage-based controller
+  const iframe = document.getElementById('ytPlayerDiv');
+  iframe.onload = () => {
+    ytReady = true;
+    // Try to autoplay via postMessage
+    try { iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*'); } catch(e) {}
+    startALTimer();
+  };
+}
+
+// Control the YouTube iframe via postMessage (no YT.Player object needed)
+function ytControl(func) {
+  const iframe = document.getElementById('ytPlayerDiv');
+  if (!iframe || !iframe.contentWindow) return;
+  try { iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: func, args: '' }), '*'); } catch(e) {}
+}
+function ytGetState(cb) {
+  // Request state via postMessage
+  const iframe = document.getElementById('ytPlayerDiv');
+  if (!iframe || !iframe.contentWindow) { cb(-1); return; }
+  try { iframe.contentWindow.postMessage(JSON.stringify({ event: 'listening' }), '*'); } catch(e) {}
+  // Listen for state response
+  const handler = (e) => {
+    if (e.data && typeof e.data === 'string') {
+      try { const d = JSON.parse(e.data); if (d.event === 'onStateChange' && d.info !== undefined) { cb(d.info); window.removeEventListener('message', handler); } } catch(err) {}
     }
-  });
+  };
+  window.addEventListener('message', handler);
+  // Fallback after 500ms
+  setTimeout(() => { window.removeEventListener('message', handler); }, 500);
 }
 function startALTimer() {
   stopALTimer();
   if (!alEnabled || !ytReady) return;
   alTimer = setInterval(() => {
-    if (!ytPlayer || !ytPlayer.getCurrentTime) return;
-    if (ytPlayer.getPlayerState() === 1) { // playing
-      ytPlayer.pauseVideo();
-      showALQuiz();
-    }
+    // Pause the video via postMessage and show quiz
+    ytControl('pauseVideo');
+    showALQuiz();
   }, alInterval * 1000);
 }
 function stopALTimer() { clearInterval(alTimer); alTimer = null; }
@@ -1046,10 +1063,8 @@ function alAnswer(btn) {
 }
 function resumeVideo() {
   document.getElementById('alQuiz').classList.remove('show');
-  if (ytPlayer && ytPlayer.playVideo) {
-    ytPlayer.playVideo();
-    startALTimer();
-  }
+  ytControl('playVideo');
+  startALTimer();
 }
 document.getElementById('alResume').onclick = resumeVideo;
 document.getElementById('alSkip').onclick = resumeVideo;
