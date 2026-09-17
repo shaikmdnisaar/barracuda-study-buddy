@@ -292,6 +292,32 @@ select { width:100%; padding:9px; border-radius:10px; background:var(--bg3); col
 }
 @keyframes luPop { from{transform:scale(.7);opacity:0} to{transform:scale(1);opacity:1} }
 
+/* STAR practice */
+.star-box textarea:focus { outline:none; border-color:var(--gold); }
+
+/* Product cards */
+.prod-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:14px; }
+.prod-card {
+  background:var(--card); border:2px solid var(--line); border-radius:14px; padding:16px;
+  cursor:pointer; transition:.2s; position:relative; min-height:120px;
+}
+.prod-card:hover { border-color:var(--gold); transform:translateY(-2px); }
+.prod-card.flipped { border-color:var(--cyan); }
+.prod-card .pn { font-size:1em; font-weight:800; color:#1a2233; margin-bottom:4px; }
+.prod-card .pc-icon { font-size:1.8em; margin-bottom:6px; }
+.prod-card .pd { font-size:.82em; color:var(--mut); line-height:1.5; }
+.prod-card .pf { display:none; font-size:.8em; color:#445; line-height:1.6; margin-top:8px; }
+.prod-card.flipped .pf { display:block; }
+.prod-card.flipped .pd { display:none; }
+
+/* Tips grid */
+.tips-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:14px; }
+.tips-card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px; }
+.tips-card h3 { margin-bottom:10px; font-size:.95em; }
+.tips-card ul { list-style:none; padding:0; }
+.tips-card li { font-size:.84em; color:#445; line-height:1.7; padding:4px 0 4px 20px; position:relative; }
+.tips-card li:before { content:'▸'; position:absolute; left:4px; color:var(--gold); }
+
 /* ===== Mobile responsive ===== */
 @media(max-width:768px){
   body { padding:8px; }
@@ -337,6 +363,9 @@ select { width:100%; padding:9px; border-radius:10px; background:var(--bg3); col
   .lu-card { padding:22px 24px; }
   .hype-frame { width:95vw; }
   #toast { bottom:70px; font-size:.82em; padding:8px 16px; }
+  .prod-grid { grid-template-columns:1fr; }
+  .tips-grid { grid-template-columns:1fr; }
+  .star-box textarea { font-size:.82em; }
   select { font-size:.85em; padding:8px; }
   .searchbox { font-size:.85em; padding:8px 10px; }
   .qtext { font-size:.8em; }
@@ -401,6 +430,9 @@ select { width:100%; padding:9px; border-radius:10px; background:var(--bg3); col
     <div class="tab" data-tab="interview">🎤 Interview Sim</div>
     <div class="tab" data-tab="readiness">📊 Readiness</div>
     <div class="tab" data-tab="achv">🏅 Achievements</div>
+    <div class="tab" data-tab="star">⭐ STAR Practice</div>
+    <div class="tab" data-tab="products">📦 Products</div>
+    <div class="tab" data-tab="tips">💡 Interview Tips</div>
   </div>
 
   <!-- Watch & Learn -->
@@ -485,18 +517,23 @@ select { width:100%; padding:9px; border-radius:10px; background:var(--bg3); col
   <div class="panel" id="panel-interview">
     <div class="interview-box">
       <h3 style="color:var(--purple);margin-bottom:6px">🎤 Interview Simulator</h3>
-      <p style="color:var(--mut);font-size:.85em;margin-bottom:14px">Random question · 90s to answer out loud · self-grade. Practice speaking confidently.</p>
+      <p style="color:var(--mut);font-size:.85em;margin-bottom:14px">Random question · 90s to answer out loud · self-grade · model answer to compare.</p>
+      <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
+        <button class="pcbtn" id="intMock">🔥 Start 5-Q Mock Interview</button>
+        <button class="pcbtn" id="intNew" style="background:var(--card);color:var(--txt);border:1px solid var(--line)">🎲 Single Question</button>
+      </div>
       <div class="int-q" id="intQ">
         <div class="iq-label">Question</div>
-        <div class="iq-text" id="intText">Click "New Question" to begin</div>
+        <div class="iq-text" id="intText">Click "Start 5-Q Mock Interview" or "Single Question" to begin</div>
       </div>
       <div class="int-controls">
-        <button id="intNew">🎲 New Question</button>
         <button id="intStart">⏱️ Start Timer</button>
         <button id="intStop">⏹️ Stop</button>
         <button id="intDone">✅ Done</button>
+        <button id="intModel" style="display:none">📖 Show Model Answer</button>
       </div>
       <div class="int-timer" id="intTimer">1:30</div>
+      <div class="expl" id="intModelAns" style="display:none;margin-top:10px"></div>
       <div class="int-rubric" id="intRubric" style="display:none">
         <h4 style="color:var(--gold);margin-bottom:10px;font-size:.9em">Self-grade (0-5 each)</h4>
         <div class="rs"><span>Technical accuracy</span><input type="number" id="r-tech" min="0" max="5" value="3"></div>
@@ -504,6 +541,12 @@ select { width:100%; padding:9px; border-radius:10px; background:var(--bg3); col
         <div class="rs"><span>Clarity & confidence</span><input type="number" id="r-clarity" min="0" max="5" value="3"></div>
         <div class="rs"><span>Examples used</span><input type="number" id="r-ex" min="0" max="5" value="2"></div>
         <button class="next-btn show" id="intSave" style="margin-top:10px">💾 Save & Next</button>
+      </div>
+      <div id="intMockResult" style="display:none;text-align:center;margin-top:16px">
+        <div style="font-size:2.5em;margin-bottom:6px" id="intMockEmoji">🎤</div>
+        <h3 style="color:var(--gold);margin-bottom:6px" id="intMockScore"></h3>
+        <p style="color:var(--mut);margin-bottom:14px" id="intMockSub"></p>
+        <button class="pcbtn" id="intMockAgain">🔁 Another Mock</button>
       </div>
     </div>
   </div>
@@ -519,6 +562,66 @@ select { width:100%; padding:9px; border-radius:10px; background:var(--bg3); col
     <h3 style="color:var(--gold);margin-bottom:6px">🏅 Achievements</h3>
     <p style="color:var(--mut);font-size:.85em;margin-bottom:14px"><span id="achvCount">0</span> unlocked</p>
     <div class="achv-grid" id="achvGrid"></div>
+  </div>
+
+  <!-- STAR Practice -->
+  <div class="panel" id="panel-star">
+    <h3 style="color:var(--gold);margin-bottom:6px">⭐ STAR Method Practice</h3>
+    <p style="color:var(--mut);font-size:.85em;margin-bottom:14px">Practice answering scenario questions using STAR: Situation → Task → Action → Result. Type your answer, then compare with the model.</p>
+    <div class="star-box" style="max-width:760px;margin:0 auto">
+      <div class="int-q" id="starQ" style="margin-bottom:14px">
+        <div class="iq-label" style="color:var(--gold)">Scenario</div>
+        <div class="iq-text" id="starText">Click "New Scenario" to begin</div>
+      </div>
+      <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
+        <button class="pcbtn" id="starNew">🎲 New Scenario</button>
+      </div>
+      <div id="starForm" style="display:none">
+        <div style="display:grid;gap:10px">
+          <div><label style="font-size:.8em;color:var(--gold);font-weight:700">S — Situation (what was happening?)</label><textarea id="starS" rows="2" style="width:100%;border-radius:10px;border:1px solid var(--line);background:var(--bg3);color:var(--txt);padding:10px;font-size:.88em;font-family:inherit;resize:vertical"></textarea></div>
+          <div><label style="font-size:.8em;color:var(--gold);font-weight:700">T — Task (what did you need to do?)</label><textarea id="starT" rows="2" style="width:100%;border-radius:10px;border:1px solid var(--line);background:var(--bg3);color:var(--txt);padding:10px;font-size:.88em;font-family:inherit;resize:vertical"></textarea></div>
+          <div><label style="font-size:.8em;color:var(--gold);font-weight:700">A — Action (what steps did you take?)</label><textarea id="starA" rows="3" style="width:100%;border-radius:10px;border:1px solid var(--line);background:var(--bg3);color:var(--txt);padding:10px;font-size:.88em;font-family:inherit;resize:vertical"></textarea></div>
+          <div><label style="font-size:.8em;color:var(--gold);font-weight:700">R — Result (what was the outcome?)</label><textarea id="starR" rows="2" style="width:100%;border-radius:10px;border:1px solid var(--line);background:var(--bg3);color:var(--txt);padding:10px;font-size:.88em;font-family:inherit;resize:vertical"></textarea></div>
+        </div>
+        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+          <button class="pcbtn" id="starModel">📖 Show Model Answer</button>
+          <button class="next-btn show" id="starSave">💾 Save & Next</button>
+        </div>
+        <div class="expl" id="starModelAns" style="display:none;margin-top:12px"></div>
+      </div>
+      <div style="margin-top:14px;font-size:.82em;color:var(--mut)" id="starCounter"></div>
+    </div>
+  </div>
+
+  <!-- Product Reference Cards -->
+  <div class="panel" id="panel-products">
+    <h3 style="color:var(--gold);margin-bottom:6px">📦 Barracuda Product Reference</h3>
+    <p style="color:var(--mut);font-size:.85em;margin-bottom:14px">Quick-reference cards for each Barracuda product. Click to flip and see key features.</p>
+    <div class="prod-grid" id="prodGrid"></div>
+  </div>
+
+  <!-- Interview Tips -->
+  <div class="panel" id="panel-tips">
+    <h3 style="color:var(--gold);margin-bottom:6px">💡 Interview Tips & Common Mistakes</h3>
+    <p style="color:var(--mut);font-size:.85em;margin-bottom:14px">Maximize your chances — follow these tips and avoid these mistakes.</p>
+    <div class="tips-grid">
+      <div class="tips-card">
+        <h3 style="color:var(--green)">✅ Do These</h3>
+        <ul id="tipsDo"></ul>
+      </div>
+      <div class="tips-card">
+        <h3 style="color:var(--pink)">❌ Avoid These</h3>
+        <ul id="tipsDont"></ul>
+      </div>
+      <div class="tips-card">
+        <h3 style="color:var(--cyan)">🎤 Questions to Ask Them</h3>
+        <ul id="tipsAsk"></ul>
+      </div>
+      <div class="tips-card">
+        <h3 style="color:var(--purple)">📋 TAC Interview Themes</h3>
+        <ul id="tipsThemes"></ul>
+      </div>
+    </div>
   </div>
 
 </div>
@@ -693,6 +796,9 @@ document.querySelectorAll('.tab').forEach(t => {
     document.getElementById('panel-' + t.dataset.tab).classList.add('active');
     if (t.dataset.tab === 'readiness') renderReadiness();
     if (t.dataset.tab === 'achv') renderAchievements();
+    if (t.dataset.tab === 'star') { /* lazy */ }
+    if (t.dataset.tab === 'products') renderProducts();
+    if (t.dataset.tab === 'tips') renderTips();
   };
 });
 
@@ -895,15 +1001,8 @@ document.getElementById('flashNext').onclick = () => {
   save();
 };
 
-// ====== Interview Sim ======
+// ====== Interview Sim (handlers — data/model answers defined later) ======
 let intTimer = null, intSecs = 90;
-document.getElementById('intNew').onclick = () => {
-  const q = QUESTIONS[Math.floor(Math.random() * QUESTIONS.length)];
-  document.getElementById('intText').textContent = q.q;
-  document.getElementById('intText').dataset.qid = q.id;
-  document.getElementById('intRubric').style.display = 'none';
-  intSecs = 90; document.getElementById('intTimer').textContent = '1:30';
-};
 document.getElementById('intStart').onclick = () => {
   clearInterval(intTimer);
   intTimer = setInterval(() => {
@@ -919,15 +1018,26 @@ document.getElementById('intSave').onclick = () => {
   const t = +document.getElementById('r-tech').value, c = +document.getElementById('r-comp').value;
   const cl = +document.getElementById('r-clarity').value, ex = +document.getElementById('r-ex').value;
   const score = (t + c + cl + ex) / 4;
-  S.interview.done++; S.interview.scores.push(score);
-  addXP(Math.round(score * 10));
-  markMission('interview');
-  bumpStreak();
-  save();
-  toast('🎤 Interview saved! +' + Math.round(score * 10) + ' XP');
-  burstConfetti(30);
-  document.getElementById('intRubric').style.display = 'none';
-  document.getElementById('intNew').click();
+  if (intMockQs.length && intMockIdx < intMockQs.length) {
+    intMockScores.push(score);
+    addXP(Math.round(score * 10));
+    save();
+    toast('🎤 Q' + (intMockIdx + 1) + ' scored ' + score.toFixed(1) + '/5! +' + Math.round(score * 10) + ' XP');
+    burstConfetti(20);
+    intMockIdx++;
+    document.getElementById('intRubric').style.display = 'none';
+    nextMockQ();
+  } else {
+    S.interview.done++; S.interview.scores.push(score);
+    addXP(Math.round(score * 10));
+    markMission('interview');
+    bumpStreak();
+    save();
+    toast('🎤 Interview saved! +' + Math.round(score * 10) + ' XP');
+    burstConfetti(30);
+    document.getElementById('intRubric').style.display = 'none';
+    pickIntQuestion();
+  }
 };
 
 // ====== Readiness ======
@@ -1253,11 +1363,206 @@ document.addEventListener('keydown', e => {
   }
 });
 
+// ====== STAR Practice ======
+const STAR_SCENARIOS = [
+  { q: 'A user reports they cannot access the internet. Walk me through how you would troubleshoot this.', model: 'S: A user called reporting no internet access. T: I needed to identify and resolve the connectivity issue. A: First I checked if it was one user or all users (isolated scope). It was one user, so I checked their IP config — they had a 169.254.x.x APIPA address, meaning DHCP failed. I checked the DHCP server, found the scope was exhausted. I increased the scope and released/renewed the client IP. R: The user got a valid IP and internet access was restored within 10 minutes.' },
+  { q: 'A site-to-site VPN tunnel between HQ and a branch office is down. How do you handle it?', model: 'S: The branch office reported no connectivity to HQ resources — the VPN tunnel was down. T: Diagnose and restore the IPsec tunnel. A: I checked Phase 1 IKE — UDP 500 was reachable. Found a PSK mismatch after a recent firewall firmware update on the branch side. I corrected the PSK, verified Phase 2 traffic selectors matched, and confirmed with SA counters (encrypt/decrypt packets incrementing). R: Tunnel came up, branch users regained access to HQ resources. Documented the PSK in the password vault to prevent recurrence.' },
+  { q: 'Emails from your company domain are being delivered to recipients\' spam folders. What do you do?', model: 'S: Multiple recipients reported our emails going to spam. T: Identify and fix the email authentication/reputation issue. A: I checked SPF, DKIM, and DMARC records — SPF was missing a new sending IP from our marketing tool. I updated the SPF TXT record to include it. I also checked MX Toolbox for blacklist listings — found our IP on a minor RBL, requested delisting. I verified with mail-tester.com — score went from 4/10 to 9/10. R: Emails started landing in inboxes within 24 hours. Set up DMARC reports for ongoing monitoring.' },
+  { q: 'A Linux production server CPU is spiking to 100%. Walk me through your response.', model: 'S: Monitoring alerted that a production Linux server CPU was at 100%. T: Identify the cause and restore normal performance. A: I ran top — found a single Java process consuming 99% CPU. I checked the application logs — it was in a GC loop (OutOfMemoryError). I checked heap usage with jmap, found the heap was too small for the workload. I increased the JVM heap size, restarted the service. I also set up an alert for CPU > 80% for 5 minutes. R: CPU returned to normal, application stabilized. Added monitoring to catch it earlier next time.' },
+  { q: 'A customer can send but not receive email. How do you troubleshoot?', model: 'S: A customer reported they could send email but were not receiving any. T: Diagnose and fix the inbound email issue. A: I checked MX records — they pointed to the correct mail server. I checked the firewall — port 25 inbound was blocked by a recent rule change. I added a permit rule for TCP 25 from the mail filter IPs. I checked the mail server logs — confirmed inbound connections resumed. I also checked the spam quarantine for false positives. R: Customer started receiving email within 5 minutes of the firewall fix. Documented the rule change process to prevent recurrence.' },
+  { q: 'A Barracuda appliance is not syncing to Barracuda Cloud Control. What do you check?', model: 'S: A customer\'s Barracuda appliance showed "Not Connected" in Cloud Control. T: Restore the sync connection. A: I verified the appliance had internet access — it could ping 8.8.8.8. I checked DNS — it could resolve barracudanetworks.com. I checked outbound firewall rules — TCP 443 was blocked to external IPs. I added a rule allowing 443 to Barracuda Cloud Control IP ranges. I also checked the appliance time/NTP — it was correct (needed for TLS cert validation). R: Appliance reconnected to Cloud Control within 2 minutes. Customer could manage it from the portal again.' },
+  { q: 'A newly deployed firewall is causing packet drops. How do you approach this?', model: 'S: After deploying a new firewall, users reported intermittent connectivity issues. T: Identify and fix the packet drops. A: I checked the firewall drop logs — found traffic being dropped by the default deny rule (missing permit for DNS and NTP). I added permit rules for UDP 53 (DNS) and UDP 123 (NTP). I also ran a packet trace — found large packets being dropped due to MTU mismatch on a VPN tunnel. I adjusted TCP MSS clamping. I verified with the users — connectivity was stable. R: All packet drops resolved. Created a deployment checklist to include DNS/NTP rules in future deployments.' },
+  { q: 'Tell me about a time you had to learn a new technology quickly for a project.', model: 'S: I was assigned to support a Barracuda CloudGen Firewall deployment but had no prior experience with the product. T: I needed to become proficient enough to configure and troubleshoot it within 2 weeks. A: I completed Barracuda\'s free online training (Campus). I set up a virtual CloudGen Firewall in my home lab and practiced configuring VPN, firewall rules, and SD-WAN. I read the documentation for common TAC issues. I shadowed a senior engineer for 2 days. R: I was able to independently handle L1/L2 tickets by the deadline. My manager noted the fast ramp-up in my review.' },
+];
+let starIdx = 0, starCount = 0;
+document.getElementById('starNew').onclick = () => {
+  starIdx = Math.floor(Math.random() * STAR_SCENARIOS.length);
+  const s = STAR_SCENARIOS[starIdx];
+  document.getElementById('starText').textContent = s.q;
+  document.getElementById('starForm').style.display = 'block';
+  document.getElementById('starS').value = '';
+  document.getElementById('starT').value = '';
+  document.getElementById('starA').value = '';
+  document.getElementById('starR').value = '';
+  document.getElementById('starModelAns').style.display = 'none';
+  starCount++;
+  document.getElementById('starCounter').textContent = 'Scenario ' + starCount + ' practiced';
+};
+document.getElementById('starModel').onclick = () => {
+  const el = document.getElementById('starModelAns');
+  el.innerHTML = '<strong style="color:var(--gold)">📖 Model Answer:</strong><br>' + esc(STAR_SCENARIOS[starIdx].model);
+  el.classList.add('show');
+  el.style.display = 'block';
+};
+document.getElementById('starSave').onclick = () => {
+  addXP(20);
+  if (!S.star) S.star = 0;
+  S.star++;
+  markMission('interview');
+  bumpStreak();
+  save();
+  toast('⭐ STAR practice saved! +20 XP');
+  burstConfetti(20);
+  document.getElementById('starNew').click();
+};
+
+// ====== Barracuda Product Reference Cards ======
+const PRODUCTS = [
+  { icon: '🔥', name: 'CloudGen Firewall', desc: 'Next-gen firewall with SD-WAN, ATP, VPN', features: '• NGFW: stateful + app control + IPS\n• SD-WAN: multi-link, dynamic path selection\n• ATP: sandboxing + threat intel\n• VPN: IPsec site-to-site, SSL remote access\n• Managed via Barracuda Cloud Control (BCC)\n• Form factors: hardware, virtual (Vx), cloud (AWS/Azure)\n• Key ports: 443 (BCC), 500/4500 (IPsec), 691 (TINA tunnel)' },
+  { icon: '📧', name: 'Email Security Gateway', desc: 'Email filtering: spam, malware, phishing, DLP', features: '• Anti-spam + anti-virus + anti-phishing\n• ATP sandboxing for zero-day threats\n• DLP (Data Loss Prevention) for outbound email\n• Email encryption (TLS + policy-based)\n• Continuity: email access during outages\n• Form factors: hardware, virtual, cloud service\n• Protects: on-prem Exchange + Office 365\n• MX records point to ESG → filters → forwards to mail server' },
+  { icon: '🌐', name: 'Web Application Firewall', desc: 'Protects web apps from OWASP Top 10 attacks', features: '• Blocks SQLi, XSS, CSRF, session hijacking\n• Layer 7 inspection (HTTP/HTTPS payload)\n• Bot defense + rate limiting\n• DDoS protection (L7) + cloud scrubbing integration\n• SSL inspection (reverse proxy mode)\n• Deployed: in front of web servers\n• Related to OWASP Top 10 mitigation' },
+  { icon: '💾', name: 'Barracuda Backup', desc: 'Backup + DR for physical/virtual/cloud', features: '• Backs up: files, Exchange, SQL, VMware/Hyper-V, O365\n• Deduplication + compression\n• Local backup + cloud replication\n• Instant recovery (boot VM from backup)\n• Ransomware detection + immutable backups\n• Form factors: hardware appliance + cloud service\n• O365 backup: Exchange, OneDrive, SharePoint, Teams' },
+  { icon: '☁️', name: 'SecureEdge', desc: 'Cloud-native SASE for hybrid workforces', features: '• SASE: SD-WAN + SSE (ZTNA, SWG, CASB, FWaaS)\n• Zero Trust Network Access (ZTNA) — no VPN needed\n• Cloud-native: no on-prem hardware for users\n• Remote users connect to nearest cloud PoP\n• Replaces traditional VPN with app-level access\n• Includes web security + cloud DLP' },
+  { icon: '🛡️', name: 'CloudGen WAF (cloud)', desc: 'Cloud-hosted WAF for web apps', features: '• Cloud-deployed WAF (AWS/Azure/GCP)\n• Same protection as on-prem WAF\n• Auto-scaling + load balancing\n• DDoS protection + bot defense\n• Integrates with cloud load balancers\n• Managed via BCC' },
+  { icon: '📨', name: 'Barracuda Essentials', desc: 'Cloud email security + backup for SMBs', features: '• Cloud-based (SaaS — no hardware)\n• Email security: spam, ATP, encryption\n• Email continuity (access during outages)\n• O365 backup included\n• Ideal for small/mid businesses\n• Replaced by Barracuda Email Protection (newer)' },
+  { icon: '🔐', name: 'Message Archiver', desc: 'Email archiving + compliance', features: '• Email archiving for compliance/eDiscovery\n• Search + retrieve old emails\n• Legal hold + retention policies\n• Storage optimization (dedup + compression)\n• Form factors: hardware + virtual' },
+  { icon: '🎛️', name: 'Barracuda Cloud Control', desc: 'Central cloud management portal', features: '• Manages all Barracuda products from one portal\n• Multi-site management + reporting\n• Licensing + subscription management\n• Firmware updates + alerts\n• Remote troubleshooting (support tunnel)\n• Free to use with Barracuda products' },
+];
+function renderProducts() {
+  document.getElementById('prodGrid').innerHTML = PRODUCTS.map((p, i) =>
+    '<div class="prod-card" data-i="' + i + '"><div class="pc-icon">' + p.icon + '</div><div class="pn">' + p.name + '</div><div class="pd">' + p.desc + '</div><div class="pf">' + p.features.replace(/\n/g, '<br>') + '</div></div>'
+  ).join('');
+  document.querySelectorAll('.prod-card').forEach(c => c.onclick = () => c.classList.toggle('flipped'));
+}
+
+// ====== Interview Tips ======
+const TIPS_DO = [
+  'Think out loud — show your troubleshooting process step by step',
+  'Use STAR method for scenario questions (Situation, Task, Action, Result)',
+  'Start with isolation: "Is this one user or all users?"',
+  'Say "I don\'t know, but here\'s how I\'d find out" — honesty + methodology',
+  'Use Barracuda product names naturally (CloudGen Firewall, ESG, WAF, SecureEdge)',
+  'Mention your lab/practice: "I\'ve been practicing these scenarios at home"',
+  'Have 2-3 questions ready to ask the interviewer',
+  'Be confident but humble — TAC is about learning, not knowing everything day 1',
+  'Bring notes with key port numbers, protocols, and product features',
+  'Follow up with a thank-you email within 24 hours',
+];
+const TIPS_DONT = [
+  'Don\'t guess wrong — if unsure, explain your approach instead',
+  'Don\'t say "I\'ve never used that" and stop — say how you\'d learn it',
+  'Don\'t badmouth previous employers or coworkers',
+  'Don\'t give one-word answers — explain your reasoning',
+  'Don\'t skip the isolation step — jumping to a solution looks reckless',
+  'Don\'t panic on hard questions — take a breath, think, then answer',
+  'Don\'t forget customer empathy — TAC is customer-facing',
+  'Don\'t be vague — use specific port numbers, protocols, commands',
+  'Don\'t ignore the human side — communication matters as much as tech',
+  'Don\'t leave your camera off (for video interviews) — eye contact matters',
+];
+const TIPS_ASK = [
+  'What does the first 90 days look like for a TAC engineer?',
+  'What are the most common escalation types you see?',
+  'How does Barracuda support ongoing training and certifications?',
+  'What does the career path look like beyond TAC?',
+  'What tools does the TAC team use for troubleshooting?',
+  'How is performance measured for TAC engineers?',
+  'What\'s the team structure — how many engineers per shift?',
+  'What are the biggest challenges the TAC team faces right now?',
+];
+const TIPS_THEMES = [
+  'Troubleshooting methodology: Layer 1→7, isolate before fixing',
+  'Firewall basics: stateful vs stateless, ACLs, NAT, VPN (IPsec/SSL)',
+  'Email security: SMTP flow, SPF/DKIM/DMARC, spam, bounce codes',
+  'Linux: tcpdump, grep/awk/sed, systemctl, logs, permissions',
+  'Networking: OSI, TCP/UDP, DNS, DHCP, subnetting, routing',
+  'Barracuda products: CloudGen Firewall, ESG, WAF, Backup, SecureEdge',
+  'Customer handling: empathy, clear communication, expectations, escalation',
+  'VPN troubleshooting: Phase 1 (IKE/UDP 500), Phase 2 (ESP/traffic selectors)',
+  'DNS troubleshooting: dig, nslookup, cache flush, NXDOMAIN',
+  'Security: IDS/IPS, DMZ, WAF vs network firewall, Zero Trust',
+];
+function renderTips() {
+  document.getElementById('tipsDo').innerHTML = TIPS_DO.map(t => '<li>' + esc(t) + '</li>').join('');
+  document.getElementById('tipsDont').innerHTML = TIPS_DONT.map(t => '<li>' + esc(t) + '</li>').join('');
+  document.getElementById('tipsAsk').innerHTML = TIPS_ASK.map(t => '<li>' + esc(t) + '</li>').join('');
+  document.getElementById('tipsThemes').innerHTML = TIPS_THEMES.map(t => '<li>' + esc(t) + '</li>').join('');
+}
+
+// ====== Enhanced Interview Sim with model answers + mock generator ======
+const MODEL_ANSWERS = {
+  'NET-01': 'The OSI model has 7 layers: Application (HTTP, DNS), Presentation (encryption, formatting), Session (manages sessions), Transport (TCP/UDP, ports), Network (IP, routing), Data-Link (MAC, framing), Physical (cables, signals). Mnemonic: All People Seem To Need Data Processing.',
+  'NET-02': 'TCP is connection-oriented — 3-way handshake, ACKs, retransmissions, guaranteed delivery. Used for web (HTTP), email (SMTP), file transfer. UDP is connectionless — no handshake, no guarantees, low overhead. Used for DNS, DHCP, streaming, VoIP, gaming. Choose UDP when speed > reliability and stale packets can be dropped.',
+  'NET-04': 'The TCP 3-way handshake: 1) Client sends SYN with its sequence number. 2) Server replies SYN-ACK with its own sequence number and ACK of the client SYN. 3) Client sends ACK. Connection is now established. It operates at Layer 4 (Transport).',
+  'NET-13': 'DHCP DORA: Discover (client broadcasts looking for a server), Offer (server offers IP config), Request (client requests the offered IP), Acknowledge (server confirms and assigns the lease). Uses UDP 67 (server) and 68 (client). DHCP provides IP, subnet mask, gateway, DNS, and lease time.',
+  'SEC-01': 'A firewall filters traffic based on rules (source/dest IP, port, protocol). Types: packet-filtering (stateless, checks headers only), stateful (tracks connection state), NGFW (adds app awareness, IPS, DPI), WAF (Layer 7 web app protection). Traditional firewalls operate at Layers 3-4.',
+  'SEC-09': 'IPSec (Internet Protocol Security) encrypts/authenticates IP packets. Two modes: Tunnel mode (encrypts entire packet, adds new IP header — used for site-to-site VPNs) and Transport mode (encrypts payload only — host-to-host). Uses ESP (encryption + integrity) and AH (integrity only). IKE negotiates security associations (SAs) and keys.',
+  'MAIL-01': 'SMTP sends email (port 25/587/465). Mail flow: MUA (client) → MTA (mail server) via SMTP → MTA routes to recipient\'s MX → recipient MTA → MDA (delivery) → recipient MUA retrieves via IMAP/POP3. IMAP syncs (port 143/993), POP3 downloads (port 110/995).',
+  'MAIL-04': 'SPF (Sender Policy Framework) is a DNS TXT record listing authorized sender IPs for a domain. Receivers check it to reject spoofed email. Config: "v=spf1 ip4:1.2.3.4 include:_spf.google.com ~all". ~all = softfail, -all = hardfail (reject). Prevents email spoofing.',
+  'LNX-03': 'iptables configures the Linux kernel firewall (Netfilter). Tables: filter (firewall rules), nat (address translation), mangle (packet modification), raw (before conntrack). Chains in filter: INPUT (to local host), OUTPUT (from local host), FORWARD (routed through). Example: iptables -A INPUT -p tcp --dport 22 -j ACCEPT allows SSH. DROP = silent discard, REJECT = discard + notify.',
+  'LNX-07': 'tcpdump captures network packets. Example for port 80: tcpdump -i eth0 port 80. -n disables DNS resolution, -w file.pcap writes to a file for Wireshark, -c 100 captures 100 packets. It uses libpcap and operates at Layer 2.',
+  'TS-01': 'First, isolate: is it one device or all devices? If one device — check IP config (ipconfig/ifconfig), can it ping the gateway? Can it ping 8.8.8.8 (IP) vs google.com (DNS)? If 8.8.8.8 works but google.com doesn\'t — DNS issue. If can\'t ping gateway — local network issue (cable, VLAN, switch). If all devices — check the router/ISP/WAN. Use traceroute to find where traffic stops.',
+  'TS-03': 'First check Phase 1 (IKE): are UDP 500/4500 reachable? Is the PSK correct? Do IKE proposals match (encryption, hash, DH group)? If Phase 1 is up but Phase 2 fails — check ESP transform-set, traffic selectors (local/remote subnets), and NAT-T. Verify with SA counters (encrypt/decrypt packets). If decrypt=0, return traffic isn\'t coming back — check routing or asymmetric paths.',
+  'BCD-01': 'Barracuda CloudGen Firewall is a next-gen firewall with SD-WAN, ATP, application control, site-to-site VPN, and central cloud management via Barracuda Cloud Control. Key features: multi-WAN link balancing, dynamic path selection (SD-WAN), sandboxing (ATP), IPS, app-aware filtering. Available as hardware, virtual (Vx), and cloud (AWS/Azure).',
+  'BCD-02': 'Barracuda Email Security Gateway filters inbound/outbound email for spam, malware, phishing, and data loss. Features: anti-spam, AV, ATP sandboxing for zero-day threats, DLP, encryption, email continuity. Deployed in the DMZ — MX records point to ESG, which filters then forwards clean mail to the internal server. Protects both on-prem Exchange and Office 365.',
+  'BCD-13': 'A TAC engineer handles advanced technical support — deep troubleshooting, packet captures, log analysis, config debugging, and bug escalation to R&D. L1/L2 handle routine issues (setup, basic config). TAC (L3) takes escalations requiring deep product knowledge. Tools: tcpdump, syslog analysis, BCC, internal KB, lab reproduction. Customers should provide: serial number, firmware version, issue description, logs, packet capture, and config export.',
+};
+let intMockQs = [], intMockIdx = 0, intMockScores = [];
+let curIntQid = null;
+
+function pickIntQuestion() {
+  const q = QUESTIONS[Math.floor(Math.random() * QUESTIONS.length)];
+  curIntQid = q.id;
+  document.getElementById('intText').textContent = q.q;
+  document.getElementById('intText').dataset.qid = q.id;
+  document.getElementById('intRubric').style.display = 'none';
+  document.getElementById('intModelAns').style.display = 'none';
+  document.getElementById('intModel').style.display = MODEL_ANSWERS[q.id] ? 'inline-block' : 'none';
+  intSecs = 90;
+  document.getElementById('intTimer').textContent = '1:30';
+}
+document.getElementById('intNew').onclick = () => {
+  document.getElementById('intMockResult').style.display = 'none';
+  pickIntQuestion();
+};
+document.getElementById('intMock').onclick = () => {
+  intMockQs = [...QUESTIONS].sort(() => Math.random() - 0.5).slice(0, 5);
+  intMockIdx = 0; intMockScores = [];
+  document.getElementById('intMockResult').style.display = 'none';
+  nextMockQ();
+};
+function nextMockQ() {
+  if (intMockIdx >= intMockQs.length) { endMock(); return; }
+  const q = intMockQs[intMockIdx];
+  curIntQid = q.id;
+  document.getElementById('intText').textContent = 'Q' + (intMockIdx + 1) + '/5: ' + q.q;
+  document.getElementById('intRubric').style.display = 'none';
+  document.getElementById('intModelAns').style.display = 'none';
+  document.getElementById('intModel').style.display = MODEL_ANSWERS[q.id] ? 'inline-block' : 'none';
+  intSecs = 90;
+  document.getElementById('intTimer').textContent = '1:30';
+}
+function endMock() {
+  const avg = intMockScores.length ? (intMockScores.reduce((a, b) => a + b, 0) / intMockScores.length).toFixed(1) : 0;
+  S.interview.done += intMockScores.length;
+  S.interview.scores.push(...intMockScores);
+  addXP(intMockScores.length * 10);
+  markMission('interview');
+  bumpStreak();
+  save();
+  document.getElementById('intMockScore').textContent = 'Avg score: ' + avg + '/5 (' + intMockScores.length + ' questions)';
+  document.getElementById('intMockSub').textContent = avg >= 4 ? '🔥 Excellent — you\'re interview ready!' : avg >= 3 ? '👍 Good — keep practicing!' : '📚 Keep going — practice makes perfect!';
+  document.getElementById('intMockEmoji').textContent = avg >= 4 ? '🏆' : avg >= 3 ? '👍' : '📚';
+  document.getElementById('intMockResult').style.display = 'block';
+  if (avg >= 4) burstConfetti(80);
+}
+document.getElementById('intMockAgain').onclick = () => document.getElementById('intMock').click();
+document.getElementById('intModel').onclick = () => {
+  const ans = MODEL_ANSWERS[curIntQid];
+  if (!ans) return;
+  const el = document.getElementById('intModelAns');
+  el.innerHTML = '<strong style="color:var(--gold)">📖 Model Answer:</strong><br>' + esc(ans);
+  el.classList.add('show');
+  el.style.display = 'block';
+};
+
 // ====== Init ======
 buildVidSelect();
 buildQuizFilter();
 buildFlashPool();
 renderMission();
+renderProducts();
+renderTips();
 updateCountdown();
 updateHeader();
 loadVideo(QUESTIONS[0].id);
